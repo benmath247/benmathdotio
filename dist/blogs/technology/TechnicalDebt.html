@@ -1,0 +1,62 @@
+<p>This post is a bit on the technical side so reader beware.</p>
+<h2>An idea is born</h2>
+<p>The year was 2022. I was a junior level engineer who was willing to work hard to earn more for myself. 
+I was working on a product whose code was <em>very</em> poorly written and used a .env file as a database.
+It was truly a site to behold. We were responsible for creating and deploying dozens of websites that were all pretty similar.
+We had one repository that held the framing code for all of these sites. Their differences were held in a .env file where nonactive websites were simply commented out.
+When we needed to deploy, we just commented out the variables associated with the sites we didn't want and made sure that the ones we wanted active weren't commented out. 
+We deployed by using the AWS management console to upload builds to an S3 bucket and serve them up with similarly made Cloudfront instances. Obviously, there was room for improvement.
+This code was being used by some of the biggest food retail brands in the world and desperately needed an updated.</p>
+<p>My job has been awesome because it has allowed me the ability to travel. One place I traveled to was Tel Aviv, where I hung out with my friend Steve.
+    Steve was working in operations for an Israeli AI startup. When I saw what he was working on, I recognized that they were using Django Admin as a Content Management Service.
+    I had an idea. We could replace the horrible .env file with a proper back end using Django.
+    This solved a lot of problems for my team because whenever our clients needed a comma changed to a period, it would have to go from the client, to a salesperson, to an implementation manager, to a product manager, to the developers (me), and then back up that chain the same way.
+    Such a back end would allow nontechnical users to make simple changes and free everyone down the chain to work on other things.
+    I started this project during a hackathon but I didn't finish it to completion. It was a big lift overturning an entire repository worth of code. I was told to work on other things.
+    </p><p>There seemed to have been a miscommunication in the company because after I was told not to work on it, my supervisor said that he saw a product director mention in a slideshow that it would be done by the end of the following month.
+        Interesting.
+    </p>
+    <h2>The hatching of an egg</h2>
+        <p>
+            Well, I got it done! 
+            I added some cool features too that solved even more of our problems, thanks to Django. 
+            I had our sites organized by client. 
+            I added image fields so we didn't have to manually handle images anymore. I added field validation. 
+            I even added a module that allowed the admin to pick a color from a pallet.
+            The clients were never good at providing colors and it was always a guessing game. That was all cleared up. 
+            The engineer on my team who was senior to me even created a functionality to run the react build and deploy new sites.
+            We deployed the back end and front end to a cloud environment and we were off to the races.
+            A few weeks later, we were live in production. These websites could be created and deployed with no developer intervention.
+        </p>
+    <h2>Here comes trouble</h2>
+    <p>
+        People in the company really liked the program at first.
+        I presented it to upper management and we had quite a few websites running without developer intervention.
+        Instead of working on changing commas and typos or making sure images were just the right size for our clients, we focused on other things.
+        These included feature development and new projects altogether.
+    </p>
+    <p>
+        Little by little, they wanted more features on my new app. They wanted an age gate so we could advertise for alcohol clients. Done. They wanted to be able to put other products' website related modules on it. Done.
+        The first piece of technical debt that I uncovered was when they asked me to create a feature to change the order of the components on the site.
+        "Just swap these components". 
+        It was the epitome of nontechnical stakeholders thinking that a task that they can describe easily with words could be just as easily implemented in code.
+        My app was designed to bring specifications to a <em>templated</em> design. This changed everything. I actually had to rebuild the entire app to create the ability for my frontend to interpret order.
+        What a mess! I was determined and this program was important to me for my career growth so I did it. We had ordering!
+    </p>
+    <h2>Where I am now</h2>
+    <p>
+        I am writing this post because right now I am standing at the foot of a mountain of technical debt.
+        This was one of the first serious React applications that I ever built. My front end did not use props correctly. Instead, of pulling the backend data for all of our components through the site as props, we gave each component access to a context.
+        This context was all of the data for all of the site. Each component was programmed to look for the data for its own specifications.
+        This was totally fine and working, until they said they want to be able to support multiple page sites.
+        It worked so nicely before because the template of these kinds of sites was limited to one page with a specific set of potential components.
+        Now, they want more than one page with different specifications for these components. I am definitely going to have to change the way every single component accesses the data. There won't be very many files in the repository that won't need update.
+        I will also have to change the way the back end sends its data to accomodate multiple pages.
+    </p>
+    <p>
+        This is a lot, and I am feeling a bit overwhelmed as I write this blog post on an airplane back from Uruguay.
+        My life is so awesome. Anyway, when this is over I intend to have conversations with people who have been doing this longer than I have to try to see if there's a way that I can get myself into these situations less.
+        Perhaps technical debt is a fact of life, especially when you're blazing a trail on a new product independently. 
+        It is certainly frustrating to have to rebuild the application again and again. I wanted to record this for later in my career when this mountain feels like a mole hill.
+        Time to write some code!
+    </p>
