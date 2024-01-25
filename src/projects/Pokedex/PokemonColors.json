@@ -1,0 +1,607 @@
+{
+    "1": {
+      "name": "Bulbasaur",
+      "color": "#228B22"
+    },
+    "2": {
+      "name": "Ivysaur",
+      "color": "#228B22"
+    },
+    "3": {
+      "name": "Venusaur",
+      "color": "#228B22"
+    },
+    "4": {
+      "name": "Charmander",
+      "color": "#FF4500"
+    },
+    "5": {
+      "name": "Charmeleon",
+      "color": "#FF4500"
+    },
+    "6": {
+      "name": "Charizard",
+      "color": "#FF4500"
+    },
+    "7": {
+      "name": "Squirtle",
+      "color": "#00BFFF"
+    },
+    "8": {
+      "name": "Wartortle",
+      "color": "#00BFFF"
+    },
+    "9": {
+      "name": "Blastoise",
+      "color": "#00BFFF"
+    },
+    "10": {
+      "name": "Caterpie",
+      "color": "#8B4513"
+    },
+    "11": {
+      "name": "Metapod",
+      "color": "#8B4513"
+    },
+    "12": {
+      "name": "Butterfree",
+      "color": "#8B4513"
+    },
+    "13": {
+      "name": "Weedle",
+      "color": "#8B4513"
+    },
+    "14": {
+      "name": "Kakuna",
+      "color": "#8B4513"
+    },
+    "15": {
+      "name": "Beedrill",
+      "color": "#8B4513"
+    },
+    "16": {
+      "name": "Pidgey",
+      "color": "#8B4513"
+    },
+    "17": {
+      "name": "Pidgeotto",
+      "color": "#8B4513"
+    },
+    "18": {
+      "name": "Pidgeot",
+      "color": "#8B4513"
+    },
+    "19": {
+      "name": "Rattata",
+      "color": "#8B4513"
+    },
+    "20": {
+      "name": "Raticate",
+      "color": "#8B4513"
+    },
+    "21": {
+      "name": "Spearow",
+      "color": "#8B4513"
+    },
+    "22": {
+      "name": "Fearow",
+      "color": "#8B4513"
+    },
+    "23": {
+      "name": "Ekans",
+      "color": "#8B4513"
+    },
+    "24": {
+      "name": "Arbok",
+      "color": "#8B4513"
+    },
+    "25": {
+      "name": "Pikachu",
+      "color": "#FFD700"
+    },
+    "26": {
+      "name": "Raichu",
+      "color": "#FFD700"
+    },
+    "27": {
+      "name": "Sandshrew",
+      "color": "#8B4513"
+    },
+    "28": {
+      "name": "Sandslash",
+      "color": "#8B4513"
+    },
+    "29": {
+      "name": "Nidoran♀",
+      "color": "#8B4513"
+    },
+    "30": {
+      "name": "Nidorina",
+      "color": "#8B4513"
+    },
+    "31": {
+      "name": "Nidoqueen",
+      "color": "#8B4513"
+    },
+    "32": {
+      "name": "Nidoran♂",
+      "color": "#8B4513"
+    },
+    "33": {
+      "name": "Nidorino",
+      "color": "#8B4513"
+    },
+    "34": {
+      "name": "Nidoking",
+      "color": "#8B4513"
+    },
+    "35": {
+      "name": "Clefairy",
+      "color": "#FFD700"
+    },
+    "36": {
+      "name": "Clefable",
+      "color": "#FFD700"
+    },
+    "37": {
+      "name": "Vulpix",
+      "color": "#FF4500"
+    },
+    "38": {
+      "name": "Ninetales",
+      "color": "#FF4500"
+    },
+    "39": {
+      "name": "Jigglypuff",
+      "color": "#FFD700"
+    },
+    "40": {
+      "name": "Wigglytuff",
+      "color": "#FFD700"
+    },
+    "41": {
+      "name": "Zubat",
+      "color": "#8B4513"
+    },
+    "42": {
+      "name": "Golbat",
+      "color": "#8B4513"
+    },
+    "43": {
+      "name": "Oddish",
+      "color": "#228B22"
+    },
+    "44": {
+      "name": "Gloom",
+      "color": "#228B22"
+    },
+    "45": {
+      "name": "Vileplume",
+      "color": "#228B22"
+    },
+    "46": {
+      "name": "Paras",
+      "color": "#228B22"
+    },
+    "47": {
+      "name": "Parasect",
+      "color": "#228B22"
+    },
+    "48": {
+      "name": "Venonat",
+      "color": "#8B4513"
+    },
+    "49": {
+      "name": "Venomoth",
+      "color": "#8B4513"
+    },
+    "50": {
+      "name": "Diglett",
+      "color": "#8B4513"
+    },
+    "51": {
+      "name": "Dugtrio",
+      "color": "#8B4513"
+    },
+    "52": {
+      "name": "Meowth",
+      "color": "#8B4513"
+    },
+    "53": {
+      "name": "Persian",
+      "color": "#8B4513"
+    },
+    "54": {
+      "name": "Psyduck",
+      "color": "#00BFFF"
+    },
+    "55": {
+      "name": "Golduck",
+      "color": "#00BFFF"
+    },
+    "56": {
+      "name": "Mankey",
+      "color": "#8B4513"
+    },
+    "57": {
+      "name": "Primeape",
+      "color": "#8B4513"
+    },
+    "58": {
+      "name": "Growlithe",
+      "color": "#FF4500"
+    },
+    "59": {
+      "name": "Arcanine",
+      "color": "#FF4500"
+    },
+    "60": {
+      "name": "Poliwag",
+      "color": "#00BFFF"
+    },
+    "61": {
+      "name": "Poliwhirl",
+      "color": "#00BFFF"
+    },
+    "62": {
+      "name": "Poliwrath",
+      "color": "#00BFFF"
+    },
+    "63": {
+      "name": "Abra",
+      "color": "#8B4513"
+    },
+    "64": {
+      "name": "Kadabra",
+      "color": "#8B4513"
+    },
+    "65": {
+      "name": "Alakazam",
+      "color": "#8B4513"
+    },
+    "66": {
+      "name": "Machop",
+      "color": "#8B4513"
+    },
+    "67": {
+      "name": "Machoke",
+      "color": "#8B4513"
+    },
+    "68": {
+      "name": "Machamp",
+      "color": "#8B4513"
+    },
+    "69": {
+      "name": "Bellsprout",
+      "color": "#228B22"
+    },
+    "70": {
+      "name": "Weepinbell",
+      "color": "#228B22"
+    },
+    "71": {
+      "name": "Victreebel",
+      "color": "#228B22"
+    },
+    "72": {
+      "name": "Tentacool",
+      "color": "#00BFFF"
+    },
+    "73": {
+      "name": "Tentacruel",
+      "color": "#00BFFF"
+    },
+    "74": {
+      "name": "Geodude",
+      "color": "#8B4513"
+    },
+    "75": {
+      "name": "Graveler",
+      "color": "#8B4513"
+    },
+    "76": {
+      "name": "Golem",
+      "color": "#8B4513"
+    },
+    "77": {
+      "name": "Ponyta",
+      "color": "#FF4500"
+    },
+    "78": {
+      "name": "Rapidash",
+      "color": "#FF4500"
+    },
+    "79": {
+      "name": "Slowpoke",
+      "color": "#00BFFF"
+    },
+    "80": {
+      "name": "Slowbro",
+      "color": "#00BFFF"
+    },
+    "81": {
+      "name": "Magnemite",
+      "color": "#8B4513"
+    },
+    "82": {
+      "name": "Magneton",
+      "color": "#8B4513"
+    },
+    "83": {
+      "name": "Farfetch'd",
+      "color": "#8B4513"
+    },
+    "84": {
+      "name": "Doduo",
+      "color": "#8B4513"
+    },
+    "85": {
+      "name": "Dodrio",
+      "color": "#8B4513"
+    },
+    "86": {
+      "name": "Seel",
+      "color": "#00BFFF"
+    },
+    "87": {
+      "name": "Dewgong",
+      "color": "#00BFFF"
+    },
+    "88": {
+      "name": "Grimer",
+      "color": "#8B4513"
+    },
+    "89": {
+      "name": "Muk",
+      "color": "#8B4513"
+    },
+    "90": {
+      "name": "Shellder",
+      "color": "#00BFFF"
+    },
+    "91": {
+      "name": "Cloyster",
+      "color": "#00BFFF"
+    },
+    "92": {
+      "name": "Gastly",
+      "color": "#8B4513"
+    },
+    "93": {
+      "name": "Haunter",
+      "color": "#8B4513"
+    },
+    "94": {
+      "name": "Gengar",
+      "color": "#8B4513"
+    },
+    "95": {
+      "name": "Onix",
+      "color": "#8B4513"
+    },
+    "96": {
+      "name": "Drowzee",
+      "color": "#8B4513"
+    },
+    "97": {
+      "name": "Hypno",
+      "color": "#8B4513"
+    },
+    "98": {
+      "name": "Krabby",
+      "color": "#00BFFF"
+    },
+    "99": {
+      "name": "Kingler",
+      "color": "#00BFFF"
+    },
+    "100": {
+      "name": "Voltorb",
+      "color": "#FF4500"
+    },
+    "101": {
+      "name": "Electrode",
+      "color": "#FF4500"
+    },
+    "102": {
+      "name": "Exeggcute",
+      "color": "#228B22"
+    },
+    "103": {
+      "name": "Exeggutor",
+      "color": "#228B22"
+    },
+    "104": {
+      "name": "Cubone",
+      "color": "#8B4513"
+    },
+    "105": {
+      "name": "Marowak",
+      "color": "#8B4513"
+    },
+    "106": {
+      "name": "Hitmonlee",
+      "color": "#8B4513"
+    },
+    "107": {
+      "name": "Hitmonchan",
+      "color": "#8B4513"
+    },
+    "108": {
+      "name": "Lickitung",
+      "color": "#8B4513"
+    },
+    "109": {
+      "name": "Koffing",
+      "color": "#8B4513"
+    },
+    "110": {
+      "name": "Weezing",
+      "color": "#8B4513"
+    },
+    "111": {
+      "name": "Rhyhorn",
+      "color": "#8B4513"
+    },
+    "112": {
+      "name": "Rhydon",
+      "color": "#8B4513"
+    },
+    "113": {
+      "name": "Chansey",
+      "color": "#FFD700"
+    },
+    "114": {
+      "name": "Tangela",
+      "color": "#228B22"
+    },
+    "115": {
+      "name": "Kangaskhan",
+      "color": "#8B4513"
+    },
+    "116": {
+      "name": "Horsea",
+      "color": "#00BFFF"
+    },
+    "117": {
+      "name": "Seadra",
+      "color": "#00BFFF"
+    },
+    "118": {
+      "name": "Goldeen",
+      "color": "#00BFFF"
+    },
+    "119": {
+      "name": "Seaking",
+      "color": "#00BFFF"
+    },
+    "120": {
+        "name": "Staryu",
+        "color": "#00BFFF"
+      },
+      "121": {
+        "name": "Starmie",
+        "color": "#00BFFF"
+      },
+      "122": {
+        "name": "Mr. Mime",
+        "color": "#FF69B4"
+      },
+      "123": {
+        "name": "Scyther",
+        "color": "#228B22"
+      },
+      "124": {
+        "name": "Jynx",
+        "color": "#FF69B4"
+      },
+      "125": {
+        "name": "Electabuzz",
+        "color": "#FFD700"
+      },
+      "126": {
+        "name": "Magmar",
+        "color": "#FF4500"
+      },
+      "127": {
+        "name": "Pinsir",
+        "color": "#8B0000"
+      },
+      "128": {
+        "name": "Tauros",
+        "color": "#8B0000"
+      },
+      "129": {
+        "name": "Magikarp",
+        "color": "#00BFFF"
+      },
+      "130": {
+        "name": "Gyarados",
+        "color": "#00BFFF"
+      },
+      "131": {
+        "name": "Lapras",
+        "color": "#00BFFF"
+      },
+      "132": {
+        "name": "Ditto",
+        "color": "#FF69B4"
+      },
+      "133": {
+        "name": "Eevee",
+        "color": "#FF69B4"
+      },
+      "134": {
+        "name": "Vaporeon",
+        "color": "#00BFFF"
+      },
+      "135": {
+        "name": "Jolteon",
+        "color": "#FFD700"
+      },
+      "136": {
+        "name": "Flareon",
+        "color": "#FF4500"
+      },
+      "137": {
+        "name": "Porygon",
+        "color": "#FFD700"
+      },
+      "138": {
+        "name": "Omanyte",
+        "color": "#8B4513"
+      },
+      "139": {
+        "name": "Omastar",
+        "color": "#8B4513"
+      },
+      "140": {
+        "name": "Kabuto",
+        "color": "#8B4513"
+      },
+      "141": {
+        "name": "Kabutops",
+        "color": "#8B4513"
+      },
+      "142": {
+        "name": "Aerodactyl",
+        "color": "#FF4500"
+      },
+      "143": {
+        "name": "Snorlax",
+        "color": "#8B4513"
+      },
+      "144": {
+        "name": "Articuno",
+        "color": "#00BFFF"
+      },
+      "145": {
+        "name": "Zapdos",
+        "color": "#FFD700"
+      },
+      "146": {
+        "name": "Moltres",
+        "color": "#FF4500"
+      },
+      "147": {
+        "name": "Dratini",
+        "color": "#00BFFF"
+      },
+      "148": {
+        "name": "Dragonair",
+        "color": "#00BFFF"
+      },
+      "149": {
+        "name": "Dragonite",
+        "color": "#00BFFF"
+      },
+      "150": {
+        "name": "Mewtwo",
+        "color": "#FF4500"
+      },
+      "151": {
+        "name": "Mew",
+        "color": "#FF4500"
+      }
+    }
+    
