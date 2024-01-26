@@ -21,7 +21,7 @@ import MemoryGame from './projects/Memory/Memory';
 import NumberGuessingGame from './projects/Numbers/Numbers';
 import Translation from './projects/Translation/Translation';
 import Dictation from './projects/Dictation/dictation';
-import Pokedex from './projects/Pokedex/pokedex';
+import Pokedex from './projects/Pokedex/Pokedex';
 import ContactForm from './pages/Contact';
 import PokemonDetailsPage from './projects/Pokedex/PokemonDetails';
 import PokedexType from './projects/Pokedex/PokedexType';
@@ -52,31 +52,31 @@ function App() {
               href="https://github.com/yourusername"
               target="_blank"
               rel="noopener noreferrer"
-                className="rotate-icon"
-              >
-              <FaGithub
               className="rotate-icon"
-               size={20} />
+            >
+              <FaGithub
+                className="rotate-icon"
+                size={20} />
             </Nav.Link>
             <Nav.Link
               href="https://www.linkedin.com/in/yourprofile"
               target="_blank"
               rel="noopener noreferrer"
               className="rotate-icon"
-              >
-              <FaLinkedin 
-              className="rotate-icon"
-              size={20} />
+            >
+              <FaLinkedin
+                className="rotate-icon"
+                size={20} />
             </Nav.Link>
             <Nav.Link
               href="/your-resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="rotate-icon"
-              >
-              <FaFilePdf 
-              className="rotate-icon"
-              size={20} />
+            >
+              <FaFilePdf
+                className="rotate-icon"
+                size={20} />
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
@@ -85,22 +85,22 @@ function App() {
       <Routes>
         <Route path="/about" element={<About />} />
         <Route path="/blog" element={<TabbedBlog />} />
-        <Route path="/portfolio" element={<Portfolio/>} />
-        <Route path="/contact" element={<ContactForm/>} />
-        <Route path="/json-formatter" element={<FormatJson/>} />
-        <Route path="/tik-tac-toe" element={<TikTacToe/>} />
-        <Route path="/hangman" element={<HangmanGame/>} />
-        <Route path="/colors" element={<ColorSelector/>} />
-        <Route path="/memory" element={<MemoryGame/>} />
-        <Route path="/translation" element={<Translation/>} />
-        <Route path="/numbers" element={<NumberGuessingGame/>} />
-        <Route path="/pokedex" element={<Pokedex/>} />
-        <Route path="/pokedex/type/:id" element={<PokedexType/>} />
-        <Route path="/pokedex/pokemon/:id" element={<PokemonDetailsPage/>} />
-        <Route path="/dictation" element={<Dictation/>} />
-        <Route path="/days-since-quit" element={<DaysSinceQuit/>} />
-        <Route path="/workoutPlanner" element={<ExampleCall/>} />
-        <Route path="/apininjas" element={<APINinjasNav/>} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/contact" element={<ContactForm />} />
+        <Route path="/json-formatter" element={<FormatJson />} />
+        <Route path="/tik-tac-toe" element={<TikTacToe />} />
+        <Route path="/hangman" element={<HangmanGame />} />
+        <Route path="/colors" element={<ColorSelector />} />
+        <Route path="/memory" element={<MemoryGame />} />
+        <Route path="/translation" element={<Translation />} />
+        <Route path="/numbers" element={<NumberGuessingGame />} />
+        <Route path="/pokedex" element={<Pokedex />} />
+        <Route path="/pokedex/type/:id" element={<PokedexType />} />
+        <Route path="/pokedex/pokemon/:id" element={<PokemonDetailsPage />} />
+        <Route path="/dictation" element={<Dictation />} />
+        <Route path="/days-since-quit" element={<DaysSinceQuit />} />
+        <Route path="/workoutPlanner" element={<ExampleCall />} />
+        <Route path="/apininjas" element={<APINinjasNav />} />
         <Route path="/" element={<Home />} />
       </Routes>
     </Router>
