@@ -1,0 +1,75 @@
+<h1>Good news!</h1>
+<p>I have some great news. For reasons that are now behind me, I always saw connecting cloud storage as a difficult
+    obstacle to overcome when deploying Django applications.
+    Well, that is no longer. It is actually very simple with just a few code tweaks and some clicking around the Google
+    Cloud console. You need a Google Cloud account, a project, and an access key. Creating that is outside of the scope
+    of this blog
+    post.
+</p>
+<h3>Creating the Bucket</h3>
+<p>
+    Next, go to <a href="https://console.cloud.google.com/storage/">Google Cloud Storage</a> and click Create a Bucket.
+    For those who are super new at this, a bucket is where your files get held. You can think of it as a literal bucket
+    of files.
+</p>
+<p>You can click through all of the default settings but ake sure to have "Enforce public access prevention on this
+    bucket" unchecked as shown:
+    <img src="./blogs/neighborhoods/gcsscreenshot1.png" />
+    You need it unchecked because you are using this to host files that will be accessed by people on the web. Unless,
+    you're not. Then leave it checked.
+</p>
+<p>
+    Once your bucket is created, go to permissions and add the role or IAM condition associated with the key your
+    project is going to use.
+</p>
+<p>
+    If you have all of thie properly configured, the rest is easy. Add the following to your settings.py file to ensure
+    your Django app is showing GCS its identification and authorization and pointing at the right place.
+</p>
+<pre>
+    <code>
+# settings.py
+import os
+from google.cloud import storage
+
+# Set the Google Cloud Storage credentials file path. 
+# This is the path assuming you are starting in the folder that has manage.py in it.
+# change this to wherever you put your file that we generated
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = './path/to/your/key.json'
+
+# Create a storage client for use in views.py
+storage_client = storage.Client()
+
+# Configure Django's media and static file storage to use Google Cloud Storage
+DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+GS_BUCKET_NAME = 'love-city-neighborhoods'  # Use the provided bucket name
+    </code>
+</pre>
+<p>
+    In your views.py file add the following to have your admin upload files to the right place and your API calls
+    display them.
+</p>
+<pre>
+    <code>
+# views.py
+from google.cloud import storage
+
+
+# Define the upload_file function for file uploads to Google Cloud Storage
+def upload_file(file_path, bucket_name):
+    storage_client = storage.Client()
+    bucket = storage_client.get_bucket(bucket_name)
+    blob = bucket.blob(file_path)
+    blob.upload_from_filename(file_path)
+
+# Define the get_file_url function to get the public URL of a file in the bucket
+def get_file_url(bucket_name, object_path):
+    storage_client = storage.Client()
+    bucket = storage_client.get_bucket(bucket_name)
+    blob = bucket.blob(object_path)
+    return blob.public_url
+    </code>
+</pre>
+<p>
+    That's it! Easy as pie, really. I am happy to get that out of the way on the LOVE City Neighborhoods application.
+</p>

@@ -1,6 +1,12 @@
 export const projectsPostsData = [
   // Add projects posts as needed
   {
+    title: "Connecting Google Cloud Storage",
+    subtitle: 'Enhancing the Neighborhoods backend with GCS',
+    content: './blogs/projects/ConnectingGoogleCloudStorage.html',
+    date: 'January 27, 2024',
+  },
+  {
     title: "The Neighborhoods Backend",
     subtitle: 'Creating a backend to support front ends for neighborhood associations in Philly',
     content: './blogs/projects/MakingNeighborhoodsBackend.html',
