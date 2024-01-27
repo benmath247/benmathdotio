@@ -1,0 +1,249 @@
+<head>
+    <style>
+        /* CSS to set the width of the image to 500px */
+        img {
+            max-width: 500px;
+            height: auto;
+        }
+
+        pre {
+            background-color: rgba(255, 255, 255, 0.047);
+            margin: 15px;
+            padding: 10px;
+            color: aqua;
+        }
+    </style>
+</head>
+<p>An unusual hobby of mine is affecting positive change in Philadelphia.
+    I love picking up trash, shoveling snow, removing graffiti, mentoring youth, and however else I can help.
+    Doing this on my free time brings me a lot of happiness.</p>
+<p>
+    It is weird for two reasons. First, my hobby is limited to Philadelphia. I never did or wanted to do anything like
+    this in NYC.
+    I think that may be because Philly really needs it and Philly is my home. I was raised around here and I take a lot
+    of pride in my city.
+    It is also weird because I think the people tasked with taking care of our city at the highest levels like record
+    keeping, the streets department, sanitation, and other governing entities do not take the job as seriously as I do.
+    Public sector work in Philly has a lot of good actors but a lot more people who do as little as possible.
+</p>
+<h1>Problem</h1>
+<p>
+    Having just moved to Philly, I want to help at the neighborhood level. It is cold out so cleaning and starting new
+    projects isn't an option right now.
+    But I did notice that a lot of the neighborhood associations in Philly have websites built with Wix, Squarespace, or
+    Wordpress. What a drag!
+    I am here to help. Now that I have worked in React for some time I can spin up front ends quickly.
+    However, the neighborhoods will only work with me if I give them a frontend that they can edit with a backend.
+    They all have 1-2 blog style data models, sometimes with categories, and meeting minutes.
+    I am going to use Django admin to give them a backend that they can use to update these objects.
+    It will have some interesting permission stuff that I will need to implement so that the neighborhood associations
+    aren't touching each other's stuff.
+</p>
+<p>
+    Let's get into it.
+</p>
+<h2>Django Setup</h2>
+First I will set up the project with Django and install Django Rest Framework.
+<pre>
+    <code>
+        pip install django
+        django-admin startproject neighborhoods_backend
+        cd neighborhoods_backend
+        python manage.py migrate
+        python3 manage.py runserver
+    </code>
+</pre>
+<p>Yay!</p>
+<img src="neighborhoods/djangostart.png" />
+<h2>Creating a superuser</h2>
+<p>I am not going to be making any frontend templates so most of this is going to rely on Django Admin and DRF for API
+    calls.
+    Time to make a superuser to login with.
+</p>
+<pre>
+    <code>
+        (venv) MacBook-Pro-10:neighborhoods_backend Ben$ python3 manage.py create
+        superuser
+        Username (leave blank to use 'ben'): ben
+        Email address: ben@benmath.io
+        Password: 
+        Password (again): 
+        Superuser created successfully.
+    </code>
+</pre>
+
+<p>Next I go to my localhost:8000/admin and login</p>
+<img src="neighborhoods/adminstart.png" />
+<p>Here is my starting application.</p>
+<p>I have been trying to work off of lists more, so here is a list of things for me to do to complete the application
+    from this point.</p>
+<ol>
+    <li>Make Django models for neighborhoods, users, blogtype1, blogtype2, categories, and minutes.</li>
+    <li>Create DRF endpoints to access blogtype1, blogtype2, categories, and minutes according to neighborhood</li>
+    <li>Configure permissions for each of these models in admin regarding association with the neighborhood associated
+        with the logged in user. Users should not be able to edit other neighborhood objects</li>
+    <li>Customize the Django Admin</li>
+</ol>
+<p>
+    Let's start there.
+</p>
+<h2>1. Make Django models for neighborhoods, users, blogtype1, blogtype2, categories, and minutes.</h2>
+Before I do anything, I'll need to make an App and hook it into my project settings file.
+
+The first step is to go into models.py and start to make things happen.
+<pre>
+    <code>
+        (venv) MacBook-Pro-10:neighborhoods_backend Ben$ python manage.py startapp neighborhoods_api
+    </code>
+</pre>
+
+<p>Next, I'll add it to my settings.py file of my neighborhoods_backend project.</p>
+<pre>
+    <code>
+# settings.py
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'neighborhoods_api'
+]
+    </code>
+</pre>
+
+<p>
+    Now I will add the models I came up with to models.py.
+    See the comments for explanations of what is going on.
+</p>
+<pre>
+    <code>
+# models.py
+from django.db import models
+from django.contrib.auth.models import Group
+
+# Neighborhood associations all have board minutes that they often upload as a file.
+# They could also make it just text/HTML
+class BoardMinutes(models.Model):
+    neighborhood = models.ForeignKey(Group, on_delete=models.CASCADE)
+    date = models.DateField()
+    content = models.TextField()
+    file = models.FileField(upload_to='board_minutes/', null=True, blank=True)
+
+    def __str__(self):
+        return self.neighborhood.name+"-"+str(self.date)
+    
+# Blogs 1 and 2 will each have categories. Each neighborhood has their own set of categories
+class Blog1Category(models.Model):
+    neighborhood = models.ForeignKey(Group, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+
+class Blog2Category(models.Model):
+    neighborhood = models.ForeignKey(Group, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+# Every neighborhood can have their own 2 sets of blogs
+class Blog1(models.Model):
+    neighborhood = models.ForeignKey(Group, on_delete=models.CASCADE)
+    title = models.CharField(max_length=255)
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    categories = models.ManyToManyField(Blog1Category, blank=True)
+
+    def __str__(self):
+        return self.title
+
+class Blog2(models.Model):
+    neighborhood = models.ForeignKey(Group, on_delete=models.CASCADE)
+    title = models.CharField(max_length=255)
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    categories = models.ManyToManyField(Blog2Category, blank=True)
+
+    def __str__(self):
+        return self.title
+    </code>
+</pre>
+<p>
+    To save some time, I'll let my colleague ChatGPT give us a hand with serializers, views, and urlpatterns. It's a lot
+    of code to share, so you can see the commit on <a
+        href="https://github.com/benmath247/neighborhoods-backend/commit/99cbb4966f5ae069adb0bd8c92a21c557d6808cb">Github</a>
+</p>
+<p>One thing that I don't do every day that I got to do today is mess with the querysets and the way models are saved. I
+    wanted to make sure that users can only view objects associated with their group. I also wanted to make sure that
+    when they create an object, it is assigned to their neighborhood and not someone else's.</p>
+<p>To do that, I overwrode get_queryset in Django Rest Framework's Generics list view.</p>
+<pre>
+    <code>
+# admin.py
+def save_model(self, request, obj, form, change):
+    # Automatically set the neighborhood based on the user's group
+    obj.neighborhood = request.user.groups.first()
+    super().save_model(request, obj, form, change)
+
+def get_queryset(self, request):
+    # Filter objects based on the user's neighborhood
+    queryset = super().get_queryset(request)
+    if not request.user.is_superuser:
+        queryset = queryset.filter(neighborhood=request.user.groups.first())
+    return queryset
+    </code>
+</pre>
+
+<p>
+    I also overwrote the Django Admin colors to make them resemble the Philadelphia Eagles and 76ers colors.
+    Hopefully that draws some interest from the clients.
+    It's a little trick I learned at work to help look a little more custom.
+    You just add a templates/folder/base_site.html file in your project directoy.
+    Copy over the code that defines the usual base_site.html from <a
+        href="https://github.com/django/django/tree/main/django/contrib/admin/templates/admin">Django's Github</a> and
+    edit according to your needs.
+    I added a style sheet to override the old colors. You can also edit from any other file in that folder that defines
+    the appearance of the admin.
+</p>
+<p>Well, that's all for my to do list! I am going to hook up Django CKEditor so the neighborhoods can edit their blogs
+    as formatted text that turns into HTML.</p>
+<pre>
+    <code>
+pip install django-ckeditor
+
+# settings.py
+import os
+
+INSTALLED_APPS = [
+    # ...
+    'ckeditor',
+    # ...
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
+
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 300,
+        'width': 600,
+    },
+}
+
+    </code>
+</pre>
+
+<p>
+    It's all in the <a
+        href="https://github.com/benmath247/neighborhoods-backend/commit/320517f588805053ac9743ecc198bdd96e091463">commit
+        on Github</a>.
+</p>
