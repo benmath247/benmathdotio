@@ -1,0 +1,100 @@
+<p>
+    This morning was rough.
+    It was one of those interviews where you could tell how it is about to go from the very beginning.
+    I signed on and the interviewer looked very unfriendly, almost angry, to be interviewing me.
+    I'll admit, technical interviews are not my strength. Also, I hate doing them. I have declined jobs that were
+    otherwise a great cultural fit because they asked me to do meaningless code exercises only to be thrown out later.
+    I thought that since there would be a company representative present on this one it was a fair use of my time and
+    I'd give it a shot.
+</p>
+<p>
+    The interviewer had me write some code in the Zoom chat, which I didn't like to do. It messed with capitalization,
+    etc and was pretty unpleasant.
+    The questions were oddly phrased and paired with a thick accent that made things more difficult for my
+    understanding.
+    For example, he asked if I knew anything about Lambda. I talked for two minutes about AWS Lambda. He was talking
+    about the Lambda functions.
+    Whatever. Some of the questions were fair and some I answered well. Regardless, I don't think it was the job for me.
+</p>
+<p>
+    I want to turn this into a learning experience and use this blog post to reflect on what I learned and how I could
+    better answer the questions.
+</p>
+<h3>Questions</h3>
+<ol>
+    <li>What is a dictionary</li>
+    <p>
+        Simple enough. I use dictionaries every day.
+        It is a list of key value pairs.
+        Keys are a string, tuple, or a number that point to a value.
+        I got this wrong because I said they couldn't be numbers when he asked me.
+        I have never worked with keys as numbers.
+        Keys are unique and immutable.
+    </p>
+    <p>
+        You can add, modify, or delete key-value pairs in a dictionary, making it a versatile data structure for various
+        tasks like data storage, retrieval, and manipulation in Python.
+    </p>
+    <li>What is the ORM used for?</li>
+    <p>
+        Object-Relational Mapping (ORM) is used to map objects in your code to tables in a relational database. It
+        provides an abstraction layer that allows you to interact with the database using objects and classes instead of
+        writing raw SQL queries. This simplifies database operations and makes it easier to work with databases in your
+        software applications.
+    </p>
+
+    <li>What is a lambda?</li>
+    <p>
+        In Python, a lambda function is an anonymous, small, and inline function that can have any number of arguments
+        but can only have one expression. Lambda functions are typically used for short, simple operations where you
+        don't want to define a full function using the `def` keyword. They are often used as arguments to higher-order
+        functions like `map()`, `filter()`, and `sorted()`.
+    </p>
+
+    <li>What are decorators used for?</li>
+    <p>
+        Decorators in Python are used to modify or enhance the behavior of functions or methods. They are typically
+        applied to functions using the "@" symbol and are commonly used for tasks like logging, authorization, caching,
+        and more. Decorators allow you to add functionality to functions without modifying their code directly,
+        promoting code reusability and separation of concerns.
+    </p>
+
+    <li>Why would you use a list versus a tuple?</li>
+    <p>
+        Lists and tuples in Python are both used to store collections of items, but there are key differences between
+        them. Lists are mutable, meaning you can add, remove, or modify elements after creation. Tuples, on the other
+        hand, are immutable, and their elements cannot be changed once they are defined. You would use a list when you
+        need a collection of items that may change during the program's execution. Tuples are useful when you want to
+        create a collection of items that should not change, such as coordinates or configuration settings.
+    </p>
+
+    <li>Why are tuples immutable?</li>
+    <p>
+        Tuples are immutable in Python to ensure their integrity and make them suitable for use as keys in dictionaries
+        or elements in sets. Immutability guarantees that once a tuple is created, its elements cannot be accidentally
+        or maliciously modified, making it safe for certain use cases where data should remain constant. This
+        immutability also allows tuples to be hashable, which is necessary for dictionary keys and set elements.
+    </p>
+
+    <li>How can you efficiently use Python to count the number of times a value appears in a list?</li>
+    <p>
+        You can efficiently count the number of times a value appears in a list using the `count()` method provided by
+        Python lists. Here's an example:
+    <pre>
+        <code>
+my_list = [1, 2, 2, 3, 4, 2, 5, 2]
+value_to_count = 2
+
+count = my_list.count(value_to_count)
+print(f"The value {value_to_count} appears {count} times in the list.")
+        </code>
+    </pre>
+    This code snippet will count the occurrences of value_to_count in my_list and print the result.
+    </p>
+</ol>
+<p>
+    Well, that was fun. These questions really aren't very far out of the range of things that I know about. I'll do
+    better next time.
+    Ultimately, I am happy with where I am in life and every failed interview that has got me here. I look forward to
+    getting the right job that is right for me, at the right time.
+</p>
