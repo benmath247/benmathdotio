@@ -49,7 +49,7 @@ function App() {
             <Nav.Link as={Link} to="/contact">Contact
             </Nav.Link>
             <Nav.Link
-              href="https://github.com/yourusername"
+              href="https://github.com/benmath247"
               target="_blank"
               rel="noopener noreferrer"
               className="rotate-icon"
@@ -59,7 +59,7 @@ function App() {
                 size={20} />
             </Nav.Link>
             <Nav.Link
-              href="https://www.linkedin.com/in/yourprofile"
+              href="https://www.linkedin.com/in/benmath247/"
               target="_blank"
               rel="noopener noreferrer"
               className="rotate-icon"
