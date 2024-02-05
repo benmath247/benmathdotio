@@ -1,70 +1,122 @@
 /* Reset default margin and padding */
 :root {
-  --bs-blue: #007acc; /* Visual Studio Code Blue */
-  --bs-indigo: #6610f2; /* Visual Studio Code Indigo */
-  --bs-purple: #9333ea; /* Visual Studio Code Purple */
-  --bs-pink: #d63384; /* Visual Studio Code Pink */
-  --bs-red: #e53935; /* Visual Studio Code Red */
-  --bs-orange: #f76707; /* Visual Studio Code Orange */
-  --bs-yellow: #f9a825; /* Visual Studio Code Yellow */
-  --bs-green: #4caf50; /* Visual Studio Code Green */
-  --bs-teal: #00acc1; /* Visual Studio Code Teal */
-  --bs-cyan: #26c6da; /* Visual Studio Code Cyan */
-  --bs-black: #000; /* Visual Studio Code Black */
-  --bs-white: #fff; /* Visual Studio Code White */
-  --bs-gray: #8a8a8a; /* Visual Studio Code Gray */
-  --bs-gray-dark: #2d2d2d; /* Visual Studio Code Dark Gray */
-  --bs-gray-100: #f3f4f6; /* Visual Studio Code Gray 100 */
-  --bs-gray-200: #e5e7eb; /* Visual Studio Code Gray 200 */
-  --bs-gray-300: #d1d5db; /* Visual Studio Code Gray 300 */
-  --bs-gray-400: #9ca3af; /* Visual Studio Code Gray 400 */
-  --bs-gray-500: #6b7280; /* Visual Studio Code Gray 500 */
-  --bs-gray-600: #4b5563; /* Visual Studio Code Gray 600 */
-  --bs-gray-700: #374151; /* Visual Studio Code Gray 700 */
-  --bs-gray-800: #1f2937; /* Visual Studio Code Gray 800 */
-  --bs-gray-900: #111827; /* Visual Studio Code Gray 900 */
-  --bs-primary: #007acc; /* Visual Studio Code Blue */
-  --bs-secondary: #6b7280; /* Visual Studio Code Gray 500 */
-  --bs-success: #4caf50; /* Visual Studio Code Green */
-  --bs-info: #26c6da; /* Visual Studio Code Cyan */
-  --bs-warning: #f9a825; /* Visual Studio Code Yellow */
-  --bs-danger: #e53935; /* Visual Studio Code Red */
-  --bs-light: #f3f4f6; /* Visual Studio Code Gray 100 */
-  --bs-dark: #111827; /* Visual Studio Code Gray 900 */
-  --bs-primary-rgb: 0, 122, 204; /* Visual Studio Code Blue RGB */
-  --bs-secondary-rgb: 107, 114, 128; /* Visual Studio Code Gray 500 RGB */
-  --bs-success-rgb: 76, 175, 80; /* Visual Studio Code Green RGB */
-  --bs-info-rgb: 38, 198, 218; /* Visual Studio Code Cyan RGB */
-  --bs-warning-rgb: 249, 168, 37; /* Visual Studio Code Yellow RGB */
-  --bs-danger-rgb: 229, 57, 53; /* Visual Studio Code Red RGB */
-  --bs-light-rgb: 243, 244, 246; /* Visual Studio Code Gray 100 RGB */
-  --bs-dark-rgb: 1, 7, 14; /* Visual Studio Code Gray 900 RGB */
-  --bs-primary-text-emphasis: rgb(0, 40, 68); /* Visual Studio Code Darker Blue */
-  --bs-secondary-text-emphasis: #6b7280; /* Visual Studio Code Gray 500 */
-  --bs-success-text-emphasis: #2e7d32; /* Visual Studio Code Darker Green */
-  --bs-info-text-emphasis: #038e9b; /* Visual Studio Code Darker Cyan */
-  --bs-warning-text-emphasis: #f57d00; /* Visual Studio Code Darker Yellow */
-  --bs-danger-text-emphasis: #c62828; /* Visual Studio Code Darker Red */
-  --bs-light-text-emphasis: #495057; /* Visual Studio Code Gray 600 */
-  --bs-dark-text-emphasis: #090c10; /* Visual Studio Code Very Dark Gray */
-  --bs-primary-bg-subtle: #e5f4ff; /* Visual Studio Code Subtle Blue */
-  --bs-secondary-bg-subtle: #f2f3f5; /* Visual Studio Code Subtle Gray */
-  --bs-success-bg-subtle: #c8e7c3; /* Visual Studio Code Subtle Green */
+  --bs-blue: #007acc;
+  /* Visual Studio Code Blue */
+  --bs-indigo: #6610f2;
+  /* Visual Studio Code Indigo */
+  --bs-purple: #9333ea;
+  /* Visual Studio Code Purple */
+  --bs-pink: #d63384;
+  /* Visual Studio Code Pink */
+  --bs-red: #e53935;
+  /* Visual Studio Code Red */
+  --bs-orange: #f76707;
+  /* Visual Studio Code Orange */
+  --bs-yellow: #f9a825;
+  /* Visual Studio Code Yellow */
+  --bs-green: #4caf50;
+  /* Visual Studio Code Green */
+  --bs-teal: #00acc1;
+  /* Visual Studio Code Teal */
+  --bs-cyan: #26c6da;
+  /* Visual Studio Code Cyan */
+  --bs-black: #000;
+  /* Visual Studio Code Black */
+  --bs-white: #fff;
+  /* Visual Studio Code White */
+  --bs-gray: #8a8a8a;
+  /* Visual Studio Code Gray */
+  --bs-gray-dark: #2d2d2d;
+  /* Visual Studio Code Dark Gray */
+  --bs-gray-100: #f3f4f6;
+  /* Visual Studio Code Gray 100 */
+  --bs-gray-200: #e5e7eb;
+  /* Visual Studio Code Gray 200 */
+  --bs-gray-300: #d1d5db;
+  /* Visual Studio Code Gray 300 */
+  --bs-gray-400: #9ca3af;
+  /* Visual Studio Code Gray 400 */
+  --bs-gray-500: #6b7280;
+  /* Visual Studio Code Gray 500 */
+  --bs-gray-600: #4b5563;
+  /* Visual Studio Code Gray 600 */
+  --bs-gray-700: #374151;
+  /* Visual Studio Code Gray 700 */
+  --bs-gray-800: #1f2937;
+  /* Visual Studio Code Gray 800 */
+  --bs-gray-900: #111827;
+  /* Visual Studio Code Gray 900 */
+  --bs-primary: #007acc;
+  /* Visual Studio Code Blue */
+  --bs-secondary: #6b7280;
+  /* Visual Studio Code Gray 500 */
+  --bs-success: #4caf50;
+  /* Visual Studio Code Green */
+  --bs-info: #26c6da;
+  /* Visual Studio Code Cyan */
+  --bs-warning: #f9a825;
+  /* Visual Studio Code Yellow */
+  --bs-danger: #e53935;
+  /* Visual Studio Code Red */
+  --bs-light: #f3f4f6;
+  /* Visual Studio Code Gray 100 */
+  --bs-dark: #111827;
+  /* Visual Studio Code Gray 900 */
+  --bs-primary-rgb: 0, 122, 204;
+  /* Visual Studio Code Blue RGB */
+  --bs-secondary-rgb: 107, 114, 128;
+  /* Visual Studio Code Gray 500 RGB */
+  --bs-success-rgb: 76, 175, 80;
+  /* Visual Studio Code Green RGB */
+  --bs-info-rgb: 38, 198, 218;
+  /* Visual Studio Code Cyan RGB */
+  --bs-warning-rgb: 249, 168, 37;
+  /* Visual Studio Code Yellow RGB */
+  --bs-danger-rgb: 229, 57, 53;
+  /* Visual Studio Code Red RGB */
+  --bs-light-rgb: 243, 244, 246;
+  /* Visual Studio Code Gray 100 RGB */
+  --bs-dark-rgb: 1, 7, 14;
+  /* Visual Studio Code Gray 900 RGB */
+  --bs-primary-text-emphasis: rgb(0, 40, 68);
+  /* Visual Studio Code Darker Blue */
+  --bs-secondary-text-emphasis: #6b7280;
+  /* Visual Studio Code Gray 500 */
+  --bs-success-text-emphasis: #2e7d32;
+  /* Visual Studio Code Darker Green */
+  --bs-info-text-emphasis: #038e9b;
+  /* Visual Studio Code Darker Cyan */
+  --bs-warning-text-emphasis: #f57d00;
+  /* Visual Studio Code Darker Yellow */
+  --bs-danger-text-emphasis: #c62828;
+  /* Visual Studio Code Darker Red */
+  --bs-light-text-emphasis: #495057;
+  /* Visual Studio Code Gray 600 */
+  --bs-dark-text-emphasis: #090c10;
+  /* Visual Studio Code Very Dark Gray */
+  --bs-primary-bg-subtle: #e5f4ff;
+  /* Visual Studio Code Subtle Blue */
+  --bs-secondary-bg-subtle: #f2f3f5;
+  /* Visual Studio Code Subtle Gray */
+  --bs-success-bg-subtle: #c8e7c3;
+  /* Visual Studio Code Subtle Green */
   --bs-emphasis-color-rgb: white;
   --bs-navbar-hover-color: white;
 }
 
 .nav-pills {
   --bs-nav-pills-border-radius: var(--bs-border-radius);
-  --bs-nav-pills-link-active-color: var(--bs-cyan); /* Visual Studio Code White */
-  --bs-nav-pills-link-active-bg: var(--bs-black); /* Visual Studio Code Blue */
+  --bs-nav-pills-link-active-color: var(--bs-cyan);
+  /* Visual Studio Code White */
+  --bs-nav-pills-link-active-bg: var(--bs-black);
+  /* Visual Studio Code Blue */
 }
 
-button{
+button {
   margin: 5px;
 }
 
-.navbar-toggler-icon{
+.navbar-toggler-icon {
   color: white;
 }
 
@@ -376,6 +428,7 @@ h2.what-i-do-title {
   0% {
     background-position: 100% 0;
   }
+
   100% {
     background-position: 0 0;
   }

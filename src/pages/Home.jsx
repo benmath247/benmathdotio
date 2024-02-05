@@ -1,6 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 function Home() {
+  const images = [];
+  for (let i = 1; i <= 151; i++) {
+    images.push(`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i}.png`);
+  }
+
   return (
     <div>
       <section className="hero bg-primary text-white py-5">
@@ -19,8 +26,8 @@ function Home() {
             I have a passion for coding with JavaScript, Python, and Java.
             I enjoy working on projects that make a difference for my community, customers, and the world.
           </p>
-          <a href="/portfolio" className="btn btn-light btn-lg" style={{ width: "150px", margin: "15px" }}>View My Portfolio</a>
-          <a href="/blog" className="btn btn-light btn-lg" style={{ width: "150px", margin: "15px" }}>View My Blog</a>
+          <Link to="/portfolio" className="btn btn-light btn-lg" style={{ width: "150px", margin: "15px" }}>View My Portfolio</Link>
+          <Link to="/blog" className="btn btn-light btn-lg" style={{ width: "150px", margin: "15px" }}>View My Blog</Link>
         </div>
       </section>
     </div>
