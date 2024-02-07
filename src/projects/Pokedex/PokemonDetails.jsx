@@ -81,8 +81,13 @@ const PokemonDetailsPage = () => {
                 alt={`${pokemonData.name} Official Artwork`}
               />
             </div>
-            <div style={{ padding: '100px' }} className="col-md-9 d-flex flex-column justify-content-end">
-              <h2 style={{ fontSize: '70px' }}>{pokemonData.name.toUpperCase()}</h2>
+            <div
+              // style={{ padding: '100px' }} 
+              id='pokemon-name-header'
+              className="col-md-9 d-flex flex-column justify-content-end">
+              <h2
+              // style={{ fontSize: '70px' }}
+              >{pokemonData.name.toUpperCase()}</h2>
             </div>
           </div>
         </div>

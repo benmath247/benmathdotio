@@ -1,8 +1,8 @@
-.pokemon-details-page{
+.pokemon-details-page {
   border-radius: 15px !important;
 }
 
-.species-description p{
+.species-description p {
   color: white;
   padding: 20px;
   border-radius: 15px !important;
@@ -25,15 +25,17 @@
   box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.342);
   margin-top: 100px;
   margin-bottom: 100px;
-  
-    font-family: 'Press Start 2P', cursive;  
-    
-  
+
+  font-family: 'Press Start 2P', cursive;
+
+
 }
 
 .pokedex-container-styled img {
-  display: block; /* Ensures the image is centered within the container */
-  margin: 0 auto; /* Center the image horizontally */
+  display: block;
+  /* Ensures the image is centered within the container */
+  margin: 0 auto;
+  /* Center the image horizontally */
 }
 
 /* Optional: If you want to style the Pokedex logo image separately */
@@ -43,7 +45,7 @@
   /* Add additional styles for the Pokedex logo here */
 }
 
-.pokemon-image-display{
+.pokemon-image-display {
   border: 4px solid black;
   border-radius: 10px;
   box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.356);
@@ -52,7 +54,7 @@
   background-color: aliceblue;
 }
 
-.pokemon-image-display:hover{
+.pokemon-image-display:hover {
   background-color: white;
   border: 5px solid black;
   box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.445);
@@ -62,29 +64,35 @@
 
 /* CSS for the "grow-on-hover" class (Low) */
 .grow-on-hover {
-  transition: transform 0.3s ease-in-out; /* Add smooth transition effect */
+  transition: transform 0.3s ease-in-out;
+  /* Add smooth transition effect */
 }
 
 .grow-on-hover:hover {
-  transform: scale(1.05); /* Scale up by 5% on hover */
+  transform: scale(1.05);
+  /* Scale up by 5% on hover */
 }
 
 /* CSS for the "grow-on-hover" class (Medium) */
 .grow-on-hover-medium {
-  transition: transform 0.3s ease-in-out; /* Add smooth transition effect */
+  transition: transform 0.3s ease-in-out;
+  /* Add smooth transition effect */
 }
 
 .grow-on-hover-medium:hover {
-  transform: scale(1.1); /* Scale up by 10% on hover */
+  transform: scale(1.1);
+  /* Scale up by 10% on hover */
 }
 
 /* CSS for the "grow-on-hover" class (High) */
 .grow-on-hover-high {
-  transition: transform 0.3s ease-in-out; /* Add smooth transition effect */
+  transition: transform 0.3s ease-in-out;
+  /* Add smooth transition effect */
 }
 
 .grow-on-hover-high:hover {
-  transform: scale(1.2); /* Scale up by 20% on hover */
+  transform: scale(1.2);
+  /* Scale up by 20% on hover */
 }
 
 a {
@@ -92,12 +100,15 @@ a {
 
 }
 
-.pokemon-stats{
+.pokemon-stats {
   margin: 15px;
 }
+
 .pokemon-name-list-display {
-  background-color: #e0e0e0; /* Light gray background */
-  border: 2px solid #000000; /* Coral border */
+  background-color: #e0e0e0;
+  /* Light gray background */
+  border: 2px solid #000000;
+  /* Coral border */
   border-radius: 15px;
   padding: 15px;
   font-family: 'Pokemon', sans-serif;
@@ -107,17 +118,17 @@ a {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s;
-  
-    font-family: 'Press Start 2P', cursive;
-  
-  
+
+  font-family: 'Press Start 2P', cursive;
+
+
 }
 
 .pokemon-name-list-display:hover {
   transform: scale(1.05);
 }
 
-.moves-container{
+.moves-container {
   margin: 15px;
 }
 
@@ -125,48 +136,62 @@ a {
 
 /* Modal Styles */
 .pokemon-modal {
-  background-color: #ff000015; /* Yellow background */
-  color: #333; /* Text color */
+  background-color: #ff000015;
+  /* Yellow background */
+  color: #333;
+  /* Text color */
 }
 
 /* Title Styles */
 .pokemon-title {
-  color: #e74c3c; /* Red title color */
+  color: #e74c3c;
+  /* Red title color */
 }
 
 /* Description and Effect Styles */
 .pokemon-description,
 .pokemon-effect {
-  color: #3498db; /* Blue heading color */
+  color: #3498db;
+  /* Blue heading color */
 }
 
 .pokemon-text {
-  color: #333; /* Text color */
+  color: #333;
+  /* Text color */
 }
 
 /* Move Attributes Styles */
 .pokemon-attributes {
-  color: #27ae60; /* Green heading color */
+  color: #27ae60;
+  /* Green heading color */
 }
 
 /* Button Styles */
 .pokemon-button {
-  background-color: #e74c3c; /* Red button background color */
-  border-color: #c0392b; /* Darker red border color */
-  color: #fff; /* Button text color */
+  background-color: #e74c3c;
+  /* Red button background color */
+  border-color: #c0392b;
+  /* Darker red border color */
+  color: #fff;
+  /* Button text color */
 }
 
 .pokemon-button:hover {
-  background-color: #c0392b; /* Darker red on hover */
+  background-color: #c0392b;
+  /* Darker red on hover */
 }
 
 .sprite-frame {
   width: 250px;
   height: 250px;
-  background-color: #f2f2f21c; /* Background color */
-  border: 5px solid #1f1d1d; /* Border color (Pokémon theme color) */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* 3D shadow effect */
+  background-color: #f2f2f21c;
+  /* Background color */
+  border: 5px solid #1f1d1d;
+  /* Border color (Pokémon theme color) */
+  border-radius: 10px;
+  /* Rounded corners */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  /* 3D shadow effect */
   text-align: center;
   display: flex;
   justify-content: center;
@@ -175,10 +200,11 @@ a {
 
 
 /* Add this CSS to your stylesheet */
-.pokemon-details-table a{
+.pokemon-details-table a {
   color: white;
   text-decoration: underline;
 }
+
 .pokemon-details-table {
   border-collapse: collapse;
   width: 100%;
@@ -197,7 +223,7 @@ a {
   border: 1px solid #0000007e;
 }
 
-.pokemon-details-table{
+.pokemon-details-table {
   border: 1px solid #000000;
 
 }
@@ -260,6 +286,24 @@ a {
 }
 
 
-.move-link:hover{
+.move-link:hover {
   color: black
+}
+
+
+/* CSS for all devices */
+#pokemon-name-header h2 {
+  /* padding: 20px; */
+  /* Default padding for non-desktop devices */
+  font-size: 25px;
+
+  /* Default font size for non-desktop devices */
+}
+
+/* CSS for desktop devices */
+@media only screen and (min-width: 768px) {
+  #pokemon-name-header h2 {
+    padding: 100px;
+    font-size: 70px;
+  }
 }
