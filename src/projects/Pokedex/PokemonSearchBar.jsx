@@ -30,17 +30,16 @@ const PokemonSearchBar = ({ setPokemonList }) => {
     };
 
     return (
-        <div className='col-md-3'>
+        <div className='col-md-3' style={{ marginTop: '5px' }}>
             {/* Search bar */}
             <input
                 type="text"
                 value={searchInput}
                 onChange={handleChange}
                 placeholder="Search Pokémon"
-            // style={{ marginRight: '5px' }}
             />
             {/* Submit button */}
-            <button onClick={handleSubmit}>Submit</button>
+            <button onClick={handleSubmit} style={{ padding: '2px' }}>Search</button>
         </div>
     );
 };
