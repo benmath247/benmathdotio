@@ -1,23 +1,34 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Fuse from 'fuse.js';
 
 const PokemonSearchBar = ({ setPokemonList }) => {
     const [searchInput, setSearchInput] = useState('');
+    const [allPokemon, setAllPokemon] = useState([]);
+
+    const fetchAllPokemon = async () => {
+        try {
+            const response = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=1025');
+            setAllPokemon(response.data.results);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
+
+    if (allPokemon.length === 0) {
+        fetchAllPokemon();
+    }
 
     const handleSearch = (query) => {
-        axios.get('https://pokeapi.co/api/v2/pokemon?limit=1025')
-            .then((response) => {
-                const allPokemon = response.data.results;
-                // Filter the list based on the query
-                const filteredPokemonList = allPokemon.filter((pokemon) =>
-                    pokemon.name.toLowerCase().includes(query.toLowerCase())
-                );
-                // Update the filtered list
-                setPokemonList(filteredPokemonList);
-            })
-            .catch((error) => {
-                console.error('Error fetching data:', error);
-            });
+        const options = {
+            keys: ['name'],
+            includeScore: true,
+            threshold: 0.2, // Adjust this threshold according to your needs
+        };
+        const fuse = new Fuse(allPokemon, options);
+        const result = fuse.search(query);
+        const filteredPokemonList = result.map(({ item }) => item);
+        setPokemonList(filteredPokemonList);
     };
 
     const handleSubmit = () => {
