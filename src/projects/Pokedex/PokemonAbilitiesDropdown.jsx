@@ -57,17 +57,17 @@ function PokemonAbilitiesDropdown({
 
     const handleAbilityChange = (event) => {
         const newSelectedAbility = event.target.value;
-            setSelectedColor(null)
-            // setPokemonList={setPokemonList}
-            setSelectedType(null)
-            setDamageRelationsData(null)
-            setSelectedAbility(newSelectedAbility); 
-            setColorBackground(newSelectedAbility ? abilityColors[newSelectedAbility] : 'red')
+        setSelectedColor(null)
+        // setPokemonList={setPokemonList}
+        setSelectedType(null)
+        setDamageRelationsData(null)
+        setSelectedAbility(newSelectedAbility);
+        setColorBackground(newSelectedAbility ? abilityColors[newSelectedAbility] : 'red')
     };
 
     return (
         <div>
-            <select style={{ height: '30px', width: '250px' }} onChange={handleAbilityChange} value={selectedAbility}>
+            <select style={{ height: '30px', width: '100%' }} onChange={handleAbilityChange} value={selectedAbility}>
                 <option value="">Abilities</option>
                 {abilityNames.map((ability) => (
                     <option key={ability} value={ability}>

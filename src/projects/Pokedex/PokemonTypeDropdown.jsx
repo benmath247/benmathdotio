@@ -30,7 +30,7 @@ function PokemonTypeDropdown({ setDamageRelationsData, setColorBackground, setPo
         const newSelectedType = event.target.value;
         setSelectedType(newSelectedType);
         setColorBackground(newSelectedType ? pokemonTypes[newSelectedType] : 'red');
-        
+
         // Check if a type is selected or if the selectedType is not empty
         if (newSelectedType || selectedType !== '') {
             try {
@@ -52,7 +52,7 @@ function PokemonTypeDropdown({ setDamageRelationsData, setColorBackground, setPo
     return (
         <div>
             {/* Dropdown menu to select Pokemon type */}
-            <select style={{ height: '30px', width: '250px' }} onChange={handleTypeChange} value={selectedType}>
+            <select style={{ height: '30px', width: '100%' }} onChange={handleTypeChange} value={selectedType}>
                 <option value="" >Type</option>
                 {Object.keys(pokemonTypes).map((type) => (
                     // Option for each Pokemon type with background color and text color

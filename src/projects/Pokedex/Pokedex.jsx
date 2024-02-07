@@ -6,8 +6,8 @@ import PokemonList from './PokemonList';
 import PokedexContainer from './PokedexContainer';
 import PokemonTypeDropdown from './PokemonTypeDropdown';
 import PokemonColorDropdown from './PokemonColorDropdown';
-import darkenColor from './DarkenColor';
 import PokemonAbilitiesDropdown from './PokemonAbilitiesDropdown';
+import PokemonSearchBar from './PokemonSearchBar'
 import DamageRelations from './DamageRelations';
 import './DamageRelations.css'
 import PokemonHabitatsDropdown from './PokemonHabitatsDropdown';
@@ -50,7 +50,7 @@ function Pokedex() {
   }, [selectedAbility]);
 
   useEffect(() => {
-    if (selectedHabitat){
+    if (selectedHabitat) {
       axios.get(`https://pokeapi.co/api/v2/pokemon-habitat/${selectedHabitat}`)
         .then((response) => {
           console.log("HERE")
@@ -65,7 +65,7 @@ function Pokedex() {
   }, [selectedHabitat]);
 
 
-  
+
 
 
   return (
@@ -134,19 +134,23 @@ function Pokedex() {
           />
         </div>
         <div className='col-md-3'>
-        <PokemonHabitatsDropdown
-        setSelectedColor={setSelectedColor}
-        setColorBackground={setColorBackground}
-        setSelectedType={setColorBackground}
-        setDamageRelationsData={setDamageRelationsData}
-        selectedAbility={selectedAbility}
-        setSelectedAbility={setSelectedAbility}
-        setSelectedHabitat={setSelectedHabitat}
-        selectedHabitat={selectedHabitat}/>
+          <PokemonHabitatsDropdown
+            setSelectedColor={setSelectedColor}
+            setColorBackground={setColorBackground}
+            setSelectedType={setColorBackground}
+            setDamageRelationsData={setDamageRelationsData}
+            selectedAbility={selectedAbility}
+            setSelectedAbility={setSelectedAbility}
+            setSelectedHabitat={setSelectedHabitat}
+            selectedHabitat={selectedHabitat} />
 
         </div>
+
+
+          <PokemonSearchBar setPokemonList={setPokemonList} pokemonList={pokemonList} />
+ 
       </div>
-      {damageRelationsData && selectedType && <DamageRelations damage_relations={damageRelationsData}/>}
+      {damageRelationsData && selectedType && <DamageRelations damage_relations={damageRelationsData} />}
       {/* Render PokemonList component with props */}
       <PokemonList
         list={pokemonList}
@@ -157,7 +161,7 @@ function Pokedex() {
         selectedAbility={selectedAbility}
 
       />
-    </PokedexContainer>
+    </PokedexContainer >
   );
 }
 

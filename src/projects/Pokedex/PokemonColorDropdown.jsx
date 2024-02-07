@@ -62,7 +62,7 @@ function PokemonColorDropdown({ setColorBackground, setPokemonList, selectedType
 
   return (
     <div style={{ height: '30px' }}>
-      <select style={{ height: '30px', width: '250px' }} onChange={handleColorChange} value={selectedType}>
+      <select style={{ height: '30px', width: '100%' }} onChange={handleColorChange} value={selectedType}>
         <option value="">Color</option>
         {pokemonColors.map((color, id) => (
           <option
