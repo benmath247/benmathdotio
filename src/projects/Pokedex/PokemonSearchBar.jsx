@@ -23,7 +23,7 @@ const PokemonSearchBar = ({ setPokemonList }) => {
         const options = {
             keys: ['name'],
             includeScore: true,
-            threshold: 0.2, // Adjust this threshold according to your needs
+            threshold: 0.25, // Adjust this threshold according to your needs
         };
         const fuse = new Fuse(allPokemon, options);
         const result = fuse.search(query);
