@@ -33,7 +33,7 @@ class ErrorHandlingImage extends React.Component {
 
 const PokedexContainer = ({ children, colorBackground }) => (
   <Container className="pokedex-container-styled" style={{ backgroundColor: colorBackground }}>
-    <div className='moving-background'></div>
+
     <Link to='/pokedex'>
       {/* Use the ErrorHandlingImage component for the Pokedex Logo */}
       <ErrorHandlingImage src='/portfolio/games/Pokedex.png' alt='Pokedex Logo' className="grow-on-hover-high pokedex-logo" />

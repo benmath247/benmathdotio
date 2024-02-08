@@ -147,20 +147,23 @@ function Pokedex() {
         </div>
 
 
-          <PokemonSearchBar setPokemonList={setPokemonList} pokemonList={pokemonList} />
- 
+        <PokemonSearchBar setPokemonList={setPokemonList} pokemonList={pokemonList} />
+
       </div>
       {damageRelationsData && selectedType && <DamageRelations damage_relations={damageRelationsData} />}
       {/* Render PokemonList component with props */}
-      <PokemonList
-        list={pokemonList}
-        setSelectedType={setSelectedType}
-        setColorBackground={setColorBackground}
-        colorCardBackground={colorBackground}
-        colorBackground={colorBackground}
-        selectedAbility={selectedAbility}
+      <div className='col'>
 
-      />
+        <PokemonList
+          list={pokemonList}
+          setSelectedType={setSelectedType}
+          setColorBackground={setColorBackground}
+          colorCardBackground={colorBackground}
+          colorBackground={colorBackground}
+          selectedAbility={selectedAbility}
+
+        />
+      </div>
     </PokedexContainer >
   );
 }
