@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios';
+
 
 function ContactForm() {
     const [formData, setFormData] = useState({
@@ -15,7 +17,7 @@ function ContactForm() {
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         // Form validation (you can add more validation rules as needed)
@@ -24,10 +26,35 @@ function ContactForm() {
             return;
         }
 
-        // Simulate form submission (you can replace this with your actual form submission logic)
-        setTimeout(() => {
+        try {
+            // Send email via SendGrid
+            await axios.post('https://api.sendgrid.com/v3/mail/send', {
+                personalizations: [
+                    {
+                        to: [{ email: 'recipient@example.com' }], // Replace with your recipient email address
+                        subject: 'New Message from Contact Form'
+                    }
+                ],
+                from: { email: formData.email, name: formData.name },
+                content: [
+                    {
+                        type: 'text/plain',
+                        value: formData.message
+                    }
+                ]
+            }, {
+                headers: {
+                    'Authorization': `Bearer YOUR_SENDGRID_API_KEY`, // Replace with your SendGrid API key
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            // Update state to show submission success
             setSubmitted(true);
-        }, 1000);
+        } catch (error) {
+            console.error('Error sending email:', error);
+            alert('Error sending message. Please try again later.');
+        }
     };
 
     return (
@@ -39,8 +66,7 @@ function ContactForm() {
                 </div>
             ) : (
                 <form onSubmit={handleSubmit}>
-                    <div className="mb-3">
-                        <label htmlFor="name" className="form-label">Your Name</label>
+                    <div className="mb-3 position-relative">
                         <input
                             type="text"
                             className="form-control"
@@ -48,12 +74,12 @@ function ContactForm() {
                             name="name"
                             value={formData.name}
                             onChange={handleChange}
-                            placeholder="John Doe"
+                            placeholder="Name"
                             required
                         />
+                        <div className="diagonal-decoration"></div> {/* Diagonal decoration */}
                     </div>
-                    <div className="mb-3">
-                        <label htmlFor="email" className="form-label">Your Email</label>
+                    <div className="mb-3 position-relative">
                         <input
                             type="email"
                             className="form-control"
@@ -61,12 +87,12 @@ function ContactForm() {
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
-                            placeholder="johndoe@example.com"
+                            placeholder="Email"
                             required
                         />
+                        <div className="diagonal-decoration"></div> {/* Diagonal decoration */}
                     </div>
-                    <div className="mb-3">
-                        <label htmlFor="message" className="form-label">Your Message</label>
+                    <div className="mb-3 position-relative">
                         <textarea
                             className="form-control"
                             id="message"
@@ -74,9 +100,10 @@ function ContactForm() {
                             value={formData.message}
                             onChange={handleChange}
                             rows="4"
-                            placeholder="I'd love to hear from you!"
+                            placeholder="Message"
                             required
                         ></textarea>
+                        <div className="diagonal-decoration"></div> {/* Diagonal decoration */}
                     </div>
                     <button type="submit" className="btn btn-primary">Send Message</button>
                 </form>

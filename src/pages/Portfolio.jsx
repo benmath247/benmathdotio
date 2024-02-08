@@ -35,63 +35,63 @@ function Portfolio() {
         image: '/portfolio/games/pokedex.webp',
         link: 'pokedex'
       },
-        {
-            title: 'Tik Tac Toe',
-            subtitle: 'A simple Tik Tac Toe application',
-            image: '/portfolio/games/ttt.png',
-            link: 'tik-tac-toe'
-          },
-        {
-            title: 'Pokemon Hangman',
-            subtitle: "Who's that Pokemon?!",
-            image: '/portfolio/games/pokemon.jpeg',
-            link: 'hangman'
-          },
-        {
-            title: 'Memory',
-            subtitle: "Use your memory to match all of the emojis",
-            image: '/portfolio/games/memory.jpeg',
-            link: 'memory'
-          },
-        {
-            title: 'Guess the Number',
-            subtitle: "Guess a number between 1 and 100",
-            image: '/portfolio/games/numbers.jpeg',
-            link: 'numbers'
-          },
-        ];
+      {
+        title: 'Tik Tac Toe',
+        subtitle: 'A simple Tik Tac Toe application',
+        image: '/portfolio/games/ttt.png',
+        link: 'tik-tac-toe'
+      },
+      {
+        title: 'Pokemon Hangman',
+        subtitle: "Who's that Pokemon?!",
+        image: '/portfolio/games/pokemon.jpeg',
+        link: 'hangman'
+      },
+      {
+        title: 'Memory',
+        subtitle: "Use your memory to match all of the emojis",
+        image: '/portfolio/games/memory.jpeg',
+        link: 'memory'
+      },
+      {
+        title: 'Guess the Number',
+        subtitle: "Guess a number between 1 and 100",
+        image: '/portfolio/games/numbers.jpeg',
+        link: 'numbers'
+      },
+    ];
 
-        const websites = [
-        {
-          title: 'Frozen Rewards',
-          subtitle: 'A Conagra Frozen Products rebates site',
-          image: './portfolio/websites/digitalReward.png',
-          link: 'https://www.frozenrewardsclub.com'
-        },
-        {
-          title: 'Club Publix Digital Event',
-          subtitle: 'Brand promotion site for 90+ brands on behalf of Publix Grocery',
-          image: './portfolio/websites/multibrand.jpg',
-          link: 'https://www.clubpublixdigitalevent.com'
-        },
-        {
-          title: 'Penn Mutual Asset Management',
-          subtitle: 'UI consulting for Penn Mutual Asset Management',
-          image: './portfolio/websites/pmam.png',
-          link: 'https://www.pennmutualam.org'
-        },
-        {
-          title: 'My Pantry Planner',
-          subtitle: 'High level customization of a brand site product',
-          image: './portfolio/websites/mpp.jpeg',
-          link: 'https://www.mypantryplanner.com'
-        },
-        {
-          title: 'Spoonable Perks',
-          subtitle: 'Using React to engage proprietary API to support a loyalty shopping program',
-          image: './portfolio/websites/spoonable.jpeg',
-          link: 'https://www.spoonableperks.com'
-        },
+    const websites = [
+      {
+        title: 'Frozen Rewards',
+        subtitle: 'A Conagra Frozen Products rebates site',
+        image: './portfolio/websites/digitalReward.png',
+        link: 'https://www.frozenrewardsclub.com'
+      },
+      {
+        title: 'Club Publix Digital Event',
+        subtitle: 'Brand promotion site for 90+ brands on behalf of Publix Grocery',
+        image: './portfolio/websites/multibrand.jpg',
+        link: 'https://www.clubpublixdigitalevent.com'
+      },
+      {
+        title: 'Penn Mutual Asset Management',
+        subtitle: 'UI consulting for Penn Mutual Asset Management',
+        image: './portfolio/websites/pmam.png',
+        link: 'https://www.pennmutualam.org'
+      },
+      {
+        title: 'My Pantry Planner',
+        subtitle: 'High level customization of a brand site product',
+        image: './portfolio/websites/mpp.jpeg',
+        link: 'https://www.mypantryplanner.com'
+      },
+      {
+        title: 'Spoonable Perks',
+        subtitle: 'Using React to engage proprietary API to support a loyalty shopping program',
+        image: './portfolio/websites/spoonable.jpeg',
+        link: 'https://www.spoonableperks.com'
+      },
     ];
 
     const tools = [
@@ -178,19 +178,20 @@ function Portfolio() {
     return (
       <div className="row">
         {posts.map((post) => (
-          <div className="col-md-4 mb-4" key={post.title}>
+          <div className="col-md-4 mb-4 position-relative" key={post.title}>
             <a href={post.link} rel="noopener noreferrer">
-            <div className="card">
-  <img
-    src={post.image} // Replace with the actual path to your project images
-    alt={post.title}
-    className="card-img-top"
-  />
-  <div className="card-body">
-    <h5 className="card-title">{post.title}</h5>
-    <p className="card-text">{post.subtitle}</p>
-  </div>
-</div>
+              <div className="card">
+                <img
+                  src={post.image} // Replace with the actual path to your project images
+                  alt={post.title}
+                  className="card-img-top"
+                />
+                <div className="card-body">
+                  <h5 className="card-title">{post.title}</h5>
+                  <p className="card-text">{post.subtitle}</p>
+                </div>
+                <div className="diagonal-decoration"></div>
+              </div>
 
             </a>
           </div>

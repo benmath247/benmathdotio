@@ -102,6 +102,7 @@
   /* Visual Studio Code Subtle Green */
   --bs-emphasis-color-rgb: white;
   --bs-navbar-hover-color: white;
+  --bs-card-border-radius: 0px !important;
 }
 
 .nav-pills {
@@ -112,8 +113,20 @@
   /* Visual Studio Code Blue */
 }
 
+.card {
+  border-radius: 0px;
+}
+
+.card img {
+  border-radius: 0px;
+}
+
 button {
   margin: 5px;
+}
+
+button:hover {
+  background-color: green !important;
 }
 
 .navbar-toggler-icon {
@@ -274,7 +287,7 @@ h1.blog-title {
   margin-top: 20px;
   background-color: #333;
   padding: 20px;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease;
 }
@@ -432,4 +445,22 @@ h2.what-i-do-title {
   100% {
     background-position: 0 0;
   }
+}
+
+
+.diagonal-decoration {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  /* Adjust size as needed */
+  border-top: 30px solid #0166cc;
+  /* Adjust color as needed */
+}
+
+.diagonal-decoration:hover:hover {
+
+  border-top: 30px solid #1274d7;
 }

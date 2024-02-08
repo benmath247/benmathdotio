@@ -30,7 +30,7 @@ function BlogPreview({ title, subtitle, id, content, date, setKey }) {
   }, [expanded, content]);
 
   return (
-    <div className="card mb-4">
+    <div className="card mb-4 position-relative"> {/* Added position-relative class */}
       <div className="card-body bg-dark">
         <h2 className="card-title text-light">{title}</h2>
         <h6 className='card-date text-light mb-2'>{date}</h6>
@@ -49,6 +49,8 @@ function BlogPreview({ title, subtitle, id, content, date, setKey }) {
             Read More
           </button>
         )}
+        {/* Diagonal decoration */}
+        <div className="diagonal-decoration"></div>
       </div>
     </div>
   );

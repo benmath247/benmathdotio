@@ -30,6 +30,7 @@ import ExampleCall from './projects/workoutPlanner/examplecall';
 import BlogPostList from './components/Blog';
 
 import { allPostsData } from './components/allPostsData';
+import Roulette from './projects/Roulette/Roulette';
 
 function App() {
   return (
