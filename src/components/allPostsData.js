@@ -94,7 +94,7 @@ export const allPostsData = [
         title: 'A Personal Anecdote on Failure',
         subtitle: 'Failure often comes disguised as opportunity',
         content: '/blogs/personal/LearningFromFailure.html',
-        date: 'January 30, 2024',
+        date: 'February 10, 2024',
         category: 'Personal'
     },
 ]
