@@ -43,14 +43,15 @@ function BlogDetails() {
             <Row>
                 <Col>
                     <div className="card mb-4 position-relative">
-                        <div className="card-body bg-dark">
-                            <h2 className="card-title text-light">{title}</h2>
+                        <div className="card-body bg-dark" style={{ padding: '50px' }}>
+                            <h1 className="card-title" style={{ color: 'aqua' }}>{title}</h1>
                             {
                                 postData && <>
-                                    <h6 className='card-date text-light mb-2'>{postData.date}</h6>
-                                    <p className="card-text text-light">{postData.subtitle}</p>
+                                    <h6 className='card-date mb-2' style={{ color: 'aqua' }}>{postData.date}</h6>
+                                    <p className="card-text" style={{ color: 'aqua' }}>{postData.subtitle}</p>
+                                    <hr />
                                     <p className="card-text text-light" dangerouslySetInnerHTML={{ __html: htmlContent }} />
-                                    <p className="card-text text-light">Category: {postData.category}</p>
+                                    {/* <p className="card-text" style={{ color: 'aqua' }}>Category: {postData.category}</p> */}
                                 </>
                             }
                             <Button variant="primary" onClick={() => window.history.back()}>Go Back</Button>
@@ -60,7 +61,7 @@ function BlogDetails() {
                     </div>
                 </Col>
             </Row>
-        </Container>
+        </Container >
     );
 }
 

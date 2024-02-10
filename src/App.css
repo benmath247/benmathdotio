@@ -14,7 +14,7 @@
   /* Visual Studio Code Orange */
   --bs-yellow: #f9a825;
   /* Visual Studio Code Yellow */
-  --bs-green: #4caf50;
+  --bs-green: #6ef462;
   /* Visual Studio Code Green */
   --bs-teal: #00acc1;
   /* Visual Studio Code Teal */
@@ -126,7 +126,7 @@ button {
 }
 
 button:hover {
-  background-color: green !important;
+  background-color: #6ef462 !important;
 }
 
 .navbar-toggler-icon {
@@ -169,9 +169,13 @@ body {
   color: rgb(214, 214, 109);
 }
 
+h1 {
+  color: aqua;
+}
+
 
 .navbar a {
-  color: #61afef;
+  color: #6ef462;
   text-decoration: none;
   padding: 10px 20px;
   font-weight: bold;
@@ -179,7 +183,7 @@ body {
 }
 
 .navbar a:hover {
-  color: #98c379;
+  color: aqua;
 }
 
 /* Hero section styles */
@@ -383,6 +387,11 @@ h1.blog-title {
   color: #1e1e1e;
 }
 
+button {
+  background-color: aqua !important;
+  color: #1e1e1e !important;
+}
+
 /* "What I Do" section styles */
 .container.what-i-do {
   background-color: #333;
@@ -456,12 +465,11 @@ h2.what-i-do-title {
   height: 0;
   border-left: 30px solid transparent;
   /* Adjust size as needed */
-  border-top: 30px solid #0166cc;
+  border-top: 30px solid aqua;
   /* Adjust color as needed */
 }
 
 .diagonal-decoration:hover:hover {
 
-  border-top: 30px solid #1274d7;
+  border-top: 30px solid aqua;
 }
-

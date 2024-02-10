@@ -43,8 +43,8 @@ function App() {
             {/* <Nav.Link as={Link} to="/">
               <i className="fa fa-home fa-lg" /> Home
             </Nav.Link> */}
-            <Nav.Link as={Link} to="/about">About
-            </Nav.Link>
+            {/* <Nav.Link as={Link} to="/about">About
+            </Nav.Link> */}
             <Nav.Link as={Link} to="/blog">Blog
             </Nav.Link>
             <Nav.Link as={Link} to="/portfolio">Portfolio
