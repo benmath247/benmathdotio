@@ -6,7 +6,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Navbar from 'react-bootstrap/Navbar'; // Import the Navbar component
 import Nav from 'react-bootstrap/Nav'; // Import the Nav component
-import Blog from './components/Blog';
+import Blog from './pages/Blog';
 import Portfolio from './pages/Portfolio';
 import APINinjasNav from './projects/APINinjas/ApiNinjas';
 import './App.css';
@@ -27,9 +27,10 @@ import PokemonDetailsPage from './projects/Pokedex/PokemonDetails';
 import PokedexType from './projects/Pokedex/PokedexType';
 import DaysSinceQuit from './projects/QuitSmoking/DaysSinceQuit';
 import ExampleCall from './projects/workoutPlanner/examplecall';
-import BlogPostList from './components/Blog';
+import BlogPostList from './pages/Blog';
 
 import { allPostsData } from './components/allPostsData';
+import BlogDetails from './pages/BlogDetails';
 
 function App() {
   return (
@@ -87,6 +88,7 @@ function App() {
       <Routes>
         <Route path="/about" element={<About />} />
         <Route path="/blog" element={<Blog allPostsData={allPostsData} />} />
+        <Route path="/blog/:title" element={<BlogDetails />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/contact" element={<ContactForm />} />
         <Route path="/json-formatter" element={<FormatJson />} />

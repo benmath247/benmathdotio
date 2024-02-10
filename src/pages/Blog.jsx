@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, ListGroup } from 'react-bootstrap';
-import BlogPreview from './BlogPreview'; // Import the BlogPreview component
+import BlogPreview from '../components/BlogPreview'; // Import the BlogPreview component
 
 function Blog({ allPostsData }) {
     const [selectedCategory, setSelectedCategory] = useState('All');
@@ -17,11 +17,8 @@ function Blog({ allPostsData }) {
             const dateA = new Date(a.date);
             const dateB = new Date(b.date);
 
-            if (sortDirection === 'asc') {
-                return dateA - dateB;
-            } else {
-                return dateB - dateA;
-            }
+            // Always return the opposite of the current sorting direction
+            return sortDirection === 'asc' ? dateB - dateA : dateA - dateB;
         });
 
         return sorted;
@@ -69,17 +66,18 @@ function Blog({ allPostsData }) {
                             </Form.Group>
                         </Col>
                     </Row>
-                    <ListGroup>
-                        {sortedPosts.reverse().map((post, index) => (
-                            <BlogPreview
-                                key={index}
-                                title={post.title}
-                                subtitle={post.subtitle}
-                                date={post.date}
-                                content={post.content}
-                            />
+                    <Row>
+                        {sortedPosts.map((post, index) => (
+                            <Col key={index} xs={12} sm={6} md={4}>
+                                <BlogPreview
+                                    title={post.title}
+                                    subtitle={post.subtitle}
+                                    date={post.date}
+                                    content={post.content}
+                                />
+                            </Col>
                         ))}
-                    </ListGroup>
+                    </Row>
                 </Col>
             </Row>
         </Container>
