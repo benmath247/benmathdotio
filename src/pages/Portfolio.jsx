@@ -65,31 +65,31 @@ function Portfolio() {
       {
         title: 'Frozen Rewards',
         subtitle: 'A Conagra Frozen Products rebates site',
-        image: './portfolio/websites/digitalReward.png',
+        image: '/portfolio/websites/digitalReward.png',
         link: 'https://www.frozenrewardsclub.com'
       },
       {
         title: 'Club Publix Digital Event',
         subtitle: 'Brand promotion site for 90+ brands on behalf of Publix Grocery',
-        image: './portfolio/websites/multibrand.jpg',
+        image: '/portfolio/websites/multibrand.jpg',
         link: 'https://www.clubpublixdigitalevent.com'
       },
       {
         title: 'Penn Mutual Asset Management',
         subtitle: 'UI consulting for Penn Mutual Asset Management',
-        image: './portfolio/websites/pmam.png',
+        image: '/portfolio/websites/pmam.png',
         link: 'https://www.pennmutualam.org'
       },
       {
         title: 'My Pantry Planner',
         subtitle: 'High level customization of a brand site product',
-        image: './portfolio/websites/mpp.jpeg',
+        image: '/portfolio/websites/mpp.jpeg',
         link: 'https://www.mypantryplanner.com'
       },
       {
         title: 'Spoonable Perks',
         subtitle: 'Using React to engage proprietary API to support a loyalty shopping program',
-        image: './portfolio/websites/spoonable.jpeg',
+        image: '/portfolio/websites/spoonable.jpeg',
         link: 'https://www.spoonableperks.com'
       },
     ];
