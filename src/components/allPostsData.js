@@ -28,13 +28,6 @@ export const allPostsData = [
         category: 'Technology'
     },
     {
-        title: 'Today I Failed a Technical Interview',
-        subtitle: 'Turning a failed technical interview into a learning experience',
-        content: './blogs/technology/BombingAnInterview.html',
-        date: 'January 11, 2024',
-        category: 'Technology'
-    },
-    {
         title: 'Reflecting on my South American Trip',
         subtitle: 'Thoughts from my second airplane ride home',
         content: './blogs/personal/PanamaFlight.html',
@@ -89,5 +82,19 @@ export const allPostsData = [
         content: './blogs/projects/ConnectingGoogleCloudStorage.html',
         date: 'January 27, 2024',
         category: 'Projects'
-    }
+    },
+    {
+        title: 'Today I Failed a Technical Interview',
+        subtitle: 'Turning a failed technical interview into a learning experience',
+        content: './blogs/technology/BombingAnInterview.html',
+        date: 'January 30, 2024',
+        category: 'Technology'
+    },
+    {
+        title: 'A Personal Anecdote on Failure',
+        subtitle: 'Failure often comes disguised as opportunity',
+        content: './blogs/personal/LearningFromFailure.html',
+        date: 'January 30, 2024',
+        category: 'Technology'
+    },
 ]

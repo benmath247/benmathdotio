@@ -16,7 +16,7 @@ function Home() {
             src="https://media.licdn.com/dms/image/D4E03AQH--5mTLwHlBQ/profile-displayphoto-shrink_400_400/0/1664807111568?e=1709769600&v=beta&t=Ml3wEiJek-1V5TT8XKRLVO6xawYpsLKcAt_JokLBEUI" // Replace with the actual path to your image
             alt="Your Name"
             className="rounded-circle mb-4"
-            width="150"
+            width="300"
           />
           <h1>Welcome to My Personal Website</h1>
           <p className="lead">

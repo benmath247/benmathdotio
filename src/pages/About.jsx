@@ -14,9 +14,9 @@ function About() {
         <div className="container">
           <img
             src="https://media.licdn.com/dms/image/D4E03AQH--5mTLwHlBQ/profile-displayphoto-shrink_400_400/0/1664807111568?e=1709769600&v=beta&t=Ml3wEiJek-1V5TT8XKRLVO6xawYpsLKcAt_JokLBEUI" // Replace with the actual path to your profile picture
-            alt="Your Name"
+            alt="Me"
             className="rounded-circle mb-4"
-            width="150"
+            width="300"
           />
           <h1 className="display-4">About Me</h1>
           <p className="lead">
@@ -57,49 +57,49 @@ function About() {
       </section>
 
       <section className="container what-i-do mt-5">
-  <h2 className="text-center what-i-do-title">What I Do</h2>
-  <div className="row what-i-do-row">
-    <div className="col-md-4">
-      <Card className="mb-4 what-i-do-card">
-        <Card.Body>
-          <FaLaptopCode className="display-4 text-primary mb-3" />
-          <h5 className="card-title">Coding</h5>
-          <p className="card-text">
-            I'm passionate about writing clean and efficient code. Solving complex
-            problems with technology is what I do best.
-          </p>
-        </Card.Body>
-      </Card>
-    </div>
-    <div className="col-md-4">
-      <Card className="mb-4 what-i-do-card">
-        <Card.Body>
-          <FaHiking className="display-4 text-success mb-3" />
-          <h5 className="card-title">Exploring</h5>
-          <p className="card-text">
-            I love exploring the outdoors, from hiking in the mountains to camping by
-            the lakeside. Nature inspires me.
-          </p>
-        </Card.Body>
-      </Card>
-    </div>
-    <div className="col-md-4">
-      <Card className="mb-4 what-i-do-card">
-        <Card.Body>
-          <FaUtensils className="display-4 text-warning mb-3" />
-          <h5 className="card-title">Cooking</h5>
-          <p className="card-text">
-            In the kitchen, I'm an adventurer too. Trying new recipes and flavors
-            is a delightful experience.
-          </p>
-        </Card.Body>
-      </Card>
-    </div>
-  </div>
-</section>
+        <h2 className="text-center what-i-do-title">What I Do</h2>
+        <div className="row what-i-do-row">
+          <div className="col-md-4">
+            <Card className="mb-4 what-i-do-card">
+              <Card.Body>
+                <FaLaptopCode className="display-4 text-primary mb-3" />
+                <h5 className="card-title">Coding</h5>
+                <p className="card-text">
+                  I'm passionate about writing clean and efficient code. Solving complex
+                  problems with technology is what I do best.
+                </p>
+              </Card.Body>
+            </Card>
+          </div>
+          <div className="col-md-4">
+            <Card className="mb-4 what-i-do-card">
+              <Card.Body>
+                <FaHiking className="display-4 text-success mb-3" />
+                <h5 className="card-title">Exploring</h5>
+                <p className="card-text">
+                  I love exploring the outdoors, from hiking in the mountains to camping by
+                  the lakeside. Nature inspires me.
+                </p>
+              </Card.Body>
+            </Card>
+          </div>
+          <div className="col-md-4">
+            <Card className="mb-4 what-i-do-card">
+              <Card.Body>
+                <FaUtensils className="display-4 text-warning mb-3" />
+                <h5 className="card-title">Cooking</h5>
+                <p className="card-text">
+                  In the kitchen, I'm an adventurer too. Trying new recipes and flavors
+                  is a delightful experience.
+                </p>
+              </Card.Body>
+            </Card>
+          </div>
+        </div>
+      </section>
 
       <section className="container mt-5">
-         {/* <Pokedex/> */}
+        {/* <Pokedex/> */}
 
       </section>
 
