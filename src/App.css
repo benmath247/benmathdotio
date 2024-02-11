@@ -105,6 +105,10 @@
   --bs-card-border-radius: 0px !important;
 }
 
+.bg-primary {
+  background-color: #1E1E1E !important;
+}
+
 .nav-pills {
   --bs-nav-pills-border-radius: var(--bs-border-radius);
   --bs-nav-pills-link-active-color: var(--bs-cyan);
@@ -221,7 +225,7 @@ h1 {
 }
 
 .hero a:hover {
-  background-color: #98c379;
+  background-color: #6ef462;
 }
 
 /* About Me section styles */
@@ -283,7 +287,7 @@ h1.blog-title {
 
 .nav-link:hover {
   background-color: #333;
-  color: #98c379;
+  color: #6ef462;
 }
 
 /* Blog previews styles */
@@ -334,7 +338,7 @@ h1.blog-title {
 }
 
 .back-to-top:hover {
-  background-color: #98c379;
+  background-color: #6ef462;
   color: #1e1e1e;
 }
 
@@ -371,7 +375,7 @@ h1.blog-title {
 
 /* Button styles */
 .jumbotron .btn-primary {
-  background-color: #61afef;
+  background-color: aqua;
   color: #1e1e1e;
   border: none;
   border-radius: 5px;
@@ -383,8 +387,16 @@ h1.blog-title {
 }
 
 .jumbotron .btn-primary:hover {
-  background-color: #98c379;
+  background-color: #6ef462;
   color: #1e1e1e;
+}
+
+.btn-lg {
+  background-color: aqua !important;
+}
+
+.btn-lg:hover {
+  background-color: #6ef462 !important;
 }
 
 button {
@@ -472,4 +484,29 @@ h2.what-i-do-title {
 .diagonal-decoration:hover:hover {
 
   border-top: 30px solid aqua;
+}
+
+.container.text-center {
+  background-color: #1E1E1E;
+}
+
+
+.rounded-circle {
+  padding: 10px;
+  border: 2px solid aqua !important;
+
+}
+
+.card {
+  border: 1px solid aqua !important;
+}
+
+.card-body {
+  border: 1px solid aqua !important;
+  background-color: #101010;
+  color: aqua
+}
+
+.card img {
+  filter: grayscale(10%) brightness(1) contrast(1) sepia(20%) hue-rotate(200deg);
 }

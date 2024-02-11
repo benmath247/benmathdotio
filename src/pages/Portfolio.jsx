@@ -215,9 +215,9 @@ function Portfolio() {
             <Nav.Item>
               <Nav.Link eventKey="tools">Tools</Nav.Link>
             </Nav.Item>
-            <Nav.Item>
+            {/* <Nav.Item>
               <Nav.Link eventKey="demos">Demos</Nav.Link>
-            </Nav.Item>
+            </Nav.Item> */}
           </Nav>
         </Container>
 
@@ -225,7 +225,7 @@ function Portfolio() {
           <Tab.Pane eventKey="games">{renderProjectPreviews('games', gamesPosts)}</Tab.Pane>
           <Tab.Pane eventKey="websites">{renderProjectPreviews('websites', websitesPosts)}</Tab.Pane>
           <Tab.Pane eventKey="tools">{renderProjectPreviews('tools', toolsPosts)}</Tab.Pane>
-          <Tab.Pane eventKey="demos">{renderProjectPreviews('demos', demosPosts)}</Tab.Pane>
+          {/* <Tab.Pane eventKey="demos">{renderProjectPreviews('demos', demosPosts)}</Tab.Pane> */}
         </Tab.Content>
       </Tab.Container>
     </div>
