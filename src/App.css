@@ -510,3 +510,11 @@ h2.what-i-do-title {
 .card img {
   filter: grayscale(10%) brightness(1) contrast(1) sepia(20%) hue-rotate(200deg);
 }
+
+
+.text-container {
+  font-size: 24px;
+  transition: color 1s ease-in-out;
+  --text-color: #6A9955;
+  color: var(--text-color);
+}
