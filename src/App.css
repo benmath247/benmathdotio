@@ -486,10 +486,6 @@ h2.what-i-do-title {
   border-top: 30px solid aqua;
 }
 
-.container.text-center {
-  background-color: #1E1E1E;
-}
-
 
 .rounded-circle {
   padding: 10px;
@@ -517,4 +513,33 @@ h2.what-i-do-title {
   transition: color 1s ease-in-out;
   --text-color: #6A9955;
   color: var(--text-color);
+}
+
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: #000000;
+  /* fallback color */
+  background-image: linear-gradient(90deg, #031308, #230220);
+  background-size: 200% auto;
+  animation: moveBackground 4s linear infinite;
 }

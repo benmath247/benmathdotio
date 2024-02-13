@@ -201,33 +201,36 @@ function Portfolio() {
   };
 
   return (
-    <div className="container mt-5">
-      <h1 className="text-center">Portfolio</h1>
-      <Tab.Container id="project-tabs" activeKey={key} onSelect={(k) => setKey(k)}>
-        <Container>
-          <Nav variant="pills" className="justify-content-center">
-            <Nav.Item>
-              <Nav.Link eventKey="games">Games</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="websites">Websites</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="tools">Tools</Nav.Link>
-            </Nav.Item>
-            {/* <Nav.Item>
+    <div className='background'>
+
+      <div className="container mt-5">
+        <h1 className="text-center">Portfolio</h1>
+        <Tab.Container id="project-tabs" activeKey={key} onSelect={(k) => setKey(k)}>
+          <Container>
+            <Nav variant="pills" className="justify-content-center">
+              <Nav.Item>
+                <Nav.Link eventKey="games">Games</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link eventKey="websites">Websites</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link eventKey="tools">Tools</Nav.Link>
+              </Nav.Item>
+              {/* <Nav.Item>
               <Nav.Link eventKey="demos">Demos</Nav.Link>
             </Nav.Item> */}
-          </Nav>
-        </Container>
+            </Nav>
+          </Container>
 
-        <Tab.Content>
-          <Tab.Pane eventKey="games">{renderProjectPreviews('games', gamesPosts)}</Tab.Pane>
-          <Tab.Pane eventKey="websites">{renderProjectPreviews('websites', websitesPosts)}</Tab.Pane>
-          <Tab.Pane eventKey="tools">{renderProjectPreviews('tools', toolsPosts)}</Tab.Pane>
-          {/* <Tab.Pane eventKey="demos">{renderProjectPreviews('demos', demosPosts)}</Tab.Pane> */}
-        </Tab.Content>
-      </Tab.Container>
+          <Tab.Content>
+            <Tab.Pane eventKey="games">{renderProjectPreviews('games', gamesPosts)}</Tab.Pane>
+            <Tab.Pane eventKey="websites">{renderProjectPreviews('websites', websitesPosts)}</Tab.Pane>
+            <Tab.Pane eventKey="tools">{renderProjectPreviews('tools', toolsPosts)}</Tab.Pane>
+            {/* <Tab.Pane eventKey="demos">{renderProjectPreviews('demos', demosPosts)}</Tab.Pane> */}
+          </Tab.Content>
+        </Tab.Container>
+      </div>
     </div>
   );
 }

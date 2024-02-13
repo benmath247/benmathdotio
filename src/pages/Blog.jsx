@@ -38,49 +38,51 @@ function Blog({ allPostsData }) {
     const sortedPosts = sortPosts();
 
     return (
-        <Container style={{ marginTop: '100px' }}>
-            <Row>
-                <Col>
-                    <h1>Blog</h1>
-                    <Row style={{ marginTop: '25px', marginBottom: '25px' }}>
-                        <Col>
-                            <Form.Group>
-                                <Form.Control
-                                    as="select"
-                                    value={selectedCategory}
-                                    onChange={handleCategoryChange}
-                                >
-                                    {categories.map((category) => (
-                                        <option key={category} value={category}>
-                                            {category}
-                                        </option>
-                                    ))}
-                                </Form.Control>
-                            </Form.Group>
-                        </Col>
-                        <Col>
-                            <Form.Group>
-                                <div onClick={handleSortChange}>
-                                    {sortDirection === 'asc' ? `Date: \u2193` : `Date: \u2191`}
-                                </div>
-                            </Form.Group>
-                        </Col>
-                    </Row>
-                    <Row>
-                        {sortedPosts.map((post, index) => (
-                            <Col key={index} xs={12} sm={6} md={4}>
-                                <BlogPreview
-                                    title={post.title}
-                                    subtitle={post.subtitle}
-                                    date={post.date}
-                                    content={post.content}
-                                />
+        <div className='background'>
+            <Container style={{ marginTop: '100px' }}>
+                <Row>
+                    <Col>
+                        <h1>Blog</h1>
+                        <Row style={{ marginTop: '25px', marginBottom: '25px' }}>
+                            <Col>
+                                <Form.Group>
+                                    <Form.Control
+                                        as="select"
+                                        value={selectedCategory}
+                                        onChange={handleCategoryChange}
+                                    >
+                                        {categories.map((category) => (
+                                            <option key={category} value={category}>
+                                                {category}
+                                            </option>
+                                        ))}
+                                    </Form.Control>
+                                </Form.Group>
                             </Col>
-                        ))}
-                    </Row>
-                </Col>
-            </Row>
-        </Container>
+                            <Col>
+                                <Form.Group>
+                                    <div onClick={handleSortChange}>
+                                        {sortDirection === 'asc' ? `Date: \u2193` : `Date: \u2191`}
+                                    </div>
+                                </Form.Group>
+                            </Col>
+                        </Row>
+                        <Row>
+                            {sortedPosts.map((post, index) => (
+                                <Col key={index} xs={12} sm={6} md={4}>
+                                    <BlogPreview
+                                        title={post.title}
+                                        subtitle={post.subtitle}
+                                        date={post.date}
+                                        content={post.content}
+                                    />
+                                </Col>
+                            ))}
+                        </Row>
+                    </Col>
+                </Row>
+            </Container>
+        </div>
     );
 }
 

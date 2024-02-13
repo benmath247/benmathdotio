@@ -11,7 +11,7 @@ const TextColorChanging = ({ text, size }) => {
         "#D16969", // Red
         "#DCDCAA", // Yellow
         "#569CD6", // Blue
-        "#2A2D2E"  // Editor Line Highlight
+        // "#2A2D2E"  // Editor Line Highlight
     ];
 
     const [colorIndex, setColorIndex] = useState(0);
