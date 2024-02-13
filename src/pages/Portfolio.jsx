@@ -178,7 +178,7 @@ function Portfolio() {
     return (
       <div className="row">
         {posts.map((post) => (
-          <div className="col-md-4 mb-4 position-relative" key={post.title}>
+          <div className="col-md-4 mb-4 position-relative grow-on-hover" key={post.title}>
             <a href={post.link} rel="noopener noreferrer">
               <div className="card">
                 <img

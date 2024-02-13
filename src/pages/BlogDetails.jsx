@@ -54,7 +54,7 @@ function BlogDetails() {
                                     {/* <p className="card-text" style={{ color: 'aqua' }}>Category: {postData.category}</p> */}
                                 </>
                             }
-                            <Button variant="primary" onClick={() => window.history.back()}>Go Back</Button>
+                            <Button variant="primary" onClick={() => window.history.back()}>Back to All Blogs</Button>
                             {/* Diagonal decoration */}
                             <div className="diagonal-decoration"></div>
                         </div>

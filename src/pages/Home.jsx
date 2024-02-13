@@ -15,7 +15,7 @@ function Home() {
           <img
             src="https://media.licdn.com/dms/image/D4E03AQH--5mTLwHlBQ/profile-displayphoto-shrink_400_400/0/1664807111568?e=1709769600&v=beta&t=Ml3wEiJek-1V5TT8XKRLVO6xawYpsLKcAt_JokLBEUI" // Replace with the actual path to your image
             alt="Ben Math"
-            className="rounded-circle mb-4"
+            className="rounded-circle mb-4 grow-on-hover"
             width="300"
           />
           <h1>Welcome to BenMath.io</h1>
@@ -26,8 +26,8 @@ function Home() {
             I have a passion for coding with JavaScript, Python, and Java.
             I enjoy working on projects that make a difference for my community, customers, and the world.
           </p> */}
-          <Link to="/portfolio" className="btn btn-light btn-lg" style={{ width: "150px", margin: "15px" }}>View My Portfolio</Link>
-          <Link to="/blog" className="btn btn-light btn-lg" style={{ width: "150px", margin: "15px" }}>View My Blog</Link>
+          <Link to="/portfolio" className="btn btn-light btn-lg grow-on-hover" style={{ width: "150px", margin: "15px" }}>View My Portfolio</Link>
+          <Link to="/blog" className="btn btn-light btn-lg grow-on-hover" style={{ width: "150px", margin: "15px" }}>View My Blog</Link>
         </div>
       </section>
     </div>

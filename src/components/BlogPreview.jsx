@@ -10,7 +10,7 @@ function BlogPreview({ title, subtitle, date }) {
         <h6 className='card-date text-light mb-2'>{date}</h6>
         <p className="card-text text-light">{subtitle}</p>
         <Link to={`/blog/${title}`}>
-          <button className="btn btn-primary"
+          <button className="btn btn-primary grow-on-hover"
           >
             Read More
           </button>
