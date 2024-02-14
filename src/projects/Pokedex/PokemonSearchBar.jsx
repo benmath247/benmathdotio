@@ -50,7 +50,7 @@ const PokemonSearchBar = ({ setPokemonList }) => {
                 placeholder="Search Pokémon"
             />
             {/* Submit button */}
-            <button onClick={handleSubmit} style={{ padding: '2px' }}>Search</button>
+            <button className='pokedex-btn-lg' onClick={handleSubmit} style={{ padding: '2px' }}>Search</button>
         </div>
     );
 };

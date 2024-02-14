@@ -400,6 +400,16 @@ h1.blog-title {
   background-color: #6ef462 !important;
 }
 
+.pokedex-btn-lg {
+  background-color: white !important;
+  color: black !important;
+}
+
+.pokedex-btn-lg:hover {
+  background-color: black !important;
+  color: rgb(197, 0, 0) !important;
+}
+
 button {
   background-color: aqua !important;
   color: #1e1e1e !important;
@@ -494,17 +504,17 @@ h2.what-i-do-title {
 
 }
 
-.card {
+.blue-card {
   border: 1px solid aqua !important;
 }
 
-.card-body {
+.blue-card-body {
   border: 1px solid aqua !important;
   background-color: #101010;
   color: aqua
 }
 
-.card img {
+.blue-card img {
   filter: grayscale(10%) brightness(1) contrast(1) sepia(20%) hue-rotate(200deg);
 }
 
@@ -532,13 +542,14 @@ h2.what-i-do-title {
 }
 
 .background {
-  position: fixed;
-  top: 0;
-  left: 0;
+  /* position: fixed; */
+  /* top: 0; */
+  /* left: 0; */
   width: 100%;
   height: 100%;
-  z-index: -1;
-  background-color: #000000;
+  min-height: 100vh;
+  /* z-index: -1; */
+  /* background-color: #000000; */
   /* fallback color */
   background-image: linear-gradient(90deg, #031308, #230220);
   background-size: 200% auto;

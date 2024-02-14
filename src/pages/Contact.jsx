@@ -59,7 +59,7 @@ function ContactForm() {
 
     return (
         <div className='background'>
-            <div className="container mt-5">
+            <div className="background container mt-5">
                 <h1>Contact Me</h1>
                 {submitted ? (
                     <div className="alert alert-success">

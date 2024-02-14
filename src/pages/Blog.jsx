@@ -39,7 +39,9 @@ function Blog({ allPostsData }) {
 
     return (
         <div className='background'>
-            <Container style={{ marginTop: '100px' }}>
+            <Container
+                style={{ marginTop: '50px' }}
+            >
                 <Row>
                     <Col>
                         <h1>Blog</h1>
