@@ -551,7 +551,7 @@ h2.what-i-do-title {
   /* z-index: -1; */
   /* background-color: #000000; */
   /* fallback color */
-  background-image: linear-gradient(90deg, #031308, #230220);
+  background-image: linear-gradient(90deg, #05122d, #280425);
   background-size: 200% auto;
   animation: moveBackground 4s linear infinite;
 }
