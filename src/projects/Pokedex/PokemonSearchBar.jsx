@@ -32,8 +32,13 @@ const PokemonSearchBar = ({ setPokemonList }) => {
     };
 
     const handleSubmit = () => {
-        // Trigger the search with the current input value
-        handleSearch(searchInput);
+        if (!searchInput.trim()) {
+            // If search input is empty, set the Pokemon list to all Pokemon
+            setPokemonList(allPokemon);
+        } else {
+            // If search input is not empty, trigger the search with the current input value
+            handleSearch(searchInput);
+        }
     };
 
     const handleChange = (event) => {

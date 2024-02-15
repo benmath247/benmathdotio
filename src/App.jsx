@@ -36,7 +36,7 @@ function App() {
   return (
     <Router>
       <Navbar bg="dark" expand="lg" className="mb-0 pb-0">
-        <Navbar.Brand href="/">BENMATH.IO</Navbar.Brand>
+        <Navbar.Brand href="/">BENMATH.COM</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">

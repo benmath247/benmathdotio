@@ -19,7 +19,7 @@ function Home() {
             className="rounded-circle mb-4 grow-on-hover"
             width="300"
           />
-          <TextColorChanging text="WELCOME TO BENMATH.IO" size="60" />
+          <TextColorChanging text="WELCOME TO BENMATH.COM" size="60" />
           <p className="lead">
             Venture within for thoughts on my personal and professional life or to see projects I have worked on.
           </p>

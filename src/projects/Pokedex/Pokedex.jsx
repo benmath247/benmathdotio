@@ -40,13 +40,16 @@ function Pokedex() {
   }, []);
 
   useEffect(() => {
-    axios.get(`https://pokeapi.co/api/v2/ability/${selectedAbility}`)
-      .then((response) => {
-        setPokemonList(response.data.pokemon.map(entry => entry.pokemon))
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-      });
+    if (selectedAbility) {
+      axios.get(`https://pokeapi.co/api/v2/ability/${selectedAbility}`)
+        .then((response) => {
+          setPokemonList(response.data.pokemon.map(entry => entry.pokemon))
+        })
+        .catch((error) => {
+          console.error('Error fetching data:', error);
+        });
+
+    }
   }, [selectedAbility]);
 
   useEffect(() => {
