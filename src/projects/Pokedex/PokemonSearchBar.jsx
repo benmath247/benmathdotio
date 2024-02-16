@@ -45,6 +45,12 @@ const PokemonSearchBar = ({ setPokemonList }) => {
         setSearchInput(event.target.value);
     };
 
+    const handleKeyPress = (event) => {
+        if (event.key === 'Enter') {
+            handleSubmit();
+        }
+    };
+
     return (
         <div className='col-md-3' style={{ marginTop: '5px' }}>
             {/* Search bar */}
@@ -52,6 +58,7 @@ const PokemonSearchBar = ({ setPokemonList }) => {
                 type="text"
                 value={searchInput}
                 onChange={handleChange}
+                onKeyPress={handleKeyPress}
                 placeholder="Search Pokémon"
             />
             {/* Submit button */}
