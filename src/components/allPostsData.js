@@ -64,7 +64,7 @@ export const allPostsData = [
     },
     {
         title: "1, 2, 3 Deployed!",
-        subtitle: 'Deploying and setting up CI/CD for benmath.io',
+        subtitle: 'Deploying and setting up CI/CD for benmath.com',
         content: '/blogs/projects/123Deployment.html',
         date: 'January 25, 2024',
         category: 'Projects'
