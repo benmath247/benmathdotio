@@ -73,12 +73,11 @@ function Pokedex() {
 
 
   return (<div>
-
     <Helmet>
       <title>BenMath.com | Portfolio - Pokédex</title>
       <meta property="og:description" content="Gotta Catch 'Em All" />
       <meta property="og:title" content="BenMath.com | Portfolio - Pokédex" />
-      <meta property="og:image" content="BenMath.com | Portfolio - Pokédex" />
+      <meta property="og:image" content="/portfolio/games/pokedex.webp" />
 
     </Helmet>
     <PokedexContainer colorBackground={colorBackground}>
