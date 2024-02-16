@@ -72,7 +72,7 @@ function App() {
                 size={20} />
             </Nav.Link>
             <Nav.Link
-              href="/your-resume.pdf"
+              href="https://docs.google.com/document/d/17JA9cJ-SORMmOwBwrK2uofu6XVnVmqTvXo8fTVGIs6s/edit?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="rotate-icon"
