@@ -11,6 +11,7 @@ import PokemonSearchBar from './PokemonSearchBar'
 import DamageRelations from './DamageRelations';
 import './DamageRelations.css'
 import PokemonHabitatsDropdown from './PokemonHabitatsDropdown';
+import { Helmet } from 'react-helmet'
 
 function Pokedex() {
   let pokemonSprites = [];
@@ -71,36 +72,44 @@ function Pokedex() {
 
 
 
-  return (
+  return (<div>
+
     <PokedexContainer colorBackground={colorBackground}>
+      <Helmet>
+        <title>BenMath.com | Portfolio - Pokédex</title>
+        <meta property="og:description" content="Gotta Catch 'Em All" />
+        <meta property="og:title" content="BenMath.com | Portfolio - Pokédex" />
+        <meta property="og:image" content="/portfolio/games/pokedex.webp" />
+
+      </Helmet>
       <style>
         {`
       .sorting-row {
         background-color: rgba(0, 0, 0, 0.1);
       }
-          .damage-relations-container {
-            background-color: rgba(0, 0, 0, 0.1);
-          }
-  
-          .damage-heading-container {
-            background-color: rgba(0, 0, 0, 0.1);
-          }
-  
-          .damage-type-container {
-            background-color: rgba(0, 0, 0, 0.1);
-          }
-  
-          .damage-item {
-            background-color: rgba(0, 0, 0, 0.1);
-          }
-  
-          .damage-item:hover {
-            background-color: rgba(0, 0, 0, 0.1);
-          }
-          .type-title{
-            background-color: rgba(0, 0, 0, 0.1);
-          }
-        `}
+      .damage-relations-container {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+      
+      .damage-heading-container {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+      
+      .damage-type-container {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+      
+      .damage-item {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+      
+      .damage-item:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+      .type-title{
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+      `}
       </style>
       <div className='sorting-row row' style={{ colorBackground: 'transparent' }}>
         <div className='col-md-3' style={{ colorBackground: 'transparent' }}>
@@ -168,6 +177,7 @@ function Pokedex() {
         />
       </div>
     </PokedexContainer >
+  </div>
   );
 }
 
