@@ -21,14 +21,19 @@ function HangmanGame() {
     setGuessedWord(new Array(randomWord.length).fill('_ '));
   }, []);
 
+  useEffect(() => {
+    if (guess !== '' && guess.length === 1 && !usedLetters.includes(guess.toLowerCase())) {
+      handleGuessSubmit();
+    }
+  }, [guess]);
+
   const handleGuessChange = (event) => {
     setGuess(event.target.value);
   };
 
-  const handleGuessSubmit = (event) => {
-    event.preventDefault();
+  const handleGuessSubmit = () => {
     const guessLowerCase = guess.toLowerCase();
-    if (guessLowerCase.length === 1 && !usedLetters.includes(guessLowerCase)) {
+    if (!usedLetters.includes(guessLowerCase)) {
       const newGuessedWord = guessedWord.slice();
       let found = false;
 
@@ -108,7 +113,7 @@ function HangmanGame() {
   return (
     <div className="container mt-5">
       <h1>Pokemon Hangman Game</h1>
-      <p>Try to guess the Pokemon by entering a letter at a time. You have {maxAttempts - attempts} attempts left.</p>
+      <p>Try to guess the Pokemon by entering a letter at a time. <strong>You have {maxAttempts - attempts} attempts left.</strong></p>
 
       {isGameLost && <>
         <p className="text-danger">You lost! The word was "{word}".</p>
@@ -118,7 +123,7 @@ function HangmanGame() {
       <>
         {renderWord()}
         {renderUsedLetters()}
-        <form onSubmit={handleGuessSubmit}>
+        <form onSubmit={(e) => { e.preventDefault(); }}>
           <div className="form-group">
             <input
               type="text"
@@ -129,9 +134,6 @@ function HangmanGame() {
               maxLength="1"
             />
           </div>
-          <button type="submit" className="btn btn-primary">
-            Guess
-          </button>
           <div>
             <button className="btn btn-primary" onClick={() => window.location.reload(false)}>
               New Game
