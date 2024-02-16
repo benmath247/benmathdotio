@@ -518,6 +518,10 @@ h2.what-i-do-title {
   filter: grayscale(10%) brightness(1) contrast(1) sepia(20%) hue-rotate(200deg);
 }
 
+.blue-card div {
+  padding: 10px;
+}
+
 
 .text-container {
   font-size: 24px;
