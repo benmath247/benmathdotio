@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './pages/Home';
 import About from './pages/About';
-import Navbar from 'react-bootstrap/Navbar'; // Import the Navbar component
-import Nav from 'react-bootstrap/Nav'; // Import the Nav component
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
 import Blog from './pages/Blog';
 import Portfolio from './pages/Portfolio';
 import APINinjasNav from './projects/APINinjas/ApiNinjas';
