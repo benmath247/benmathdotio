@@ -14,7 +14,7 @@ function Home() {
       <section className="hero background py-5">
         <div style={{ paddingTop: "50px" }} className="container text-center">
           <img
-            src="https://media.licdn.com/dms/image/D4E03AQH--5mTLwHlBQ/profile-displayphoto-shrink_400_400/0/1664807111568?e=1709769600&v=beta&t=Ml3wEiJek-1V5TT8XKRLVO6xawYpsLKcAt_JokLBEUI" // Replace with the actual path to your image
+            src="images/me/me.png"
             alt="Ben Math"
             className="rounded-circle mb-4 grow-on-hover"
             width="300"
