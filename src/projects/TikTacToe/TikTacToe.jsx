@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './TikTacToe.css';
+import { Link } from 'react-router-dom';
 
 function TikTacToe() {
   const [history, setHistory] = useState([Array(9).fill(null)]);
@@ -219,11 +220,11 @@ function TikTacToe() {
         <button className="btn btn-danger" onClick={resetGame}>Play Again</button>
         <br />
         <div className='container'>
-          <a href="portfolio">
+          <Link to="/portfolio">
             <button className="btn btn-primary">
               Back to Portfolio
             </button>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

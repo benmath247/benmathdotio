@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Dictation = () => {
   const [transcript, setTranscript] = useState('');
@@ -57,49 +58,51 @@ const Dictation = () => {
 
   return (
     <div className="container mt-5">
-  <h1 className="mb-4">Speech-to-Text Dictation Tool</h1>
-  <p>
-    This tool allows you to convert your speech into text. Follow these steps to
-    use the app:
-  </p>
-  <ol>
-    <li>Click the "Start Recording" button to begin recording your speech.</li>
-    <li>Speak clearly and concisely into your device's microphone.</li>
-    <li>
-      Click the "Stop Recording" button when you want to stop recording.
-    </li>
-  </ol>
-  <p>Your recorded speech will appear in the "Transcript" section below.</p>
-  <div className="mb-3">
-    <button
-      className="btn btn-primary"
-      onClick={startRecording}
-      disabled={recording}
-      >
-      Start Recording
-    </button>
-    <br/>
-    <button
-      className="btn btn-primary"
-      onClick={stopRecording}
-      disabled={!recording}
-    >
-      Stop Recording
-    </button>
-  </div>
-  <div className="transcript">
-    <h5>Transcript:</h5>
-    <p>{transcript}</p>
-  </div>
-  <div className='container'>
+      <h1 className="mb-4">Speech-to-Text Dictation Tool</h1>
+      <p>
+        This tool allows you to convert your speech into text. Follow these steps to
+        use the app:
+      </p>
+      <ol>
+        <li>Click the "Start Recording" button to begin recording your speech.</li>
+        <li>Speak clearly and concisely into your device's microphone.</li>
+        <li>
+          Click the "Stop Recording" button when you want to stop recording.
+        </li>
+      </ol>
+      <p>Your recorded speech will appear in the "Transcript" section below.</p>
+      <div className="mb-3">
+        <button
+          className="btn btn-primary"
+          onClick={startRecording}
+          disabled={recording}
+        >
+          Start Recording
+        </button>
+        <br />
+        <button
+          className="btn btn-primary"
+          onClick={stopRecording}
+          disabled={!recording}
+        >
+          Stop Recording
+        </button>
+      </div>
+      <div className="transcript">
+        <h5>Transcript:</h5>
+        <p>{transcript}</p>
+      </div>
+      <div className='container'>
 
-      <a href="portfolio">
-      <button className="btn btn-primary">
-        Back to Portfolio
-      </button>
-      </a>
-        </div>
-</div>
+        <a href="portfolio">
+          <Link to="/portfolio">
+            <button className="btn btn-primary">
+              Back to Portfolio
+            </button>
+          </Link>
+        </a>
+      </div>
+    </div>
 
   );
 };

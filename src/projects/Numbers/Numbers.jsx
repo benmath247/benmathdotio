@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const NumberGuessingGame = () => {
   const minNumber = 1;
@@ -73,11 +74,11 @@ const NumberGuessingGame = () => {
       </div>
       <div className='text-center'>
 
-        <a href="portfolio">
-      <button className="btn btn-primary">
-        Back to Portfolio
-      </button>
-      </a>
+        <Link to="/portfolio">
+          <button className="btn btn-primary">
+            Back to Portfolio
+          </button>
+        </Link>
       </div>
     </div>
   );
