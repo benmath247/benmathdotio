@@ -99,7 +99,7 @@ export const allPostsData = [
     },
     {
         title: 'Exploring 3 Basic Sorting Algorithms',
-        subtitle: 'Drilling down onBubble Sort, Insertion Sort, and Merge Sort',
+        subtitle: 'Drilling down on Bubble Sort, Insertion Sort, and Merge Sort',
         content: '/blogs/technology/Sorting.html',
         date: 'February 20, 2024',
         category: 'Technology'
