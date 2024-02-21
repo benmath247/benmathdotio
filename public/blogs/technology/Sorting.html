@@ -1,0 +1,104 @@
+<h2>Bubble Sort</h2>
+<p>Bubble sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and
+    swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted. It
+    gets its name from the way smaller elements "bubble" to the top of the list with each iteration.</p>
+<pre><code>def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        # Last i elements are already in place, so no need to check them
+        for j in range(0, n-i-1):
+            # Compare adjacent elements and swap if they are in the wrong order
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]</code></pre>
+
+<h2>Insertion Sort</h2>
+<p>Insertion sort is another simple sorting algorithm that builds the final sorted list one item at a time. It
+    iterates through the list, removing one element at a time and finds the correct position to insert it into the
+    sorted portion of the list. It is named as such because it inserts each element into its proper place in the
+    sorted list.</p>
+<pre><code>def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i-1
+        # Move elements of arr[0..i-1] that are greater than key to one position ahead of their current position
+        while j >=0 and key < arr[j] :
+                arr[j+1] = arr[j]
+                j -= 1
+        arr[j+1] = key</code></pre>
+
+<h2>Merge Sort</h2>
+<p>Merge sort is a more efficient sorting algorithm that follows the divide-and-conquer approach. It divides the
+    unsorted list into n sublists, each containing one element, and then repeatedly merges sublists to produce new
+    sorted sublists until there is only one sublist remaining. It is named "merge" sort because it merges smaller
+    sorted lists together into a larger sorted list.</p>
+<pre><code>def merge_sort(arr):
+    if len(arr) > 1:
+        mid = len(arr)//2
+        L = arr[:mid]
+        R = arr[mid:]
+
+        merge_sort(L)  # Recursively sort the first half
+        merge_sort(R)  # Recursively sort the second half
+
+        i = j = k = 0
+
+        # Merge the sorted halves
+        while i < len(L) and j < len(R):
+            if L[i] < R[j]:
+                arr[k] = L[i]
+                i += 1
+            else:
+                arr[k] = R[j]
+                j += 1
+            k += 1
+
+        # Check if any element was left
+        while i < len(L):
+            arr[k] = L[i]
+            i += 1
+            k += 1
+
+        while j < len(R):
+            arr[k] = R[j]
+            j += 1
+            k += 1</code></pre>
+
+<h2>Comparison</h2>
+<table class="table table-bordered table-hover">
+    <thead class="table-light">
+        <tr>
+            <th>Algorithm</th>
+            <th>Time Complexity</th>
+            <th>Space Complexity</th>
+            <th>Stable</th>
+            <th>Efficiency</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Bubble Sort</td>
+            <td>O(n^2)</td>
+            <td>O(1)</td>
+            <td>Yes</td>
+            <td>Efficient for small data sets</td>
+        </tr>
+        <tr>
+            <td>Insertion Sort</td>
+            <td>O(n^2)</td>
+            <td>O(1)</td>
+            <td>Yes</td>
+            <td>Efficient for small data sets and nearly sorted lists</td>
+        </tr>
+        <tr>
+            <td>Merge Sort</td>
+            <td>O(n log n)</td>
+            <td>O(n)</td>
+            <td>Yes</td>
+            <td>Efficient for large data sets</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>In summary, while bubble sort and insertion sort are suitable for small data sets and simple to implement, merge
+    sort offers better performance for larger data sets due to its lower time complexity. Additionally, merge sort
+    maintains stability and can be efficient for a wide range of input data.</p>

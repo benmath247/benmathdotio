@@ -97,4 +97,11 @@ export const allPostsData = [
         date: 'February 10, 2024',
         category: 'Personal'
     },
+    {
+        title: 'Exploring 3 Basic Sorting Algorithms',
+        subtitle: 'Drilling down onBubble Sort, Insertion Sort, and Merge Sort',
+        content: '/blogs/technology/Sorting.html',
+        date: 'February 20, 2024',
+        category: 'Technology'
+    }
 ]
