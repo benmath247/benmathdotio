@@ -1,21 +1,26 @@
 <h2>Bubble Sort</h2>
 <p>Bubble sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and
-    swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted. It
-    gets its name from the way smaller elements "bubble" to the top of the list with each iteration.</p>
+    swaps them if they are in the wrong order. By this method, the largest element in the list rises to the top as it is
+    compared against all of the other elements. The pass through the list is repeated until the list is sorted. It
+    gets its name from the way smaller elements "bubble" to the top of the list with each time the function repeats.</p>
 <pre><code>def bubble_sort(arr):
     n = len(arr)
+    # Iterate through every element in the list
     for i in range(n):
-        # Last i elements are already in place, so no need to check them
+        # Last i elements are already in place, so no need to check them.
+        # This is for optimization and increased efficiency but it is not needed for the function to run effectively.
         for j in range(0, n-i-1):
             # Compare adjacent elements and swap if they are in the wrong order
             if arr[j] > arr[j+1]:
                 arr[j], arr[j+1] = arr[j+1], arr[j]</code></pre>
 
 <h2>Insertion Sort</h2>
-<p>Insertion sort is another simple sorting algorithm that builds the final sorted list one item at a time. It
-    iterates through the list, removing one element at a time and finds the correct position to insert it into the
-    sorted portion of the list. It is named as such because it inserts each element into its proper place in the
-    sorted list.</p>
+<p>Insertion sort is a straightforward sorting algorithm that incrementally builds the final sorted list by repeatedly
+    taking one element at a time and inserting it into its correct position within the already sorted part of the list.
+    It traverses through the list, starting from the second element, compares it with the elements before it, and shifts
+    them to the right to make space for the new element. This process continues until the entire list is sorted. The
+    algorithm derives its name from the way it inserts each element into its proper place, similar to arranging playing
+    cards in hand from left to right.</p>
 <pre><code>def insertion_sort(arr):
     for i in range(1, len(arr)):
         key = arr[i]
@@ -27,10 +32,13 @@
         arr[j+1] = key</code></pre>
 
 <h2>Merge Sort</h2>
-<p>Merge sort is a more efficient sorting algorithm that follows the divide-and-conquer approach. It divides the
-    unsorted list into n sublists, each containing one element, and then repeatedly merges sublists to produce new
-    sorted sublists until there is only one sublist remaining. It is named "merge" sort because it merges smaller
-    sorted lists together into a larger sorted list.</p>
+<p>Merge sort is an efficient sorting algorithm that employs a divide-and-conquer strategy to sort a list of elements.
+    It divides the unsorted list into equal halves until each sublist contains only one element. Then, it merges these
+    sublists in a manner that combines them into a new sorted sublist. This process continues recursively until there is
+    only one sorted sublist remaining, which constitutes the sorted list. The term "merge" in merge sort denotes the
+    merging of smaller sorted lists into larger ones until the entire list is sorted. This approach ensures a time
+    complexity of O(n log n), making merge sort particularly efficient for handling large datasets. If you double the
+    size of the dataset being sorted, the algorithm only has to run one more step.</p>
 <pre><code>def merge_sort(arr):
     if len(arr) > 1:
         mid = len(arr)//2
@@ -70,7 +78,6 @@
             <th>Algorithm</th>
             <th>Time Complexity</th>
             <th>Space Complexity</th>
-            <th>Stable</th>
             <th>Efficiency</th>
         </tr>
     </thead>
@@ -79,21 +86,18 @@
             <td>Bubble Sort</td>
             <td>O(n^2)</td>
             <td>O(1)</td>
-            <td>Yes</td>
             <td>Efficient for small data sets</td>
         </tr>
         <tr>
             <td>Insertion Sort</td>
             <td>O(n^2)</td>
             <td>O(1)</td>
-            <td>Yes</td>
             <td>Efficient for small data sets and nearly sorted lists</td>
         </tr>
         <tr>
             <td>Merge Sort</td>
             <td>O(n log n)</td>
             <td>O(n)</td>
-            <td>Yes</td>
             <td>Efficient for large data sets</td>
         </tr>
     </tbody>
