@@ -102,7 +102,7 @@ function App() {
         <Route path="/numbers" element={<NumberGuessingGame />} />
         <Route path="/pokedex" element={<Pokedex />} />
         <Route path="/foods" element={<Foods />} />
-        <Route path="/Retirement" element={<Retirement />} />
+        <Route path="/rothira" element={<Retirement />} />
         <Route path="/pokedex/type/:id" element={<PokedexType />} />
         <Route path="/pokedex/pokemon/:id" element={<PokemonDetailsPage />} />
         <Route path="/dictation" element={<Dictation />} />

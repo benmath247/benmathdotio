@@ -553,3 +553,7 @@ h2.what-i-do-title {
   background-size: 200% auto;
   animation: moveBackground 4s linear infinite;
 }
+
+.no-background {
+  background-color: none !important;
+}

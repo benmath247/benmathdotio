@@ -96,6 +96,12 @@ function Portfolio() {
 
     const tools = [
       {
+        title: 'Roth IRA Simulator',
+        subtitle: 'Enter inputs for investment scenarios and see how a Roth IRA can help you make money!',
+        image: '/portfolio/tools/roth.jpeg',
+        link: 'rothira'
+      },
+      {
         title: 'Dictation',
         subtitle: 'Using the browser`s built in audio to text tool for dictation',
         image: '/portfolio/tools/dictation.jpeg',

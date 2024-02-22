@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import TextColorChanging from '../components/TextColorChanging';
+import FeaturedProjects from '../components/FeaturedProjects';
 
 
 function Home() {
@@ -31,6 +32,7 @@ function Home() {
           <Link to="/portfolio" className="btn btn-light btn-lg grow-on-hover" style={{ width: "150px", margin: "15px" }} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>View My Portfolio</Link>
           <Link to="/blog" className="btn btn-light btn-lg grow-on-hover" style={{ width: "150px", margin: "15px" }} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>View My Blog</Link>
         </div>
+        <FeaturedProjects />
       </section >
     </div >
   );
