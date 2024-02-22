@@ -2,22 +2,24 @@ import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 
 const ChartComponent = ({ data }) => {
+    // Reference to the canvas element for the chart
     const chartRef = useRef(null);
+    // Reference to the Chart.js instance
     const chartInstanceRef = useRef(null);
 
     useEffect(() => {
+        // Check if the chartRef has been initialized
         if (chartRef.current) {
+            // Check if a chart instance already exists
             if (chartInstanceRef.current) {
-                // Update chart data
-                chartInstanceRef.current.data.labels = data.map(entry => entry.year
-                    //  + (new Date().getFullYear() - data[0].year)
-                );
+                // Update chart data if the instance exists
+                chartInstanceRef.current.data.labels = data.map(entry => entry.year);
                 chartInstanceRef.current.data.datasets[0].data = data.map(entry => entry.totalDeposits);
                 chartInstanceRef.current.data.datasets[1].data = data.map(entry => entry.rothIRA);
                 chartInstanceRef.current.data.datasets[2].data = data.map(entry => entry.taxableAccount);
-                chartInstanceRef.current.update();
+                chartInstanceRef.current.update(); // Update the chart
             } else {
-                // Create new chart instance
+                // Create new chart instance if it doesn't exist
                 const newChartInstance = new Chart(chartRef.current, {
                     type: 'line',
                     data: {
@@ -61,15 +63,15 @@ const ChartComponent = ({ data }) => {
                             },
                         },
                     },
-
                 });
-                chartInstanceRef.current = newChartInstance;
+                chartInstanceRef.current = newChartInstance; // Set the chart instance reference
             }
         }
-    }, [data]);
+    }, [data]); // Update the effect when the data prop changes
 
     return (
         <div>
+            {/* Canvas element for the chart */}
             <canvas ref={chartRef} />
         </div>
     );

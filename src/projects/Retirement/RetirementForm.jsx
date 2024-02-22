@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form, Col, Row } from 'react-bootstrap';
 
+// Define a functional component called RetirementForm which takes in various props
 const RetirementForm = ({
     startingBalance,
     yearlyDeposits,
@@ -17,34 +18,44 @@ const RetirementForm = ({
     onTaxRateChange,
     onMaximizeContributionsChange
 }) => {
-    function renderMaximumContributions(age) {
+    // Function to determine maximum contributions based on age according to tax laws 
+    const renderMaximumContributions = (age) => {
         return age < 50 ? "6500" : "7500";
-    }
+    };
+
+    // Function to format currency
+    const formatCurrency = (value) => {
+        return value.startsWith('$') ? value : '$' + value;
+    };
 
     return (
+
         <Col className='col-md-3'>
+            {/* Form row for starting balance */}
             <Row className="mb-3">
-                <Form.Label>Starting Balance: ${startingBalance}</Form.Label>
+                <Form.Label>Starting Balance: {formatCurrency(startingBalance)}</Form.Label>
                 <Form.Control
                     type="value"
-                    value={startingBalance.startsWith('$') ? startingBalance : '$' + startingBalance}
+                    value={formatCurrency(startingBalance)}
                     min="0"
                     max="1000000"
                     step="50"
                     onChange={onStartingBalanceChange}
                 />
             </Row>
+            {/* Form row for annual contributions */}
             <Row className="mb-3">
-                <Form.Label>Annual Contributions: ${yearlyDeposits}</Form.Label>
+                <Form.Label>Annual Contributions: {formatCurrency(yearlyDeposits)}</Form.Label>
                 <Form.Control
                     type="value"
-                    value={yearlyDeposits.startsWith('$') ? yearlyDeposits : '$' + yearlyDeposits}
+                    value={formatCurrency(yearlyDeposits)}
                     min="0"
                     max={renderMaximumContributions(age)}
                     step="1"
                     onChange={onYearlyDepositsChange}
                 />
             </Row>
+            {/* Form row for current age */}
             <Row className="mb-3">
                 <Form.Label>Current Age: {age}</Form.Label>
                 <Form.Control
@@ -56,6 +67,7 @@ const RetirementForm = ({
                     onChange={onAgeChange}
                 />
             </Row>
+            {/* Form row for retirement age */}
             <Row className="mb-3">
                 <Form.Label>Age at Retirement: {retirementAge}</Form.Label>
                 <Form.Control
@@ -67,6 +79,7 @@ const RetirementForm = ({
                     onChange={onRetirementAgeChange}
                 />
             </Row>
+            {/* Form row for expected rate of return */}
             <Row className="mb-3">
                 <Form.Label>Expected Rate of Return: {rateOfReturn}%</Form.Label>
                 <Form.Control
@@ -78,6 +91,7 @@ const RetirementForm = ({
                     onChange={onRateOfReturnChange}
                 />
             </Row>
+            {/* Form row for marginal tax rate */}
             <Row className="mb-3">
                 <Form.Label>Marginal Tax Rate: {taxRate}%</Form.Label>
                 <Form.Control
@@ -89,6 +103,7 @@ const RetirementForm = ({
                     onChange={onTaxRateChange}
                 />
             </Row>
+            {/* Form row for "Maximize Contributions" checkbox */}
             <Row className="mb-3">
                 <Form.Check
                     type="checkbox"
