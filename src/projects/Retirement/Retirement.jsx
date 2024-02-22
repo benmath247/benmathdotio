@@ -82,9 +82,15 @@ const Retirement = () => {
     const totalRothIRA = useMemo(() => formattedNumber(lastSimulationData?.rothIRA), [lastSimulationData?.rothIRA]);
     const totalTaxableAccount = useMemo(() => formattedNumber(lastSimulationData?.taxableAccount), [lastSimulationData?.taxableAccount]);
     const totalContributions = useMemo(() => formattedNumber(lastSimulationData?.totalDeposits), [lastSimulationData?.totalDeposits]);
-
+    const ogTitle = "BenMath.com | Roth IRA Simulator"
+    const ogImage = "https://www.benmath.com/portfolio/tools/roth.jpeg";
     return (
         <div className='retirement'>
+            <Helmet>
+                <title>{ogTitle}</title>
+                <meta property="og:title" content={ogTitle} />
+                <meta property="og:image" content={ogImage} />
+            </Helmet>
             <h1 className="text-center">Roth IRA Simulator</h1>
             <Container>
                 {simulationData.length > 0 && <h3>Final Roth IRA Account Balance: ${totalRothIRA}</h3>}
