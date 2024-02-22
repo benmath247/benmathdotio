@@ -31,6 +31,8 @@ import BlogPostList from './pages/Blog';
 
 import { allPostsData } from './components/allPostsData';
 import BlogDetails from './pages/BlogDetails';
+import Foods from './projects/FoodAPI/Foods';
+import Retirement from './projects/Retirement/Retirement';
 
 function App() {
   return (
@@ -99,6 +101,8 @@ function App() {
         <Route path="/translation" element={<Translation />} />
         <Route path="/numbers" element={<NumberGuessingGame />} />
         <Route path="/pokedex" element={<Pokedex />} />
+        <Route path="/foods" element={<Foods />} />
+        <Route path="/Retirement" element={<Retirement />} />
         <Route path="/pokedex/type/:id" element={<PokedexType />} />
         <Route path="/pokedex/pokemon/:id" element={<PokemonDetailsPage />} />
         <Route path="/dictation" element={<Dictation />} />
