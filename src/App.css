@@ -569,3 +569,12 @@ h2.what-i-do-title {
     /* Set margin to 0 for mobile devices */
   }
 }
+
+.disabled-input {
+  background-color: #757575;
+  /* Light gray background color */
+  color: #cccccc;
+  /* Dimmed text color */
+  /* cursor: not-allowed; */
+  /* Change cursor to not-allowed */
+}

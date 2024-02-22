@@ -53,6 +53,8 @@ const RetirementForm = ({
                     max={renderMaximumContributions(age)}
                     step="1"
                     onChange={onYearlyDepositsChange}
+                    disabled={maximizeContributions}
+                    className={maximizeContributions ? 'disabled-input' : ''}
                 />
             </Row>
             {/* Form row for current age */}
