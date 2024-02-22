@@ -69,10 +69,15 @@ const ChartComponent = ({ data }) => {
         }
     }, [data]); // Update the effect when the data prop changes
 
+    // CSS style to set the height of the canvas dynamically
+    const canvasStyle = {
+        height: '800px', // 80% of the viewport height
+    };
+
     return (
         <div>
-            {/* Canvas element for the chart */}
-            <canvas ref={chartRef} />
+            {/* Canvas element for the chart with dynamic height */}
+            <canvas ref={chartRef} style={canvasStyle} />
         </div>
     );
 };

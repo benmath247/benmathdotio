@@ -84,7 +84,7 @@ const Retirement = () => {
     const totalContributions = useMemo(() => formattedNumber(lastSimulationData?.totalDeposits), [lastSimulationData?.totalDeposits]);
 
     return (
-        <div style={{ margin: '100px' }}>
+        <div className='retirement'>
             <h1 className="text-center">Roth IRA Simulator</h1>
             <Container>
                 {simulationData.length > 0 && <h3>Final Roth IRA Account Balance: ${totalRothIRA}</h3>}
@@ -93,23 +93,25 @@ const Retirement = () => {
 
                 <hr />
                 <Row>
-                    <RetirementForm
-                        startingBalance={startingBalance}
-                        yearlyDeposits={yearlyDeposits}
-                        age={age}
-                        retirementAge={retirementAge}
-                        rateOfReturn={rateOfReturn}
-                        taxRate={taxRate}
-                        maximizeContributions={maximizeContributions}
-                        onStartingBalanceChange={(e) => setStartingBalance(e.target.value.slice(1))}
-                        onYearlyDepositsChange={(e) => setYearlyDeposits(e.target.value)}
-                        onAgeChange={(e) => setAge(e.target.value)}
-                        onRetirementAgeChange={(e) => setRetirementAge(e.target.value)}
-                        onRateOfReturnChange={(e) => setRateOfReturn(e.target.value)}
-                        onTaxRateChange={(e) => setTaxRate(e.target.value)}
-                        onMaximizeContributionsChange={(e) => setMaximizeContributions(e.target.checked)}
-                    />
                     <Col>
+                        <RetirementForm
+                            startingBalance={startingBalance}
+                            yearlyDeposits={yearlyDeposits}
+                            age={age}
+                            retirementAge={retirementAge}
+                            rateOfReturn={rateOfReturn}
+                            taxRate={taxRate}
+                            maximizeContributions={maximizeContributions}
+                            onStartingBalanceChange={(e) => setStartingBalance(e.target.value.slice(1))}
+                            onYearlyDepositsChange={(e) => setYearlyDeposits(e.target.value)}
+                            onAgeChange={(e) => setAge(e.target.value)}
+                            onRetirementAgeChange={(e) => setRetirementAge(e.target.value)}
+                            onRateOfReturnChange={(e) => setRateOfReturn(e.target.value)}
+                            onTaxRateChange={(e) => setTaxRate(e.target.value)}
+                            onMaximizeContributionsChange={(e) => setMaximizeContributions(e.target.checked)}
+                        />
+                    </Col>
+                    <Col lg={8} xs={12}>
                         <ChartComponent data={simulationData} />
                     </Col>
                 </Row>

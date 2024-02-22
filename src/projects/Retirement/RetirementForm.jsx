@@ -1,5 +1,6 @@
 import React from 'react';
-import { Form, Col, Row } from 'react-bootstrap';
+import { Form, Col, Row, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { BsInfoCircle } from 'react-icons/bs'; // Importing Bootstrap icons for the information icon
 
 // Define a functional component called RetirementForm which takes in various props
 const RetirementForm = ({
@@ -29,8 +30,7 @@ const RetirementForm = ({
     };
 
     return (
-
-        <Col className='col-md-3'>
+        <Col>
             {/* Form row for starting balance */}
             <Row className="mb-3">
                 <Form.Label>Starting Balance: {formatCurrency(startingBalance)}</Form.Label>
@@ -104,7 +104,7 @@ const RetirementForm = ({
                 />
             </Row>
             {/* Form row for "Maximize Contributions" checkbox */}
-            <Row className="mb-3">
+            <Row className="mb-3 align-items-center">
                 <Form.Check
                     type="checkbox"
                     id="maximizeContributionsCheckbox"
@@ -112,6 +112,24 @@ const RetirementForm = ({
                     checked={maximizeContributions}
                     onChange={onMaximizeContributionsChange}
                 />
+                <div>
+                    <small>
+                        <em>
+
+                            Checking Maximize Contributions will set every contribution to the maximum possible value according to tax law.
+                            <br />
+                            The maximum contribution is $6,500 until age 50, $8,500 at age 50, and $7,500 thereafter.
+                        </em>
+                    </small>
+                </div>
+                {/* <OverlayTrigger
+                    placement="bottom"
+                    show={true}
+                    overlay={<Tooltip id="tooltip-maximize-contributions">Explanation for Maximize Contributions</Tooltip>}
+                >
+                    <BsInfoCircle className="ml-2" style={{ color: "white", cursor: "pointer" }} />
+                </OverlayTrigger> */}
+
             </Row>
         </Col>
     );
