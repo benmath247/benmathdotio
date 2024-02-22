@@ -14,6 +14,7 @@ const Retirement = () => {
     const [taxRate, setTaxRate] = useState(25);
     const [maximizeContributions, setMaximizeContributions] = useState(false);
     const [simulationData, setSimulationData] = useState([]);
+    const [showNumbers, setShowNumbers] = useState(false)
 
     useEffect(() => {
         simulateGrowth();
@@ -95,10 +96,7 @@ const Retirement = () => {
             </Helmet>
             <h1 className="text-center">Roth IRA Simulator</h1>
             <Container>
-                {simulationData.length > 0 && <h3>Final Roth IRA Account Balance: ${totalRothIRA}</h3>}
-                {simulationData.length > 0 && <h3>Taxable Account Balance: ${totalTaxableAccount}</h3>}
-                {simulationData.length > 0 && <h3>Total Contributions: ${totalContributions}</h3>}
-
+                <h2>Enter some data for the fields below and see how a Roth IRA can help you save for retirement.</h2>
                 <hr />
                 <Row>
                     <Col>
@@ -109,6 +107,7 @@ const Retirement = () => {
                             retirementAge={retirementAge}
                             rateOfReturn={rateOfReturn}
                             taxRate={taxRate}
+                            setShowNumbers={setShowNumbers}
                             maximizeContributions={maximizeContributions}
                             onStartingBalanceChange={(e) => setStartingBalance(e.target.value.slice(1))}
                             onYearlyDepositsChange={(e) => setYearlyDeposits(e.target.value)}
@@ -121,6 +120,10 @@ const Retirement = () => {
                     </Col>
                     <Col lg={8} xs={12}>
                         <ChartComponent data={simulationData} />
+                        {showNumbers && <div style={{ padding: '20px' }}>{simulationData.length > 0 && <h3>Final Roth IRA Account Balance: ${totalRothIRA}</h3>}
+                            {simulationData.length > 0 && <h3>Taxable Account Balance: ${totalTaxableAccount}</h3>}
+                            {simulationData.length > 0 && <h3>Total Contributions: ${totalContributions}</h3>}</div>
+                        }
                     </Col>
                 </Row>
             </Container>

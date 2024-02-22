@@ -4,6 +4,7 @@ import { BsInfoCircle } from 'react-icons/bs'; // Importing Bootstrap icons for 
 
 // Define a functional component called RetirementForm which takes in various props
 const RetirementForm = ({
+    setShowNumbers,
     startingBalance,
     yearlyDeposits,
     age,
@@ -29,6 +30,11 @@ const RetirementForm = ({
         return value.startsWith('$') ? value : '$' + value;
     };
 
+    // Function to handle change and set showNumbers to true
+    const handleChange = () => {
+        setShowNumbers(true);
+    };
+
     return (
         <Col>
             {/* Form row for starting balance */}
@@ -40,7 +46,10 @@ const RetirementForm = ({
                     min="0"
                     max="1000000"
                     step="50"
-                    onChange={onStartingBalanceChange}
+                    onChange={(e) => {
+                        onStartingBalanceChange(e);
+                        handleChange();
+                    }}
                 />
             </Row>
             {/* Form row for annual contributions */}
@@ -52,7 +61,10 @@ const RetirementForm = ({
                     min="0"
                     max={renderMaximumContributions(age)}
                     step="1"
-                    onChange={onYearlyDepositsChange}
+                    onChange={(e) => {
+                        onYearlyDepositsChange(e);
+                        handleChange();
+                    }}
                     disabled={maximizeContributions}
                     className={maximizeContributions ? 'disabled-input' : ''}
                 />
@@ -66,7 +78,10 @@ const RetirementForm = ({
                     min="18"
                     max="120"
                     step="1"
-                    onChange={onAgeChange}
+                    onChange={(e) => {
+                        onAgeChange(e);
+                        handleChange();
+                    }}
                 />
             </Row>
             {/* Form row for retirement age */}
@@ -78,7 +93,10 @@ const RetirementForm = ({
                     min={age}
                     max="120"
                     step="1"
-                    onChange={onRetirementAgeChange}
+                    onChange={(e) => {
+                        onRetirementAgeChange(e);
+                        handleChange();
+                    }}
                 />
             </Row>
             {/* Form row for expected rate of return */}
@@ -90,7 +108,10 @@ const RetirementForm = ({
                     min="0"
                     max="30"
                     step="0.5"
-                    onChange={onRateOfReturnChange}
+                    onChange={(e) => {
+                        onRateOfReturnChange(e);
+                        handleChange();
+                    }}
                 />
             </Row>
             {/* Form row for marginal tax rate */}
@@ -102,7 +123,10 @@ const RetirementForm = ({
                     min="0"
                     max="30"
                     step="0.5"
-                    onChange={onTaxRateChange}
+                    onChange={(e) => {
+                        onTaxRateChange(e);
+                        handleChange();
+                    }}
                 />
             </Row>
             {/* Form row for "Maximize Contributions" checkbox */}
@@ -112,12 +136,14 @@ const RetirementForm = ({
                     id="maximizeContributionsCheckbox"
                     label="Maximize Contributions"
                     checked={maximizeContributions}
-                    onChange={onMaximizeContributionsChange}
+                    onChange={(e) => {
+                        onMaximizeContributionsChange(e);
+                        handleChange();
+                    }}
                 />
                 <div>
                     <small>
                         <em>
-
                             Checking Maximize Contributions will set every contribution to the maximum possible value according to tax law.
                             <br />
                             The maximum contribution is $6,500 until age 50, $8,500 at age 50, and $7,500 thereafter.
