@@ -2,6 +2,8 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { Col, Row, Container } from 'react-bootstrap';
 import ChartComponent from './ChartComponent';
 import RetirementForm from './RetirementForm';
+import { Helmet } from 'react-helmet';
+
 
 const Retirement = () => {
     const [startingBalance, setStartingBalance] = useState('0');
