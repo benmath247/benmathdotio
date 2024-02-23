@@ -78,7 +78,7 @@ function Portfolio() {
         title: 'Penn Mutual Asset Management',
         subtitle: 'UI consulting for Penn Mutual Asset Management',
         image: '/portfolio/websites/pmam.png',
-        link: 'https://www.pennmutualam.org'
+        link: 'https://www.pennmutualam.com'
       },
       {
         title: 'My Pantry Planner',
