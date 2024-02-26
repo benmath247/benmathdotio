@@ -3,9 +3,11 @@ import { Container, Tab, Nav } from 'react-bootstrap';
 import CompanyNews from './News/CompanyNews';
 import Quote from './Quote/Quote';
 import CompanyFundamentals from './Fundamentals/Fundamentals';
-
-const CompanyInfo = ({ symbol, stockData }) => {
-    const [activeTab, setActiveTab] = useState('Fundamentals');
+import InsiderTransactions from './InsiderTransactions/InsiderTransactions';
+import EPSSurprises from './EPSSurprises/EPSSurprises';
+import SECFilings from './SECFilings';
+const CompanyInfo = ({ shares, symbol, stockData }) => {
+    const [activeTab, setActiveTab] = useState('Quote');
 
     return (
         <Container style={{ marginTop: '50px' }}>
@@ -21,12 +23,21 @@ const CompanyInfo = ({ symbol, stockData }) => {
                         <Nav.Link eventKey="News">News</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link eventKey="Other Players Who Bought">Other Players Who Bought</Nav.Link>
+                        <Nav.Link eventKey="Insider Transactions">Insider Transactions</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link eventKey="EPS Surprises">EPS Surprises</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link eventKey="SEC Filings">SEC Filings</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link eventKey="Other Players">Other Players</Nav.Link>
                     </Nav.Item>
                 </Nav>
                 <Tab.Content>
                     <Tab.Pane eventKey="Quote">
-                        <Quote stockData={stockData} />
+                        <Quote symbol={symbol} shares={shares} />
                     </Tab.Pane>
                     <Tab.Pane eventKey="Fundamentals">
                         <CompanyFundamentals symbol={symbol} />
@@ -34,7 +45,16 @@ const CompanyInfo = ({ symbol, stockData }) => {
                     <Tab.Pane eventKey="News">
                         <CompanyNews symbol={symbol} />
                     </Tab.Pane>
-                    <Tab.Pane eventKey="Other Players Who Bought">
+                    <Tab.Pane eventKey="Insider Transactions">
+                        <InsiderTransactions symbol={symbol} />
+                    </Tab.Pane>
+                    <Tab.Pane eventKey="EPS Surprises">
+                        <EPSSurprises symbol={symbol} />
+                    </Tab.Pane>
+                    <Tab.Pane eventKey="SEC Filings">
+                        <SECFilings symbol={symbol} />
+                    </Tab.Pane>
+                    <Tab.Pane eventKey="Other Players">
                         {/* <ProfileSection /> */}
                     </Tab.Pane>
                 </Tab.Content>

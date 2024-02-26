@@ -1,0 +1,41 @@
+.positive-surprise {
+    color: green !important;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.negative-surprise {
+    color: red !important;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+/* EPSSurprises.css */
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+
+.custom-table th,
+.custom-table td {
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+.custom-table thead {
+    background-color: #f8f9fa;
+}
+
+.custom-positive-surprise {
+    /* background-color: #d4edda; */
+}
+
+.custom-negative-surprise {
+    background-color: #f8d7da;
+}
+
+.custom-table-responsive {
+    overflow-x: auto;
+}
