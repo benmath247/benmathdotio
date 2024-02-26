@@ -9,6 +9,7 @@ import Nav from 'react-bootstrap/Nav';
 import Blog from './pages/Blog';
 import Portfolio from './pages/Portfolio';
 import APINinjasNav from './projects/APINinjas/ApiNinjas';
+import UserInfo from './projects/Stocks/UserInfo';
 import './App.css';
 
 // Import React Icons
@@ -27,12 +28,13 @@ import PokemonDetailsPage from './projects/Pokedex/PokemonDetails';
 import PokedexType from './projects/Pokedex/PokedexType';
 import DaysSinceQuit from './projects/QuitSmoking/DaysSinceQuit';
 import ExampleCall from './projects/workoutPlanner/examplecall';
-import BlogPostList from './pages/Blog';
-
+import LoginForm from './projects/Stocks/Login';
 import { allPostsData } from './components/allPostsData';
 import BlogDetails from './pages/BlogDetails';
 import Foods from './projects/FoodAPI/Foods';
 import Retirement from './projects/Retirement/Retirement';
+import CreateStocksUser from './projects/Stocks/CreateUser'
+import Stocks from './projects/Stocks/Stocks';
 
 function App() {
   return (
@@ -102,6 +104,10 @@ function App() {
         <Route path="/numbers" element={<NumberGuessingGame />} />
         <Route path="/pokedex" element={<Pokedex />} />
         <Route path="/foods" element={<Foods />} />
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/user-info" element={<UserInfo />} />
+        <Route path="/create-user" element={<CreateStocksUser />} />
+        <Route path="/stocks" element={<Stocks />} />
         <Route path="/rothira" element={<Retirement />} />
         <Route path="/pokedex/type/:id" element={<PokedexType />} />
         <Route path="/pokedex/pokemon/:id" element={<PokemonDetailsPage />} />
