@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Container, Tab, Nav } from 'react-bootstrap';
-import CompanyNews from './CompanyInfo/CompanyNews';
-import NewsList from './CompanyInfo/NewsList';
+import CompanyNews from './News/CompanyNews';
+import Quote from './Quote/Quote';
+import CompanyFundamentals from './Fundamentals/Fundamentals';
 
-const CompanyInfo = ({ symbol }) => {
+const CompanyInfo = ({ symbol, stockData }) => {
     const [activeTab, setActiveTab] = useState('Fundamentals');
 
     return (
@@ -25,10 +26,10 @@ const CompanyInfo = ({ symbol }) => {
                 </Nav>
                 <Tab.Content>
                     <Tab.Pane eventKey="Quote">
-                        {/* <BalanceSection /> */}
+                        <Quote stockData={stockData} />
                     </Tab.Pane>
                     <Tab.Pane eventKey="Fundamentals">
-                        {/* <TradeSection /> */}
+                        <CompanyFundamentals symbol={symbol} />
                     </Tab.Pane>
                     <Tab.Pane eventKey="News">
                         <CompanyNews symbol={symbol} />

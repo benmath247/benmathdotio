@@ -3,9 +3,9 @@ import { Card, ListGroup } from 'react-bootstrap';
 
 const NewsCard = ({ news }) => {
   return (
-    <Card style={{ width: '18rem' }}>
+    <Card style={{ width: '100%' }}>
       {/* <Card.Img variant="top" src={news.image} /> */}
-      <Card.Body style={{ height: '400px' }}>
+      <Card.Body style={{ height: '100%' }}>
         <Card.Title>{news.headline}</Card.Title>
         <Card.Text>
           {news.summary}

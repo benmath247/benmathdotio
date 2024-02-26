@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import * as finnhub from 'finnhub';
 import NewsList from './NewsList';
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 function CompanyNews({ symbol }) {
-
-    const [newsData, setNewsData] = useState(null)
+    const [newsData, setNewsData] = useState(null);
 
     useEffect(() => {
         const getCompanyNews = async () => {
@@ -29,7 +30,6 @@ function CompanyNews({ symbol }) {
                 });
 
                 setNewsData(data.slice(0, 8));
-                // Here you can set the state with the fetched data or perform other actions
             } catch (error) {
                 console.error('Error fetching company news:', error);
             }
@@ -37,14 +37,17 @@ function CompanyNews({ symbol }) {
 
         getCompanyNews();
     }, [symbol]); // Dependency array includes the symbol variable
-    console.log(newsData)
 
     return (
-        <div>
-            {newsData && <NewsList newsList={newsData} />}
-        </div>
-
-    )
-
+        <Card>
+            <Card.Header>{symbol} News</Card.Header>
+            <Card.Body>
+                <ListGroup variant="flush">
+                    {newsData && <NewsList newsList={newsData} />}
+                </ListGroup>
+            </Card.Body>
+        </Card>
+    );
 }
+
 export default CompanyNews;
