@@ -6,7 +6,7 @@ import CompanyFundamentals from './Fundamentals/Fundamentals';
 import InsiderTransactions from './InsiderTransactions/InsiderTransactions';
 import EPSSurprises from './EPSSurprises/EPSSurprises';
 import SECFilings from './SECFilings';
-const CompanyInfo = ({ shares, symbol, stockData }) => {
+const CompanyInfo = ({ userInfo, shares, symbol, stockData }) => {
     const [activeTab, setActiveTab] = useState('Quote');
 
     return (
@@ -37,7 +37,7 @@ const CompanyInfo = ({ shares, symbol, stockData }) => {
                 </Nav>
                 <Tab.Content>
                     <Tab.Pane eventKey="Quote">
-                        <Quote symbol={symbol} shares={shares} />
+                        <Quote userInfo={userInfo} symbol={symbol} shares={shares} />
                     </Tab.Pane>
                     <Tab.Pane eventKey="Fundamentals">
                         <CompanyFundamentals symbol={symbol} />

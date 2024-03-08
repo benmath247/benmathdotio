@@ -5,7 +5,7 @@ import '../EPSSurprises/EPSSurprises.css'; // Import the provided CSS file
 
 const apiKey = import.meta.env.VITE_FINNHUB_KEY;
 
-function Quote({ symbol, shares }) {
+function Quote({ userInfo, symbol, shares }) {
     const [quoteData, setQuoteData] = useState(null);
 
     useEffect(() => {
@@ -31,7 +31,7 @@ function Quote({ symbol, shares }) {
                         <tbody>
                             <tr>
                                 <td>Available Cash</td>
-                                <td>$1000000</td>
+                                <td>${userInfo.profile.balance}</td>
                             </tr>
                         </tbody>
                     </table>

@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
-import { Container, Tab, Nav } from 'react-bootstrap';
+import { Container, Card } from 'react-bootstrap';
 import UserInfo from '../UserInfo';
 
-const ProfileSection = () => {
+const ProfileSection = ({ userInfo }) => {
 
     return (
-        <Container style={{}}>
-            <h2>Profile Section</h2>
-            <UserInfo />
-        </Container>
+        <Card>
+            <Card.Body>
+                <Container>
+                    <h2>Profile Section</h2>
+                    <UserInfo userInfo={userInfo} />
+                </Container>
+            </Card.Body>
+        </Card>
     );
 };
 
