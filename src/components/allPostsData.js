@@ -103,7 +103,7 @@ export const allPostsData = [
         content: '/blogs/technology/Sorting.html',
         date: 'February 20, 2024',
         category: 'Technology'
-    }
+    },
     {
         title: 'Hello World in C Sharp!',
         subtitle: 'Mentoring kids in game creation in a new language',
