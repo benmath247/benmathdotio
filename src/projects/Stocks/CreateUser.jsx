@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { redirect } from 'react-router-dom';
 
 const CreateStocksUser = () => {
     const [username, setUsername] = useState('');
@@ -7,6 +8,7 @@ const CreateStocksUser = () => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [message, setMessage] = useState('');
+    const [error, setError] = useState(null)
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -18,31 +20,30 @@ const CreateStocksUser = () => {
                 },
                 body: JSON.stringify({ username, password, email, first_name: firstName, last_name: lastName }),
             });
-            const data = await response.json();
-            setMessage(data.message); // Assuming the backend returns a message indicating success or failure
-            setUsername('');
-            setPassword('');
-            setEmail('');
-            setFirstName('');
-            setLastName('');
+            if (!response.ok) {
+                setMessage("Cannot create account")
+            }
+            else {
+                window.location.href = '/stocks/'
+            }
         } catch (error) {
             console.error('Failed to create user:', error);
         }
     };
 
     return (
-        <div>
+        <div className='container' style={{ marginTop: '100px' }}>
             <h1>Create User</h1>
             <form onSubmit={handleSubmit}>
                 <div>
-                <div>
-                    <label>First Name:</label>
-                    <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
-                </div>
-                <div>
-                    <label>Last Name:</label>
-                    <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} />
-                </div>
+                    <div>
+                        <label>First Name:</label>
+                        <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+                    </div>
+                    <div>
+                        <label>Last Name:</label>
+                        <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} />
+                    </div>
                     <label>Username:</label>
                     <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} required />
                 </div>

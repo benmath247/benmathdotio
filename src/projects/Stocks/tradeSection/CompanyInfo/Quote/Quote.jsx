@@ -13,7 +13,6 @@ function Quote({ userInfo, symbol, shares }) {
             try {
                 const response = await axios.get(`https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${apiKey}`);
                 setQuoteData(response.data);
-                console.log(response.data);
             } catch (error) {
                 console.error('Error fetching quote data:', error);
             }

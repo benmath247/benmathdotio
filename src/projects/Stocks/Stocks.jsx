@@ -9,6 +9,28 @@ const Stocks = () => {
     const [activeTab, setActiveTab] = useState('Profile');
     const [userInfo, setUserInfo] = useState(null);
 
+    var today = new Date();
+    if (localStorage.getItem('mostRecentStockCheckedDate') !== today) {
+        localStorage.setItem('mostRecentStockCheckedDate', today);
+        console.log("stocks not checked today")
+
+        const fetchHoldings = async (e) => {
+            // e.preventDefault();
+            try {
+                const response = await fetch(import.meta.env.VITE_BACKEND + 'holdings/', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+                const data = await response.json();
+            } catch (error) {
+                console.error('Failed to create user:', error);
+            }
+        };
+        fetchHoldings()
+    }
+
     const fetchUserInfo = async () => {
         try {
             const token = localStorage.getItem('token');
@@ -45,9 +67,9 @@ const Stocks = () => {
                     <Nav.Item>
                         <Nav.Link eventKey="Trade">Trade</Nav.Link>
                     </Nav.Item>
-                    <Nav.Item>
+                    {/* <Nav.Item>
                         <Nav.Link eventKey="LeaderBoard">Leader Board</Nav.Link>
-                    </Nav.Item>
+                    </Nav.Item> */}
                 </Nav>
                 <Tab.Content>
                     <Tab.Pane eventKey="Profile">

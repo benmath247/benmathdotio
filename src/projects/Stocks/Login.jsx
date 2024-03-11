@@ -45,7 +45,7 @@ function LoginForm() {
             });
             const data = await response.json();
             localStorage.setItem('token', data.token);
-            // window.location.href = '/user-info'
+            window.location.href = '/stocks'
         } catch (error) {
             console.error('Login failed:', error);
         }

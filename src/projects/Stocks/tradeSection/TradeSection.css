@@ -1,0 +1,61 @@
+/* TradeSection.css */
+
+/* Trade section card */
+.trade-section-card {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Trade section title */
+.trade-section-title {
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+/* Trade form column */
+.trade-form-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Trade form */
+.trade-form {
+    width: 100%;
+}
+
+/* Trade form label */
+.trade-label {
+    font-weight: bold;
+}
+
+/* Trade form input */
+.trade-input {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+/* Trade form button */
+.trade-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.trade-button:hover {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+}
+
+.trade-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

@@ -32,18 +32,14 @@ function SECFilings({ symbol }) {
                                     <th>Access Number</th>
                                     <th>Form</th>
                                     <th>Filing Date</th>
-                                    <th>Report URL</th>
-                                    <th>Filing URL</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {filingsData.map((filing, index) => (
                                     <tr key={index}>
                                         <td>{filing.accessNumber}</td>
-                                        <td>{filing.form}</td>
-                                        <td>{filing.filedDate}</td>
-                                        <td><a href={filing.reportUrl} target="_blank" rel="noopener noreferrer">{filing.reportUrl}</a></td>
-                                        <td><a href={filing.filingUrl} target="_blank" rel="noopener noreferrer">{filing.filingUrl}</a></td>
+                                        <td><a href={filing.reportUrl} target="_blank" rel="noopener noreferrer">{filing.form}</a></td>
+                                        <td><a href={filing.filingUrl} target="_blank" rel="noopener noreferrer">{filing.filedDate}</a></td>
                                     </tr>
                                 ))}
                             </tbody>

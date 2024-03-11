@@ -1,0 +1,16 @@
+/* ProfileSection.css */
+
+/* Profile section card */
+.profile-section-card {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Profile section title */
+.profile-section-title {
+    color: #007bff;
+    margin-bottom: 20px;
+}

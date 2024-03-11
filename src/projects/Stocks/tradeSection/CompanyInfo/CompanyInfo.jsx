@@ -10,7 +10,7 @@ const CompanyInfo = ({ userInfo, shares, symbol, stockData }) => {
     const [activeTab, setActiveTab] = useState('Quote');
 
     return (
-        <Container style={{ marginTop: '50px' }}>
+        <Container>
             <Tab.Container activeKey={activeTab} onSelect={(key) => setActiveTab(key)}>
                 <Nav variant="tabs" fill>
                     <Nav.Item>
@@ -31,28 +31,28 @@ const CompanyInfo = ({ userInfo, shares, symbol, stockData }) => {
                     <Nav.Item>
                         <Nav.Link eventKey="SEC Filings">SEC Filings</Nav.Link>
                     </Nav.Item>
-                    <Nav.Item>
+                    {/* <Nav.Item>
                         <Nav.Link eventKey="Other Players">Other Players</Nav.Link>
-                    </Nav.Item>
+                    </Nav.Item> */}
                 </Nav>
                 <Tab.Content>
                     <Tab.Pane eventKey="Quote">
-                        <Quote userInfo={userInfo} symbol={symbol} shares={shares} />
+                        {stockData && <Quote userInfo={userInfo} symbol={symbol} shares={shares} />}
                     </Tab.Pane>
                     <Tab.Pane eventKey="Fundamentals">
-                        <CompanyFundamentals symbol={symbol} />
+                        {stockData && <CompanyFundamentals symbol={symbol} />}
                     </Tab.Pane>
                     <Tab.Pane eventKey="News">
-                        <CompanyNews symbol={symbol} />
+                        {stockData && <CompanyNews symbol={symbol} />}
                     </Tab.Pane>
                     <Tab.Pane eventKey="Insider Transactions">
-                        <InsiderTransactions symbol={symbol} />
+                        {stockData && <InsiderTransactions symbol={symbol} />}
                     </Tab.Pane>
                     <Tab.Pane eventKey="EPS Surprises">
-                        <EPSSurprises symbol={symbol} />
+                        {stockData && <EPSSurprises symbol={symbol} />}
                     </Tab.Pane>
                     <Tab.Pane eventKey="SEC Filings">
-                        <SECFilings symbol={symbol} />
+                        {stockData && <SECFilings symbol={symbol} />}
                     </Tab.Pane>
                     <Tab.Pane eventKey="Other Players">
                         {/* <ProfileSection /> */}
