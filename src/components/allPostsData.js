@@ -110,5 +110,12 @@ export const allPostsData = [
         content: '/blogs/projects/Unity.html',
         date: 'March 7, 2024',
         category: 'Projects'
-    }
+    },
+    {
+        title: 'The Drywall Effect',
+        subtitle: 'Drawing parallels between drywall repair and self improvement',
+        content: '/blogs/personal/TheDrywallEffect.html',
+        date: 'March 19, 2024',
+        category: 'Personal'
+    },
 ]
