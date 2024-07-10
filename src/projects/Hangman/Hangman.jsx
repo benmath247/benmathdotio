@@ -134,7 +134,7 @@ function HangmanGame() {
               </div>}
           </Col>
           <Col>
-            <img src={`images/hangman/${mistakesCount}.png`} alt={`Hangman stage ${mistakesCount}`} />
+            <img src={`./images/hangman/${mistakesCount}.png`} alt={`Hangman stage ${mistakesCount}`} />
             {renderUsedLetters()}
             {renderWord()}
             <div className='form-group'>
