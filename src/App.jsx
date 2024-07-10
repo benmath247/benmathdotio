@@ -37,8 +37,8 @@ import Retirement from './projects/Retirement/Retirement';
 function App() {
   return (
     <Router>
-      <Navbar bg="dark" expand="lg" className="mb-0 pb-0">
-        <Navbar.Brand href="/">BENMATH.COM</Navbar.Brand>
+      <Navbar expand="lg" className="mb-0 pb-0">
+        <Navbar.Brand className='p-2' href="/">BENMATH.COM</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">

@@ -184,21 +184,19 @@ function Portfolio() {
     return (
       <div className="row">
         {posts.map((post) => (
-          <div className="col-md-4 mb-4 position-relative grow-on-hover" key={post.title}>
+          <div className="col-md-4 mb-4  position-relative grow-on-hover" key={post.title}>
             <a href={post.link} rel="noopener noreferrer">
-              <div className="blue-card card">
+              <div className="blue-card card mt-4">
                 <img
                   src={post.image} // Replace with the actual path to your project images
                   alt={post.title}
                   className="card-img-top"
                 />
-                <div className="blue-card-body card">
+                <div className="blue-card-body card p-2">
                   <h5 className="blue-card-title">{post.title}</h5>
                   <p className="blue-card-text">{post.subtitle}</p>
                 </div>
-                <div className="diagonal-decoration"></div>
               </div>
-
             </a>
           </div>
         ))}

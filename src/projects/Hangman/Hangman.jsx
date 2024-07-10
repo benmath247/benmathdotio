@@ -96,7 +96,7 @@ function HangmanGame() {
 
     return (
       <div className="container">
-        <h2>Who's that Pokemon?!</h2>
+        <h2>{isGameWon ? `It's ${word.charAt(0).toUpperCase() + word.slice(1)}!` : "Who's that Pokemon?!"}</h2>
         <div style={{ backgroundColor: "white" }}>
           {!isGameWon && !isGameLost && <img src={pokemonData.sprites['front_shiny']} style={{ filter: 'brightness(0)' }} />}
           {(isGameWon) && <img src={pokemonData.sprites['front_shiny']} />}
