@@ -1,17 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Row, Col } from 'react-bootstrap';
 
 const words = [
-  "bulbasaur", "ivysaur", "venusaur", "charmander", "charmeleon", "charizard", "squirtle", "wartortle", "blastoise", "caterpie", "metapod", "butterfree", "weedle", "kakuna", "beedrill", "pidgey", "pidgeotto", "pidgeot", "rattata", "raticate", "spearow", "fearow", "ekans", "arbok", "pikachu", "raichu", "sandshrew", "sandslash", "nidoran♀", "nidorina", "nidoqueen", "nidoran♂", "nidorino", "nidoking", "clefairy", "clefable", "vulpix", "ninetales", "jigglypuff", "wigglytuff", "zubat", "golbat", "oddish", "gloom", "vileplume", "paras", "parasect", "venonat", "venomoth", "digglet", "dugtrio", "meowth", "persian", "psyduck", "golduck", "mankey", "primeape", "growlithe", "arcanine", "poliwag", "poliwhirl", "poliwrath", "abra", "kadabra", "alakazam", "machop", "machoke", "machamp", "bellsprout", "weepinbell", "victreebel", "tentacool", "tentacruel", "geodude", "graveler", "golem", "ponyta", "rapidash", "slowpoke", "slowbro", "magnemite", "magneton", "farfetch'd", "doduo", "dodrio", "seel", "dewgong", "grimer", "muk", "shellder", "cloyster", "gastly", "haunter", "gengar", "onix", "drowzee", "hypno", "krabby", "kingler", "voltorb", "electrode", "exeggcute", "exeggutor", "cubone", "marowak", "hitmonlee", "hitmonchan", "lickitung", "koffing", "weezing", "rhyhorn", "rhydon", "chansey", "tangela", "kangaskhan", "horsea", "seadra", "goldeen", "seaking", "staryu", "starmie", "mr. mime", "scyther", "jynx", "electabuzz", "magmar", "pinsir", "tauros", "magikarp", "gyarados", "lapras", "ditto", "eevee", "vaporeon", "jolteon", "flareon", "porygon", "omanyte", "omastar", "kabuto", "kabutops", "aerodactyl", "snorlax", "articuno", "zapdos", "moltres", "dratini", "dragonair", "dragonite", "mewtwo", "mew"
+  "bulbasaur", "ivysaur", "venusaur", "charmander", "charmeleon", "charizard", "squirtle", "wartortle", "blastoise",
+  "caterpie", "metapod", "butterfree", "weedle", "kakuna", "beedrill", "pidgey", "pidgeotto", "pidgeot", "rattata",
+  "raticate", "spearow", "fearow", "ekans", "arbok", "pikachu", "raichu", "sandshrew", "sandslash", "nidoran♀",
+  "nidorina", "nidoqueen", "nidoran♂", "nidorino", "nidoking", "clefairy", "clefable", "vulpix", "ninetales",
+  "jigglypuff", "wigglytuff", "zubat", "golbat", "oddish", "gloom", "vileplume", "paras", "parasect", "venonat",
+  "venomoth", "diglett", "dugtrio", "meowth", "persian", "psyduck", "golduck", "mankey", "primeape", "growlithe",
+  "arcanine", "poliwag", "poliwhirl", "poliwrath", "abra", "kadabra", "alakazam", "machop", "machoke", "machamp",
+  "bellsprout", "weepinbell", "victreebel", "tentacool", "tentacruel", "geodude", "graveler", "golem", "ponyta",
+  "rapidash", "slowpoke", "slowbro", "magnemite", "magneton", "farfetch'd", "doduo", "dodrio", "seel", "dewgong",
+  "grimer", "muk", "shellder", "cloyster", "gastly", "haunter", "gengar", "onix", "drowzee", "hypno", "krabby",
+  "kingler", "voltorb", "electrode", "exeggcute", "exeggutor", "cubone", "marowak", "hitmonlee", "hitmonchan",
+  "lickitung", "koffing", "weezing", "rhyhorn", "rhydon", "chansey", "tangela", "kangaskhan", "horsea", "seadra",
+  "goldeen", "seaking", "staryu", "starmie", "mr. mime", "scyther", "jynx", "electabuzz", "magmar", "pinsir",
+  "tauros", "magikarp", "gyarados", "lapras", "ditto", "eevee", "vaporeon", "jolteon", "flareon", "porygon",
+  "omanyte", "omastar", "kabuto", "kabutops", "aerodactyl", "snorlax", "articuno", "zapdos", "moltres", "dratini",
+  "dragonair", "dragonite", "mewtwo", "mew"
 ];
-
 
 function HangmanGame() {
   const [word, setWord] = useState('');
   const [guessedWord, setGuessedWord] = useState([]);
   const [guess, setGuess] = useState('');
-  const [attempts, setAttempts] = useState(0);
-  const [maxAttempts, setMaxAttempts] = useState(6);
+  const [mistakesCount, setMistakesCount] = useState(0);
+  const [maxMistakes, setMaxMistakes] = useState(7);
   const [usedLetters, setUsedLetters] = useState([]);
   const [pokemonData, setPokemonData] = useState(null);
 
@@ -45,7 +61,7 @@ function HangmanGame() {
       }
 
       if (!found) {
-        setAttempts(attempts + 1);
+        setMistakesCount(mistakesCount + 1);
       }
 
       setGuessedWord(newGuessedWord);
@@ -55,7 +71,7 @@ function HangmanGame() {
   };
 
   const isGameWon = guessedWord.join('') === word;
-  const isGameLost = attempts >= maxAttempts;
+  const isGameLost = mistakesCount >= maxMistakes;
 
   const renderWord = () => {
     return (
@@ -86,63 +102,66 @@ function HangmanGame() {
     }
   };
 
-  const renderHint = () => {
-    if (word) {
-      fetchPokemonData(word.toLowerCase());
-    }
-    if (!pokemonData) {
-      return null;
-    }
-
-    return (
-      <div className="container">
-        <h2>{isGameWon ? `It's ${word.charAt(0).toUpperCase() + word.slice(1)}!` : "Who's that Pokemon?!"}</h2>
-        <div style={{ backgroundColor: "white" }}>
-          {!isGameWon && !isGameLost && <img src={pokemonData.sprites['front_shiny']} style={{ filter: 'brightness(0)' }} />}
-          {(isGameWon) && <img src={pokemonData.sprites['front_shiny']} />}
-          {(isGameLost) && <img src={pokemonData.sprites['front_shiny']} />}
-        </div>
-        <p>Height: {pokemonData.height} decimetres</p>
-        <p>Weight: {pokemonData.weight} hectograms</p>
-        <p>Type: {pokemonData.types.map((type) => type.type.name).join(', ')}</p>
-        <p>Moves: {pokemonData.moves.map((move) => move.move.name).slice(0, 4).join(', ')}</p>
-      </div>
-    );
-  };
+  if (word) {
+    fetchPokemonData(word.toLowerCase());
+  }
 
   return (
     <div className="container mt-5">
       <h1>Pokemon Hangman Game</h1>
-      <p>Try to guess the Pokemon by entering a letter at a time. <strong>You have {maxAttempts - attempts} attempts left.</strong></p>
-
-      {isGameLost && <>
-        <p className="text-danger">You lost! The word was "{word}".</p>
-      </>}
-      {isGameWon && <p className="text-success">Congratulations! You guessed the word: "{word}".</p>}
-
+      {mistakesCount != maxMistakes && <p>Try to guess the Pokemon by entering a letter at a time. <strong>You have {maxMistakes - mistakesCount} attempts left.</strong></p>}
+      <h2>{isGameWon || isGameLost ? `It's ${word.charAt(0).toUpperCase() + word.slice(1)}!` : "Who's that Pokemon?!"}</h2>
+      {isGameLost && <p className="text-danger">You lost! :(</p>}
+      {isGameWon && <p className="text-success">Congratulations! You won!</p>}
       <>
-        {renderWord()}
-        {renderUsedLetters()}
-        <form onSubmit={(e) => { e.preventDefault(); }}>
-          <div className="form-group">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Enter a letter"
-              value={guess}
-              onChange={handleGuessChange}
-              maxLength="1"
-            />
-          </div>
-          <div>
-            <button className="btn btn-primary" onClick={() => window.location.reload(false)}>
-              New Game
-            </button>
-          </div>
-          {renderHint()}
-        </form>
+        <Row>
+          <Col>
+            {pokemonData &&
+              <div className="card mb-4 position-relative">
+                <img
+                  src={pokemonData.sprites['front_shiny']}
+                  className={`card-img-top ${!isGameWon && !isGameLost ? 'grayscale' : ''}`}
+                  alt={word}
+                  style={!isGameWon && !isGameLost ? { filter: 'brightness(0)' } : {}}
+                />
+                <div className="card-body">
+                  {/* <h5 className="card-title">{word.charAt(0).toUpperCase() + word.slice(1)}</h5> */}
+                  <p className="card-text">Height: {pokemonData.height} decimetres</p>
+                  <p className="card-text">Weight: {pokemonData.weight} hectograms</p>
+                  <p className="card-text">Type: {pokemonData.types.map((type) => type.type.name).join(', ')}</p>
+                  <p className="card-text">Moves: {pokemonData.moves.map((move) => move.move.name).slice(0, 4).join(', ')}</p>
+                </div>
+              </div>}
+          </Col>
+          <Col>
+            <img src={`images/hangman/${mistakesCount}.png`} alt={`Hangman stage ${mistakesCount}`} />
+            {renderUsedLetters()}
+            {renderWord()}
+            <div className='form-group'>
+              {!isGameLost && !isGameWon &&
+                <form onSubmit={(e) => { e.preventDefault(); }}>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Enter a letter"
+                    value={guess}
+                    onChange={handleGuessChange}
+                    maxLength="1"
+                  />
+                </form>
+              }
+              <button className="btn btn-primary mt-2" onClick={() => window.location.reload(false)}>
+                New Game
+              </button>
+            </div>
+          </Col>
+
+        </Row>
+        <div>
+
+        </div>
       </>
-    </div>
+    </div >
   );
 }
 
