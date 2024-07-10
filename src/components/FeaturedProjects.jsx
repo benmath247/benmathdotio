@@ -97,8 +97,8 @@ function FeaturedProjects() {
                                     className="card-img-top"
                                 />
                                 <div className="blue-card-body card">
-                                    <h5 className="blue-card-title">{post.title}</h5>
-                                    <p className="blue-card-text">{post.subtitle}</p>
+                                    <h5 className="blue-card-title p-2">{post.title}</h5>
+                                    <p className="blue-card-text p-2">{post.subtitle}</p>
                                 </div>
                                 <div className="diagonal-decoration"></div>
                             </div>
@@ -131,7 +131,7 @@ function FeaturedProjects() {
     return (
         <div className='background'>
             <div className="container mt-5">
-                <h3 style={{ textAlign: 'left' }}>My Favorite Projects</h3>
+                <h3 className="text-start mb-3">My Favorite Projects</h3>
                 <Tab.Container id="project-tabs" activeKey={key} onSelect={(k) => setKey(k)}>
                     <Tab.Content>
                         {renderProjectPreviews('tools', currentItems)}
