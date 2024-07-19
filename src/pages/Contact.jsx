@@ -106,7 +106,7 @@ function ContactForm() {
                             ></textarea>
                             <div className="diagonal-decoration"></div> {/* Diagonal decoration */}
                         </div>
-                        <button type="submit" className="btn btn-primary">Send Message</button>
+                        <button type="submit" className="btn btn-primary awesomeButton grow-on-hover">Send Message</button>
                     </form>
                 )}
             </div>

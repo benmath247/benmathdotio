@@ -42,11 +42,6 @@ function App() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            {/* <Nav.Link as={Link} to="/">
-              <i className="fa fa-home fa-lg" /> Home
-            </Nav.Link> */}
-            {/* <Nav.Link as={Link} to="/about">About
-            </Nav.Link> */}
             <Nav.Link as={Link} to="/blog">Blog
             </Nav.Link>
             <Nav.Link as={Link} to="/portfolio">Portfolio
@@ -57,7 +52,7 @@ function App() {
               href="https://github.com/benmath247"
               target="_blank"
               rel="noopener noreferrer"
-              className="rotate-icon"
+            // className="rotate-icon"
             >
               <FaGithub
                 className="rotate-icon"
@@ -67,17 +62,18 @@ function App() {
               href="https://www.linkedin.com/in/benmath247/"
               target="_blank"
               rel="noopener noreferrer"
-              className="rotate-icon"
+            // className="rotate-icon"
             >
               <FaLinkedin
-                className="rotate-icon"
-                size={20} />
+                // className="rotate-icon"
+                size={20}
+                className="rotate-icon" />
             </Nav.Link>
             <Nav.Link
               href="https://docs.google.com/document/d/17JA9cJ-SORMmOwBwrK2uofu6XVnVmqTvXo8fTVGIs6s/edit?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              className="rotate-icon"
+            // className="rotate-icon"
             >
               <FaFilePdf
                 className="rotate-icon"

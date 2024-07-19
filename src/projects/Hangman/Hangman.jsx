@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row, Col } from 'react-bootstrap';
+import SpriteDisplay from '../Pokedex/RotatingSprite';
 
 const words = [
   "bulbasaur", "ivysaur", "venusaur", "charmander", "charmeleon", "charizard", "squirtle", "wartortle", "blastoise",
@@ -118,12 +119,13 @@ function HangmanGame() {
           <Col>
             {pokemonData &&
               <div className="card mb-4 position-relative">
-                <img
+                <SpriteDisplay grayscale={!isGameWon && !isGameLost} hovered={isGameWon || isGameLost} id={pokemonData.id} />
+                {/* <img
                   src={pokemonData.sprites['front_shiny']}
                   className={`card-img-top ${!isGameWon && !isGameLost ? 'grayscale' : ''}`}
                   alt={word}
                   style={!isGameWon && !isGameLost ? { filter: 'brightness(0)' } : {}}
-                />
+                /> */}
                 <div className="card-body">
                   {/* <h5 className="card-title">{word.charAt(0).toUpperCase() + word.slice(1)}</h5> */}
                   <p className="card-text">Height: {pokemonData.height} decimetres</p>

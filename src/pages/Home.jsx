@@ -29,8 +29,8 @@ function Home() {
             I have a passion for coding with JavaScript, Python, and Java.
             I enjoy working on projects that make a difference for my community, customers, and the world.
           </p> */}
-          <Link to="/portfolio" className="btn btn-light btn-lg grow-on-hover" style={{ width: "150px", margin: "15px" }} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>View My Portfolio</Link>
-          <Link to="/blog" className="btn btn-light btn-lg grow-on-hover" style={{ width: "150px", margin: "15px" }} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>View My Blog</Link>
+          <Link to="/portfolio" className="btn btn-light btn-lg grow-on-hover" style={{ width: "150px", margin: "15px", backgroundColor: "#DDDDDD" }} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>View My Portfolio</Link>
+          <Link to="/blog" className="btn btn-light btn-lg grow-on-hover" style={{ width: "150px", margin: "15px", backgroundColor: "#BBBBBB" }} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>View My Blog</Link>
         </div>
         <FeaturedProjects />
       </section >
