@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './portfolio.css';
+import Footer from '../components/Footer';
 
 function Portfolio() {
   const [key, setKey] = useState(''); // Default to show all projects
@@ -273,6 +274,7 @@ function Portfolio() {
         {loading && <p>Loading more projects...</p>}
         {!hasMore && <p>No more projects to load.</p>}
       </div>
+      <Footer />
     </div>
   );
 }

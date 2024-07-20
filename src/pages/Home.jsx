@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import TextColorChanging from '../components/TextColorChanging';
 import FeaturedProjects from '../components/FeaturedProjects';
 import ParallaxBackground from '../components/ParallaxBackground';
+import Footer from '../components/Footer';
 
 
 function Home() {
@@ -22,11 +23,10 @@ function Home() {
             className="rounded-circle mb-4 grow-on-hover border border-secondary border-2"
             width="300"
           />
-          <TextColorChanging text="WELCOME TO BENMATH.COM" size="60" />
-          <title>WELCOME TO BENMATH.COM</title>
-          <h2 className="lead">
+          <h1 style={{ maxWidth: "100%" }}>WELCOME TO BENMATH.COM</h1>
+          <h3 className="lead">
             Venture within for thoughts on my personal and professional life or to see projects I have worked on.
-          </h2>
+          </h3>
 
           {/* <p>
             I have a passion for coding with JavaScript, Python, and Java.
@@ -55,10 +55,11 @@ function Home() {
             </Link>
           </div>
         </div>
-        <ParallaxBackground>
-          <FeaturedProjects />
-        </ParallaxBackground>
       </section >
+      <ParallaxBackground>
+        <FeaturedProjects />
+      </ParallaxBackground>
+      <Footer />
     </div >
   );
 }

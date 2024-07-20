@@ -129,16 +129,14 @@ function FeaturedProjects() {
     };
 
     return (
-        <div className='background'>
-            <div className="container mt-5">
-                <h3 className="text-start mb-3">My Favorite Projects</h3>
-                <Tab.Container id="project-tabs" activeKey={key} onSelect={(k) => setKey(k)}>
-                    <Tab.Content>
-                        {renderProjectPreviews('tools', currentItems)}
-                        {renderPagination()}
-                    </Tab.Content>
-                </Tab.Container>
-            </div>
+        <div className="container mt-5">
+            <h3 className="text-start mb-3">My Favorite Projects</h3>
+            <Tab.Container id="project-tabs" activeKey={key} onSelect={(k) => setKey(k)}>
+                <Tab.Content>
+                    {renderProjectPreviews('tools', currentItems)}
+                    {renderPagination()}
+                </Tab.Content>
+            </Tab.Container>
         </div>
     );
 }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import '../App.css'
+import Footer from '../components/Footer';
 
 function ContactForm() {
     const [formData, setFormData] = useState({
@@ -108,6 +109,7 @@ function ContactForm() {
                     <button type="submit" className="primary">Send Message</button>
                 </form>
             )}
+            <Footer hideForm={true} />
         </div>
     );
 }

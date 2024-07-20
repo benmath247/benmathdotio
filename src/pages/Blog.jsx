@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, ListGroup } from 'react-bootstrap';
 import BlogPreview from '../components/BlogPreview'; // Import the BlogPreview component
+import Footer from '../components/Footer';
 
 function Blog({ allPostsData }) {
     const [selectedCategory, setSelectedCategory] = useState('All');
@@ -84,6 +85,7 @@ function Blog({ allPostsData }) {
                     </Col>
                 </Row>
             </Container>
+            <Footer />
         </div>
     );
 }
