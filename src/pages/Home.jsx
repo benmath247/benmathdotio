@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import TextColorChanging from '../components/TextColorChanging';
 import FeaturedProjects from '../components/FeaturedProjects';
+import ParallaxBackground from '../components/ParallaxBackground';
 
 
 function Home() {
@@ -11,6 +12,7 @@ function Home() {
   }
 
   return (
+
     <div className='background'>
       <section className="hero background py-5">
         <div style={{ paddingTop: "50px" }} className="container text-center">
@@ -53,7 +55,9 @@ function Home() {
             </Link>
           </div>
         </div>
-        <FeaturedProjects />
+        <ParallaxBackground>
+          <FeaturedProjects />
+        </ParallaxBackground>
       </section >
     </div >
   );

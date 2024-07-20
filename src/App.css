@@ -300,3 +300,23 @@ button.outline:hover {
     margin-bottom: 0.25em;
   }
 }
+
+.border-gradient {
+  border: 5px solid;
+  border-image-slice: 1;
+  border-width: 3px;
+  /* Adjust border width as needed */
+  border-image-source: linear-gradient(to right, #d3e7f2, #c0c0c0, #7f888e);
+  box-shadow: 0 4px 8px rgba(108, 162, 189, 0.39);
+
+}
+
+.border-gradient-light {
+  border: 5px solid;
+  border-image-slice: 1;
+  border-width: 3px;
+  /* Adjust border width as needed */
+  border-image-source: linear-gradient(to right, #d3e7f2, #d8e0e0, #dde9f1);
+  box-shadow: 0 4px 8px rgba(108, 162, 189, 0.39);
+
+}

@@ -4,12 +4,11 @@ import './ParallaxBackground.css';
 
 const ParallaxBackground = ({ children }) => {
     return (
-        <div></div>
-        // <div className="parallax-container">
-        // {/* <div className="parallax"> */ }
-        // {/* {children} */ }
-        // {/* </div> */ }
-        // </div >
+        <div className="parallax-container">
+            <div className="parallax">
+                {children}
+            </div>
+        </div>
     );
 };
 

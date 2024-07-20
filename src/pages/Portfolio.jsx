@@ -135,7 +135,7 @@ function Portfolio() {
         {
           title: 'Hello, world!',
           subtitle: 'Making a better site with ChatGPT in an afternoon.',
-          image: './projects/demos/HelloWorld.html',
+          image: './portfolio/chatgpt.jpeg',
           link: 'January 1, 2024'
         },
       ];
@@ -202,11 +202,11 @@ function Portfolio() {
             {row.map((post) => (
               <div className="col-md-3 mb-4 position-relative grow-on-hover" key={post.title}>
                 <a href={post.link} rel="noopener noreferrer">
-                  <div className="card">
+                  <div className="card border-gradient-light">
                     <img
                       src={post.image}
                       alt={post.title}
-                      className="card-img-top"
+                      className=""
                     />
                     <div className="blue-card-body card-body bg-dark">
                       <h5 className="blue-card-title p-2 text-light">{post.title}</h5>
