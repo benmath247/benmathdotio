@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import emailjs from 'emailjs-com';
 import '../App.css'
 import Footer from '../components/Footer';
 
@@ -11,104 +11,101 @@ function ContactForm() {
     });
 
     const [submitted, setSubmitted] = useState(false);
+    const [showAlert, setShowAlert] = useState(false);
+    const [alertMessage, setAlertMessage] = useState('');
+    const [alertVariant, setAlertVariant] = useState('');
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
 
         // Form validation (you can add more validation rules as needed)
         if (formData.name.trim() === '' || !formData.email.includes('@') || formData.message.trim() === '') {
-            alert('Please fill out all fields correctly.');
+            setAlertMessage('Please fill out all fields correctly.');
+            setAlertVariant('danger');
+            setShowAlert(true);
             return;
         }
 
-        try {
-            // Send data to Mailchimp
-            const response = await axios.post(
-                `https://<dc>.api.mailchimp.com/3.0/lists/<list_id>/members`,
-                {
-                    email_address: formData.email,
-                    status: 'subscribed',
-                    merge_fields: {
-                        FNAME: formData.name,
-                        LNAME: '',
-                        MESSAGE: formData.message
-                    }
-                },
-                {
-                    headers: {
-                        'Authorization': `Bearer bb93c31678f2f087e4b29d3fed53786c-us17`,
-                        'Content-Type': 'application/json'
-                    }
-                }
-            );
+        const templateParams = {
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+        };
 
-            if (response.status === 200) {
-                setSubmitted(true);
-            } else {
-                throw new Error('Failed to subscribe');
-            }
-        } catch (error) {
-            console.error('Error subscribing to Mailchimp:', error);
-            alert('Error sending message. Please try again later.');
-        }
+        emailjs.send(
+            import.meta.env.VITE_EMAILJS_SERVICE_ID,
+            import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+            templateParams,
+            import.meta.env.VITE_EMAILJS_USER_ID
+        ).then((result) => {
+            setAlertMessage('Message sent successfully!');
+            setAlertVariant('success');
+            setShowAlert(true);
+            setSubmitted(true);
+        }, (error) => {
+            setAlertMessage('An error occurred. Please try again.');
+            setAlertVariant('danger');
+            setShowAlert(true);
+        });
+
+        setFormData({
+            name: '',
+            email: '',
+            message: ''
+        });
     };
 
     return (
         <div className="container mt-5">
             <h1>Contact Me</h1>
-            {submitted ? (
-                <div className="alert alert-success">
-                    Thank you for your message! I will get back to you soon.
+            {showAlert && <div className={`alert alert-${alertVariant}`}>{alertMessage}</div>}
+            <form onSubmit={handleSubmit}>
+                <div className="mb-3 position-relative">
+                    <input
+                        type="text"
+                        className="form-control"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        placeholder="Name"
+                        required
+                    />
+                    <div className="diagonal-decoration"></div> {/* Diagonal decoration */}
                 </div>
-            ) : (
-                <form onSubmit={handleSubmit}>
-                    <div className="mb-3 position-relative">
-                        <input
-                            type="text"
-                            className="form-control"
-                            id="name"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleChange}
-                            placeholder="Name"
-                            required
-                        />
-                        <div className="diagonal-decoration"></div> {/* Diagonal decoration */}
-                    </div>
-                    <div className="mb-3 position-relative">
-                        <input
-                            type="email"
-                            className="form-control"
-                            id="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            placeholder="Email"
-                            required
-                        />
-                        <div className="diagonal-decoration"></div> {/* Diagonal decoration */}
-                    </div>
-                    <div className="mb-3 position-relative">
-                        <textarea
-                            className="form-control"
-                            id="message"
-                            name="message"
-                            value={formData.message}
-                            onChange={handleChange}
-                            rows="4"
-                            placeholder="Message"
-                            required
-                        ></textarea>
-                        <div className="diagonal-decoration"></div> {/* Diagonal decoration */}
-                    </div>
-                    <button type="submit" className="primary">Send Message</button>
-                </form>
-            )}
+                <div className="mb-3 position-relative">
+                    <input
+                        type="email"
+                        className="form-control"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="Email"
+                        required
+                    />
+                    <div className="diagonal-decoration"></div> {/* Diagonal decoration */}
+                </div>
+                <div className="mb-3 position-relative">
+                    <textarea
+                        className="form-control"
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        rows="4"
+                        placeholder="Message"
+                        required
+                    ></textarea>
+                    <div className="diagonal-decoration"></div> {/* Diagonal decoration */}
+                </div>
+                <button type="submit" className="primary">Send Message</button>
+            </form>
             <Footer hideForm={true} />
         </div>
     );

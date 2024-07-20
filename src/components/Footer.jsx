@@ -3,7 +3,7 @@ import { Container, Row, Col, Form, Button, Alert } from 'react-bootstrap';
 import { FaGithub, FaLinkedin, FaFilePdf } from 'react-icons/fa';
 import emailjs from 'emailjs-com';
 
-function Footer() {
+function Footer({ hideForm }) {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
@@ -14,10 +14,23 @@ function Footer() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        emailjs.sendForm(
+        if (!name || !email || !message) {
+            setAlertMessage('Please fill out the form');
+            setAlertVariant('danger');
+            setShowAlert(true);
+            return
+        }
+
+        const templateParams = {
+            name: name,
+            email: email,
+            message: message,
+        };
+
+        emailjs.send(
             import.meta.env.VITE_EMAILJS_SERVICE_ID,
             import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-            e.target,
+            templateParams,
             import.meta.env.VITE_EMAILJS_USER_ID
         ).then((result) => {
             setAlertMessage('Message sent successfully!');
@@ -37,8 +50,9 @@ function Footer() {
     return (
         <Container>
             <Row>
-                <Col style={{ background: 'grey', padding: '20px' }} md={6}>
-                    <h5 style={{ color: 'white' }}>Subscribe to our newsletter</h5>
+
+                {hideForm ? <Col></Col> : <Col style={{ background: 'grey', padding: '20px' }} md={6}>
+                    <h5 style={{ color: 'white' }}>Contact Me</h5>
                     {showAlert && <Alert variant={alertVariant}>{alertMessage}</Alert>}
                     <Form onSubmit={handleSubmit}>
                         <Row>
@@ -47,7 +61,7 @@ function Footer() {
                                     <Form.Control
                                         type="text"
                                         placeholder="Name"
-                                        name="user_name"
+                                        name="name"
                                         value={name}
                                         onChange={(e) => setName(e.target.value)}
                                     />
@@ -58,7 +72,7 @@ function Footer() {
                                     <Form.Control
                                         type="email"
                                         placeholder="Email"
-                                        name="user_email"
+                                        name="email"
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
                                     />
@@ -79,13 +93,13 @@ function Footer() {
                                 </Form.Group>
                             </Col>
                             <Col className="text-end">
-                                <button className="primary m-2" type="submit" size="sm">
+                                <Button className="primary m-2" type="submit" size="sm">
                                     Submit
-                                </button>
+                                </Button>
                             </Col>
                         </Row>
                     </Form>
-                </Col>
+                </Col>}
                 <Col md={6} className="text-md-end">
                     <h5>Follow Me</h5>
                     <a href="https://github.com" className="me-2 text-black">
