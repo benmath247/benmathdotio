@@ -1,0 +1,14 @@
+/* src/components/ParallaxBackground.css */
+.parallax-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.parallax {
+    background: #a3c5e9 url('https://www.transparenttextures.com/patterns/asfalt-light.png') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    z-index: -1;
+    padding: 20px;
+}

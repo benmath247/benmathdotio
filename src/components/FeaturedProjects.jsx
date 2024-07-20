@@ -90,15 +90,15 @@ function FeaturedProjects() {
                 {posts.map((post) => (
                     <div className="col-md-4 mb-4 position-relative grow-on-hover" key={post.title}>
                         <Link to={post.link} rel="noopener noreferrer" style={{ background: 'none' }}>
-                            <div className="">
+                            <div className="card position-relative" style={{ minHeight: '300px', maxHeight: '400px' }}>
                                 <img
                                     src={post.image}
                                     alt={post.title}
                                     className="card-img-top"
                                 />
-                                <div className="blue-card-body card">
-                                    <h5 className="blue-card-title p-2">{post.title}</h5>
-                                    <p className="blue-card-text p-2">{post.subtitle}</p>
+                                <div className="blue-card-body card-body bg-dark">
+                                    <h5 className="blue-card-title p-2 text-light">{post.title}</h5>
+                                    <p className="blue-card-text p-2 text-light">{post.subtitle}</p>
                                 </div>
                                 <div className="diagonal-decoration"></div>
                             </div>

@@ -21,16 +21,37 @@ function Home() {
             width="300"
           />
           <TextColorChanging text="WELCOME TO BENMATH.COM" size="60" />
-          <p className="lead">
+          <title>WELCOME TO BENMATH.COM</title>
+          <h2 className="lead">
             Venture within for thoughts on my personal and professional life or to see projects I have worked on.
-          </p>
+          </h2>
 
           {/* <p>
             I have a passion for coding with JavaScript, Python, and Java.
             I enjoy working on projects that make a difference for my community, customers, and the world.
           </p> */}
-          <Link to="/portfolio" className="btn btn-light btn-lg grow-on-hover" style={{ width: "150px", margin: "15px", backgroundColor: "#DDDDDD" }} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>View My Portfolio</Link>
-          <Link to="/blog" className="btn btn-light btn-lg grow-on-hover" style={{ width: "150px", margin: "15px", backgroundColor: "#BBBBBB" }} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>View My Blog</Link>
+          <div>
+            <Link
+              to="/portfolio"
+              // className="btn btn-light btn-lg grow-on-hover fun-button"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
+              <button className='m-2'>
+
+                View My Portfolio
+              </button>
+            </Link>
+            <Link
+              to="/blog"
+              // className="btn btn-light btn-lg grow-on-hover fun-button-alt"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
+              <button className='secondary m-2'>
+
+                View My Blog
+              </button>
+            </Link>
+          </div>
         </div>
         <FeaturedProjects />
       </section >

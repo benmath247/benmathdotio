@@ -140,7 +140,6 @@ function Portfolio() {
         },
       ];
 
-
       const fetchContentWithCategory = (category) => {
         return category.map((post) =>
           fetchContent(category, post.image).then((content) => ({
@@ -203,14 +202,17 @@ function Portfolio() {
             {row.map((post) => (
               <div className="col-md-3 mb-4 position-relative grow-on-hover" key={post.title}>
                 <a href={post.link} rel="noopener noreferrer">
-                  <div className="blue-card card mt-4 p-2">
+                  <div className="card">
                     <img
                       src={post.image}
                       alt={post.title}
                       className="card-img-top"
                     />
-                    <h5 className="blue-card-title p-2">{post.title}</h5>
-                    <p className="blue-card-text">{post.subtitle}</p>
+                    <div className="blue-card-body card-body bg-dark">
+                      <h5 className="blue-card-title p-2 text-light">{post.title}</h5>
+                      <p className="blue-card-text p-2 text-light">{post.subtitle}</p>
+                    </div>
+                    <div className="diagonal-decoration"></div>
                   </div>
                 </a>
               </div>
