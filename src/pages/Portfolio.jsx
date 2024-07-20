@@ -136,7 +136,7 @@ function Portfolio() {
         {
           title: 'Hello, world!',
           subtitle: 'Making a better site with ChatGPT in an afternoon.',
-          image: './portfolio/chatgpt.jpeg',
+          image: '/portfolio/chatgpt.jpeg',
           link: 'January 1, 2024'
         },
       ];
