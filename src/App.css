@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Playfair+Display:wght@700&display=swap');
+
 .grayscale {
   filter: brightness(0);
 }
@@ -137,7 +139,6 @@ a {
 }
 
 /* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Playfair+Display:wght@700&display=swap');
 
 h1,
 h2,
@@ -200,9 +201,6 @@ h6 {
   }
 }
 
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Playfair+Display:wght@700&display=swap');
-
 button {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
@@ -254,8 +252,6 @@ button.outline:hover {
   }
 }
 
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Playfair+Display:wght@700&display=swap');
 
 .title {
   font-family: 'Montserrat', sans-serif;
