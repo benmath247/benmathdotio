@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import Offcanvas from 'react-bootstrap/Offcanvas';
 import Blog from './pages/Blog';
 import Portfolio from './pages/Portfolio';
 import APINinjasNav from './projects/APINinjas/ApiNinjas';
@@ -35,51 +36,59 @@ import Foods from './projects/FoodAPI/Foods';
 import Retirement from './projects/Retirement/Retirement';
 
 function App() {
+  const handleNavLinkClick = () => {
+    const offcanvasElement = document.querySelector('.offcanvas');
+    const bsOffcanvas = new window.bootstrap.Offcanvas(offcanvasElement);
+    bsOffcanvas.hide();
+  };
+
   return (
     <Router>
-      <Navbar expand="lg" className="mb-0 pb-0">
+      <Navbar expand="lg" className="mb-0 pb-0 border border-1" bg="dark">
         <Navbar.Brand className='p-2' href="/">BENMATH.COM</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ml-auto">
-            <Nav.Link as={Link} to="/blog">Blog
-            </Nav.Link>
-            <Nav.Link as={Link} to="/portfolio">Portfolio
-            </Nav.Link>
-            <Nav.Link as={Link} to="/contact">Contact
-            </Nav.Link>
-            <Nav.Link
-              href="https://github.com/benmath247"
-              target="_blank"
-              rel="noopener noreferrer"
-            // className="rotate-icon"
-            >
-              <FaGithub
-                className="rotate-icon"
-                size={20} />
-            </Nav.Link>
-            <Nav.Link
-              href="https://www.linkedin.com/in/benmath247/"
-              target="_blank"
-              rel="noopener noreferrer"
-            // className="rotate-icon"
-            >
-              <FaLinkedin
-                // className="rotate-icon"
-                size={20}
-                className="rotate-icon" />
-            </Nav.Link>
-            <Nav.Link
-              href="https://docs.google.com/document/d/17JA9cJ-SORMmOwBwrK2uofu6XVnVmqTvXo8fTVGIs6s/edit?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaFilePdf
-                className="rotate-icon"
-                size={20} />
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
+        <Navbar.Toggle aria-controls="offcanvasNavbar" />
+        <Navbar.Offcanvas
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+          placement="end"
+        >
+          <Offcanvas.Header closeButton>
+            <Offcanvas.Title id="offcanvasNavbarLabel">BENMATH.COM</Offcanvas.Title>
+          </Offcanvas.Header>
+          <Offcanvas.Body>
+            <Nav className="justify-content flex-grow-1 pe-3">
+              <Nav.Link as={Link} to="/blog" onClick={handleNavLinkClick}>Blog</Nav.Link>
+              <Nav.Link as={Link} to="/portfolio" onClick={handleNavLinkClick}>Portfolio</Nav.Link>
+              <Nav.Link as={Link} to="/contact" onClick={handleNavLinkClick}>Contact</Nav.Link>
+            </Nav>
+            <Nav className="justify-content-end flex-grow-1 pe-3">
+              <Nav.Link
+                href="https://github.com/benmath247"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleNavLinkClick}
+              >
+                <FaGithub className="rotate-icon" size={20} />
+              </Nav.Link>
+              <Nav.Link
+                href="https://www.linkedin.com/in/benmath247/"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleNavLinkClick}
+              >
+                <FaLinkedin className="rotate-icon" size={20} />
+              </Nav.Link>
+              <Nav.Link
+                href="https://docs.google.com/document/d/17JA9cJ-SORMmOwBwrK2uofu6XVnVmqTvXo8fTVGIs6s/edit?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleNavLinkClick}
+              >
+                <FaFilePdf className="rotate-icon" size={20} />
+              </Nav.Link>
+            </Nav>
+          </Offcanvas.Body>
+        </Navbar.Offcanvas>
       </Navbar>
 
       <Routes>

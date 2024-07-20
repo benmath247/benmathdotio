@@ -228,6 +228,7 @@ button.primary:hover {
 button.secondary {
   background-color: #6c757d;
   color: #fff;
+  margin: 5px;
 }
 
 button.secondary:hover {
@@ -319,4 +320,21 @@ button.outline:hover {
   border-image-source: linear-gradient(to right, #d3e7f2, #d8e0e0, #dde9f1);
   box-shadow: 0 4px 8px rgba(108, 162, 189, 0.39);
 
+}
+
+/* Add these styles to App.css or a similar stylesheet */
+
+.navbar-toggler-icon {
+  background-color: white;
+}
+
+.offcanvas-body {
+  color: #343a40;
+  /* Bootstrap's dark color */
+}
+
+@media (max-width: 992px) {
+  .offcanvas .nav-link {
+    color: black !important;
+  }
 }

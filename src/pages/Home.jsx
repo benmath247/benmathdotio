@@ -19,7 +19,7 @@ function Home() {
           <img
             src="images/me/me.png"
             alt="Ben Math"
-            className="rounded-circle mb-4 grow-on-hover"
+            className="rounded-circle mb-4 grow-on-hover border border-secondary border-2"
             width="300"
           />
           <TextColorChanging text="WELCOME TO BENMATH.COM" size="60" />

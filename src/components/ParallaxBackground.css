@@ -2,6 +2,7 @@
 .parallax-container {
     position: relative;
     overflow: hidden;
+    z-index: 0; /* Ensure the container itself is behind other elements */
 }
 
 .parallax {
@@ -9,7 +10,7 @@
     background-size: cover;
     background-attachment: fixed;
     position: relative;
-    z-index: -1;
+    z-index: -1; /* Ensure this element is behind other elements */
     padding: 20px;
     margin: 20px 0;
     /* To ensure there's space for the pseudo-element borders */
@@ -20,12 +21,11 @@
     content: "";
     display: block;
     width: 100%;
-    height: 10px;
-    /* Adjust height as needed */
+    height: 10px; /* Adjust height as needed */
     background: linear-gradient(to right, #05314a, #c0c0c0, #05314a);
     position: absolute;
     left: 0;
-    z-index: 1;
+    z-index: -2; /* Ensure pseudo-elements are also behind other elements */
 }
 
 .parallax::before {
@@ -34,4 +34,10 @@
 
 .parallax::after {
     bottom: 0;
+}
+
+/* Ensure other elements have a higher z-index */
+.other-elements {
+    position: relative;
+    z-index: 1;
 }

@@ -115,7 +115,7 @@ function FeaturedProjects() {
         for (let i = 1; i <= totalPages; i++) {
             pageNumbers.push(
                 <li key={i} className={`page-item ${currentPage === i ? 'active' : ''}`}>
-                    <button className="page-link" onClick={() => handlePageChange(i)}>{i}</button>
+                    <button className="secondary" onClick={() => handlePageChange(i)}>{i}</button>
                 </li>
             );
         }
