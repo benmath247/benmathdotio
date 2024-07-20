@@ -93,9 +93,9 @@ function Footer({ hideForm }) {
                                 </Form.Group>
                             </Col>
                             <Col className="text-end">
-                                <Button className="primary m-2" type="submit" size="sm">
+                                <button className="primary m-2" type="submit" size="sm">
                                     Submit
-                                </Button>
+                                </button>
                             </Col>
                         </Row>
                     </Form>
