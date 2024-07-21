@@ -113,4 +113,11 @@ export const allPostsData = [
     date: 'March 7, 2024',
     category: 'Projects',
   },
+  {
+    title: 'Setting up Email.JS',
+    subtitle: 'Sending emails right from my contact form in my React site',
+    content: '/blogs/technology/EmailJS.html',
+    date: 'July 20, 2024',
+    category: 'Technology',
+  },
 ]

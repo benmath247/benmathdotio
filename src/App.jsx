@@ -35,6 +35,9 @@ import BlogDetails from './pages/BlogDetails';
 import Foods from './projects/FoodAPI/Foods';
 import Retirement from './projects/Retirement/Retirement';
 
+// Import constants
+import { GITHUB_URL, LINKEDIN_URL, GOOGLE_DOCS_URL } from './constants';
+
 function App() {
   const handleNavLinkClick = () => {
     const offcanvasElement = document.querySelector('.offcanvas');
@@ -63,7 +66,7 @@ function App() {
             </Nav>
             <Nav className="justify-content-end flex-grow-1 pe-3">
               <Nav.Link
-                href="https://github.com/benmath247"
+                href={GITHUB_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handleNavLinkClick}
@@ -71,7 +74,7 @@ function App() {
                 <FaGithub className="rotate-icon" size={20} />
               </Nav.Link>
               <Nav.Link
-                href="https://www.linkedin.com/in/benmath247/"
+                href={LINKEDIN_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handleNavLinkClick}
@@ -79,7 +82,7 @@ function App() {
                 <FaLinkedin className="rotate-icon" size={20} />
               </Nav.Link>
               <Nav.Link
-                href="https://docs.google.com/document/d/17JA9cJ-SORMmOwBwrK2uofu6XVnVmqTvXo8fTVGIs6s/edit?usp=sharing"
+                href={GOOGLE_DOCS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handleNavLinkClick}

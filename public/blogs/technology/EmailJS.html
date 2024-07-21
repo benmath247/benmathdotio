@@ -1,0 +1,67 @@
+<p>
+    EmailJS is a platform that allows you to send emails from your app, enabling contact forms.
+    I have been wrestling with different providers of this service, such as AWS SES, Mailchimp, and Sendgrid.
+    Each, for one reason or another, didn't work out quickly, resulting in nonfunctional contact forms on my sites.
+    No longer! I have found the solution.
+</p>
+<p>
+    EmailJS is exactly as easy to use as I think it should be. You make an account on
+    <a href="https://www.emailjs.com">EmailJS.com</a>. Next, you connect your mailbox.
+    If you're signed in on your Chrome browser, it's as easy as clicking "Sign Up with Google."
+    This is called a service. Make note of the Service ID and store it in an environment variable.
+</p>
+<p>
+    You then create a template with custom fields, such as name, to_email_address, and message.
+    Make note of the Template ID and save it as an environment variable in your .env file.
+    These fields will be filled in with the contact form and later submitted in a dictionary as part of a request to
+    EmailJS.
+    Lastly, you need to go to the account page and get your User ID. Save that as an environment variable too.
+</p>
+<p>
+    So, assume that we have a form that provides values for email, message, and name, and passes them as a dictionary
+    that looks like this:
+</p>
+<pre>
+<code>
+        const templateParams = {
+            "email": email,
+            "message": message,
+            "name": name
+        };
+</code>
+    </pre>
+<p>
+    Implementing the code looks like this:
+</p>
+<pre>
+<code>
+    // include this onClick on the form
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        emailjs.send(
+            //here are my .env variables
+            import.meta.env.VITE_EMAILJS_SERVICE_ID,
+            import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+            templateParams,
+            import.meta.env.VITE_EMAILJS_USER_ID
+        ).then((result) => {
+            console.log("SUCCESS")
+        }, (error) => {
+            console.log(error)
+        });
+    };
+</code>
+Your .env file should have something like this in it with the values you got from EmailJS.
+<code>
+VITE_EMAILJS_SERVICE_ID='service_abcdeo'
+VITE_EMAILJS_TEMPLATE_ID='template_fghij'
+VITE_EMAILJS_USER_ID='KLMNOPQRSTUVWXYZ'
+</code>
+    </pre>
+<p>
+    It's as easy as that. Click the button to the form and you will get an email! I really liked this tech because it is
+    free and easy to set up.
+    I couldn't believe how quickly I got it done, and without having a backend of my own responsible for sending the
+    emails.
+</p>

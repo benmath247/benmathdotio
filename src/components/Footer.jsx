@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button, Alert } from 'react-bootstrap';
 import { FaGithub, FaLinkedin, FaFilePdf } from 'react-icons/fa';
 import emailjs from 'emailjs-com';
+import { GITHUB_URL, LINKEDIN_URL, GOOGLE_DOCS_URL } from './../constants';
 
 function Footer({ hideForm }) {
     const [name, setName] = useState('');
@@ -102,13 +103,13 @@ function Footer({ hideForm }) {
                 </Col>}
                 <Col md={6} className="text-md-end">
                     <h5>Follow Me</h5>
-                    <a href="https://github.com" className="me-2 text-black">
+                    <a href={GITHUB_URL} className="me-2 text-black">
                         <FaGithub size={20} />
                     </a>
-                    <a href="https://linkedin.com" className="me-2 text-black">
+                    <a href={LINKEDIN_URL} className="me-2 text-black">
                         <FaLinkedin size={20} />
                     </a>
-                    <a href="/document" className="me-2 text-black">
+                    <a href={GOOGLE_DOCS_URL} className="me-2 text-black">
                         <FaFilePdf />
                     </a>
                 </Col>
