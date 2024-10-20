@@ -34,21 +34,21 @@ export const allPostsData = [
     date: 'January 11, 2024',
     category: 'Personal',
   },
-  {
-    title: 'When Creating New Products Turns to Technical Debt',
-    subtitle:
-      'That time I overhauled a dilapidated repository to create a new application',
-    content: '/blogs/technology/TechnicalDebt.html',
-    date: 'January 11, 2024',
-    category: 'Technology',
-  },
-  {
-    title: 'Scaling up the Brandsite Generator',
-    subtitle: 'Unearthing technical debt to make it a multi-page site solution',
-    content: '/blogs/projects/BrandsiteGeneratorPages.html',
-    date: 'January 17, 2024',
-    category: 'Projects',
-  },
+  // {
+  //   title: 'When Creating New Products Turns to Technical Debt',
+  //   subtitle:
+  //     'That time I overhauled a dilapidated repository to create a new application',
+  //   content: '/blogs/technology/TechnicalDebt.html',
+  //   date: 'January 11, 2024',
+  //   category: 'Technology',
+  // },
+  // {
+  //   title: 'Scaling up the Brandsite Generator',
+  //   subtitle: 'Unearthing technical debt to make it a multi-page site solution',
+  //   content: '/blogs/projects/BrandsiteGeneratorPages.html',
+  //   date: 'January 17, 2024',
+  //   category: 'Projects',
+  // },
   {
     title: 'Notes on Eat That Frog!',
     subtitle: 'Keeping track of my notes while I read',
