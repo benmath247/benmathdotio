@@ -11,12 +11,14 @@
     "format": "prettier --write '**/*.js'"
   },
   "dependencies": {
+    "@aws-sdk/client-rekognition": "^3.629.0",
     "@aws-sdk/client-ses": "^3.616.0",
+    "@aws-sdk/types": "^3.609.0",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "@mui/lab": "^5.0.0-alpha.163",
     "@mui/material": "^5.15.7",
-    "aws-sdk": "^2.1659.0",
+    "aws-sdk": "^2.1673.0",
     "axios": "^1.6.7",
     "bootstrap": "^5.3.2",
     "emailjs-com": "^3.2.0",

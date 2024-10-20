@@ -133,12 +133,12 @@ function Portfolio() {
       ];
 
       const demos = [
-        {
-          title: 'Hello, world!',
-          subtitle: 'Making a better site with ChatGPT in an afternoon.',
-          image: '/portfolio/chatgpt.jpeg',
-          link: 'January 1, 2024'
-        },
+        // {
+        //   title: 'Hello, world!',
+        //   subtitle: 'Making a better site with ChatGPT in an afternoon.',
+        //   image: '/portfolio/chatgpt.jpeg',
+        //   link: 'January 1, 2024'
+        // },
       ];
 
       const fetchContentWithCategory = (category) => {

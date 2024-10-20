@@ -24,6 +24,7 @@ import Translation from './projects/Translation/Translation';
 import Dictation from './projects/Dictation/dictation';
 import Pokedex from './projects/Pokedex/Pokedex';
 import ContactForm from './pages/Contact';
+import FaceAnalysis from './projects/FaceAnalysis/FaceAnalysis';
 import PokemonDetailsPage from './projects/Pokedex/PokemonDetails';
 import PokedexType from './projects/Pokedex/PokedexType';
 import DaysSinceQuit from './projects/QuitSmoking/DaysSinceQuit';
@@ -109,6 +110,7 @@ function App() {
         <Route path="/numbers" element={<NumberGuessingGame />} />
         <Route path="/pokedex" element={<Pokedex />} />
         <Route path="/foods" element={<Foods />} />
+        <Route path="/face-recognition" element={<FaceAnalysis />} />
         <Route path="/rothira" element={<Retirement />} />
         <Route path="/pokedex/type/:id" element={<PokedexType />} />
         <Route path="/pokedex/pokemon/:id" element={<PokemonDetailsPage />} />
