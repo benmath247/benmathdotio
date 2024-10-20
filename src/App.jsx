@@ -118,7 +118,6 @@ function App() {
         <Route path="/days-since-quit" element={<DaysSinceQuit />} />
         <Route path="/workoutPlanner" element={<ExampleCall />} />
         <Route path="/apininjas" element={<APINinjasNav />} />
-        <Route path="/kristynas-site" element={<Home />} />
         <Route path="/" element={<Home />} />
       </Routes>
     </Router>
