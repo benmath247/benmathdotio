@@ -202,7 +202,7 @@ function Portfolio() {
           <div className="row" key={rowIndex}>
             {row.map((post) => (
               <div className="col-md-3 mb-4 position-relative grow-on-hover" key={post.title}>
-                <a href={post.link} rel="noopener noreferrer">
+                <a href={`/${post.link}`} rel="noopener noreferrer">
                   <div className="card border-gradient-light">
                     <img
                       src={post.image}
