@@ -13,7 +13,7 @@ const Brand = () => (
 const NavLinks = ({ handleNavLinkClick }) => (
     <Nav className="justify-content flex-grow-1 pe-3">
         <Nav.Link as={Link} to="/blog" onClick={handleNavLinkClick}>Blog</Nav.Link>
-        <Nav.Link as={Link} to="/portfolio" onClick={handleNavLinkClick}>Portfolio</Nav.Link>
+        {/* <Nav.Link as={Link} to="/portfolio" onClick={handleNavLinkClick}>Portfolio</Nav.Link> */}
         <Nav.Link as={Link} to="/contact" onClick={handleNavLinkClick}>Contact</Nav.Link>
     </Nav>
 );
