@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, ListGroup } from 'react-bootstrap';
-import BlogPreview from '../components/BlogPreview'; // Import the BlogPreview component
+import BlogPreview from '../components/BlogPreview';
 import Footer from '../components/Footer';
 
 function Blog({ allPostsData }) {
@@ -12,13 +12,12 @@ function Blog({ allPostsData }) {
     );
 
     const sortPosts = () => {
-        const sorted = [...filteredPosts]; // Create a new array to avoid mutating the original
+        const sorted = [...filteredPosts];
 
         sorted.sort((a, b) => {
             const dateA = new Date(a.date);
             const dateB = new Date(b.date);
 
-            // Always return the opposite of the current sorting direction
             return sortDirection === 'asc' ? dateB - dateA : dateA - dateB;
         });
 

@@ -41,12 +41,6 @@ function Portfolio() {
           link: 'pokedex'
         },
         {
-          title: 'Tik Tac Toe',
-          subtitle: 'A simple Tik Tac Toe application',
-          image: '/portfolio/games/ttt.png',
-          link: 'tik-tac-toe'
-        },
-        {
           title: 'Pokemon Hangman',
           subtitle: "Who's that Pokemon?!",
           image: '/portfolio/games/pokemon.jpeg',
@@ -58,27 +52,9 @@ function Portfolio() {
           image: '/portfolio/games/memory.jpeg',
           link: 'memory'
         },
-        {
-          title: 'Guess the Number',
-          subtitle: "Guess a number between 1 and 100",
-          image: '/portfolio/games/numbers.jpeg',
-          link: 'numbers'
-        },
       ];
 
       const websites = [
-        {
-          title: 'Frozen Rewards',
-          subtitle: 'A Conagra Frozen Products rebates site',
-          image: '/portfolio/websites/digitalReward.png',
-          link: 'https://www.frozenrewardsclub.com'
-        },
-        {
-          title: 'Club Publix Digital Event',
-          subtitle: 'Brand promotion site for 90+ brands on behalf of Publix Grocery',
-          image: '/portfolio/websites/multibrand.jpg',
-          link: 'https://www.clubpublixdigitalevent.com'
-        },
         {
           title: 'Penn Mutual Asset Management',
           subtitle: 'UI consulting for Penn Mutual Asset Management',
@@ -90,12 +66,6 @@ function Portfolio() {
           subtitle: 'High level customization of a brand site product',
           image: '/portfolio/websites/mpp.jpeg',
           link: 'https://www.mypantryplanner.com'
-        },
-        {
-          title: 'Spoonable Perks',
-          subtitle: 'Using React to engage proprietary API to support a loyalty shopping program',
-          image: '/portfolio/websites/spoonable.jpeg',
-          link: 'https://www.spoonableperks.com'
         },
       ];
 
@@ -119,26 +89,11 @@ function Portfolio() {
           link: 'translation'
         },
         {
-          title: 'Color Pallet Assistance',
-          subtitle: 'Helping me pick colors',
-          image: '/portfolio/tools/paint.jpeg',
-          link: 'colors'
-        },
-        {
           title: 'JSON Formatter',
           subtitle: 'Organizing JSON format strings so I can read them',
           image: '/portfolio/tools/json-response.png',
           link: 'json-formatter'
         },
-      ];
-
-      const demos = [
-        // {
-        //   title: 'Hello, world!',
-        //   subtitle: 'Making a better site with ChatGPT in an afternoon.',
-        //   image: '/portfolio/chatgpt.jpeg',
-        //   link: 'January 1, 2024'
-        // },
       ];
 
       const fetchContentWithCategory = (category) => {

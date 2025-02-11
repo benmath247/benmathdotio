@@ -120,4 +120,11 @@ export const allPostsData = [
     date: 'July 20, 2024',
     category: 'Technology',
   },
+  {
+    title: 'Winter Catch Up',
+    subtitle: '',
+    content: '/blogs/personal/WinterCatchUp.html',
+    date: 'February 7th, 2025',
+    category: 'Personal',
+  }
 ]
