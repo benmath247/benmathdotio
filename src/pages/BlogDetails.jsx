@@ -55,7 +55,6 @@ function BlogDetails() {
                                 </>
                             }
                             <Button variant="primary" onClick={() => window.history.back()}>Back to All Blogs</Button>
-                            {/* Diagonal decoration */}
                             <div className="diagonal-decoration"></div>
                         </div>
                     </div>

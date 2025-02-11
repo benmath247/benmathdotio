@@ -1,0 +1,20 @@
+.grow-on-hover {
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.grow-on-hover:hover {
+    transform: scale(1.05);
+}
+
+.rotate-icon {
+    transition: transform .8s;
+}
+
+.rotate-icon:hover {
+    transform: rotate(360deg);
+}
+
+.grayscale {
+    filter: brightness(0);
+}

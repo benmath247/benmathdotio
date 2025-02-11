@@ -5,6 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { FaGithub, FaLinkedin, FaFilePdf } from 'react-icons/fa';
 import { GITHUB_URL, LINKEDIN_URL, GOOGLE_DOCS_URL } from '../../constants';
+import "../../styles/NavBar.css";
 
 const Brand = () => (
     <Navbar.Brand className="p-2" href="/">BENMATH.COM</Navbar.Brand>

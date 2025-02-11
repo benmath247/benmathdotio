@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import PokemonInfoPopup from './MoveInfoPopUp';
 
 const PokemonMovesList = ({ moves }) => {
-  const [selectedMove, setSelectedMove] = useState(null); // State to track the selected move
+  const [selectedMove, setSelectedMove] = useState(null);
 
   const openMoveInfo = (move) => {
-    setSelectedMove(move); // Set the selected move when clicked
+    setSelectedMove(move);
   };
 
   const closeMoveInfo = () => {
-    setSelectedMove(null); // Clear the selected move when closing the popup
+    setSelectedMove(null);
   };
 
   return (
@@ -24,7 +24,7 @@ const PokemonMovesList = ({ moves }) => {
                   <div
                     className="move-link"
                     onClick={() => {
-                      openMoveInfo(move); // Open move info when clicked
+                      openMoveInfo(move);
                     }}
                   >
                     {move.move.name || 'Unknown'}
@@ -35,7 +35,6 @@ const PokemonMovesList = ({ moves }) => {
           </tbody>
         </table>
       </div>
-      {/* Display move info popup when a move is selected */}
       {selectedMove && (
         <PokemonInfoPopup
           show={true}

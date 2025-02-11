@@ -89,7 +89,7 @@ function ContactForm() {
                         placeholder="Email"
                         required
                     />
-                    <div className="diagonal-decoration"></div> {/* Diagonal decoration */}
+                    <div className="diagonal-decoration"></div>
                 </div>
                 <div className="mb-3 position-relative">
                     <textarea
@@ -102,7 +102,7 @@ function ContactForm() {
                         placeholder="Message"
                         required
                     ></textarea>
-                    <div className="diagonal-decoration"></div> {/* Diagonal decoration */}
+                    <div className="diagonal-decoration"></div>
                 </div>
                 <button type="submit" className="primary">Send Message</button>
             </form>

@@ -99,7 +99,6 @@ function About() {
       </section>
 
       <section className="container mt-5">
-        {/* <Pokedex/> */}
 
       </section>
 
