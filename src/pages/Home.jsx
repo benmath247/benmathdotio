@@ -39,7 +39,7 @@ function Home() {
               />
               <h1 style={{ maxWidth: "100%" }}>WELCOME TO BENMATH.COM</h1>
               <h3 className="lead">
-                Venture within for thoughts on my personal and professional life or to see projects I have worked on.
+                Venture within for thoughts on my personal and professional life or to see projects I have worked on. This site is under construction, but enjoy my blog and a few old portfolio projects.
               </h3>
               <div>
                 <Link onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
