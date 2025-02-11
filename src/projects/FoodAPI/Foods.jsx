@@ -33,7 +33,7 @@ function Foods() {
     if (error) return <div>Error: {error.message}</div>;
 
     return (<><div className="container mt-5">
-        <h1 className="mb-4">Speech-to-Text Dictation Tool</h1>
+        <h1 className="mb-4">Foods</h1>
         <div>
             <input
                 type="text"
