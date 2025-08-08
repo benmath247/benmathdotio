@@ -13,6 +13,11 @@ export default function BlogSection() {
             title: 'Winter Catch Up',
             excerpt: 'A personal and professional update covering my time at Drexel, teaching Python at the library, getting engaged, and plans to revamp this website.',
             slug: 'winter-catch-up'
+        },
+        {
+            title: 'Learning From Failure',
+            excerpt: 'How a failed travel plan during the pandemic led to a successful bike business and valuable lessons in resilience and adaptation.',
+            slug: 'learning-from-failure'
         }
     ];
 

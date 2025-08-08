@@ -1,0 +1,95 @@
+import BlogContainer from '../../components/blog/BlogContainer';
+
+export default function LearningFromFailure() {
+    return (
+        <BlogContainer
+            title="Learning From Failure"
+            date="February 10, 2024"
+            photo={null}
+        >
+            <p>
+                Right before the pandemic began I quit my job and ended my lease to go travel the world.
+                I was planning to go to Spain, Portugal, Poland, Israel, Greece, and Thailand on a one way ticket.
+                My flight was scheduled for 3/16/2020 or something like that.
+                You never know when some freakish global catastrophe is going to completely uproot your plans.
+                It's important to be able to adapt.
+            </p>
+            <p>
+                When the pandemic caused airports to close across the globe I found myself stuck.
+                I was staying with a friend, without a job, without a home, without a clue of what I was going to do next.
+                I bought an old bike for $50 so I could go back and forth from my friend's house to the city.
+                On a particularly nice day, I decided to take some pictures of my bike.
+                They were so good that I even decided to put the bike up for sale on Facebook and make some money.
+            </p>
+            <h2>Failure to Success #1</h2>
+            <p>
+                The bike sold immediately for $165 with multiple people reaching out to buy it.
+                Fantastic! I rode it to West Philly to the buyer and went to find a new bike to buy.
+                I serendipitiously discovered the same exact model bike for sale less than a quarter mile away for around the same price as what I bought the first one for!
+                What luck! I bought that bike and decided to sell it to one of the people who wanted to buy the last one.
+                I had to ride it far into South Philly to make the sale, but I did it.
+                By the time I sold the bike, it was late at night, I was exhausted, but I felt great.
+                I just made around $200 in a day for the first time in a while, and a new venture was born.
+            </p>
+            <p>
+                I didn't realize at the time that I had just uncovered a booming demand in the bike market for the pandemic.
+                People needed fitness equipment and transportation because in the city they were afraid to ride public transportation or go to the gym.
+                I went around buying and reselling bikes every day for a few weeks. I started with one and quickly moved to two, then three, then five.
+                I was moving a few bikes a day and doing well for myself to make ends meet while I figured out what was next for me.
+            </p>
+            <h2>Failure to Success #2</h2>
+            <p>
+                As I sold more bikes I thought about scaling my business more and more.
+                I was about to learn a valuable lesson.
+                I took a UHaul a few times around the suburbs to pick up great deals on bikes that I could resell.
+                A lot of them were sold at great prices but had a few problems that I could fix easily.
+                A lot of them just needed to be cleaned with soap and water.
+                I began looking for someone to sell me a few dozen bikes instead of just one.
+                I found a guy who said he would sell my 20 bikes for $1000. His name was Dan.
+                Dan said they were all in reasonable shape but just needed a tune up. Dan was a liar.
+                I showed up to buy the bikes and I threw them in my Uhaul without taking a good look.
+                I noticed they were in rough shape but I didn't realize how bad. They were pretty useless, way beyond what I could fix.
+            </p>
+            <p>
+                When I began to unload, I had no idea what I'd do next. I had just dropped so much of my profit on new bikes that I couldn't resell or fix.
+                Without knowing what to do next, I did what was working for me. I bought a new bike from someone and sold it.
+                A few bikes later someone I was buying from had dozens and dozens of old bikes. I explained to him my situation and asked him if he could fix my bikes for me.
+                He said no problem. I asked him if he could sell me more bikes too. He sold me another 20 at $50 each. His name was Don.
+            </p>
+            <p>
+                Don solved my problems. I was out of hot water with my broken inventory and I wouldn't need to go find bikes for a while.
+                Don also allowed me to buy broken bikes and have somewhere that could fix them.
+                We developed something great. I dropped them off, he fixed them and had his guys bring them to me. I sold them.
+            </p>
+            <p>
+                I had been selling these bikes out of a creepy basement in Center City Philadelphia where my girlfriend lived.
+                It was time to scale up. The best part of Philadelphia is the community here. I put out some feelers in the Italian Market and someone told me of an older woman with a garage forr rent.
+                I boldly knocked on the door and asked if I could rent the garage without any further introduction. Remarkably, she said yes!
+                The space was beautifully located around the corner from a ragtag bike repair shop that was willing to repair even more bikes for me.
+            </p>
+            <h2>A Happy Ending</h2>
+            <p>
+                After doing an 80/20 analysis, I realized that 80% of my profit came from selling, which I spend 20% of the time on.
+                I began to hire people to get the bikes for me and I adopted a new model. Whatever bike they brought me, I'd pay them $100-120 for if it was in working condition.
+                I even hired someone on Upwork to do my marketing for me. The process was simple. I maintained an Instagram where I put pictures of all of the bikes that I was selling.
+                When the drivers would bring me new ones, I'd pay them and put up new pictures of bikes.
+                My marketer would keep an eye on the Instagram and whenever there were new listings, she'd put ads up on Craigslist, Facebook, and other used product platforms.
+                If people had questions about the bikes, she'd tell them to just come in to my location and give them the address.
+                She'd even put up listings with a bunch of different bikes just to get attention and tell people what we were doing.
+            </p>
+            <p>
+                It was wonderful. My job became to sit in the garage and sell bikes all Spring and Summer. The weather was beautiful.
+                I remember going down the street to the Italian Market to get lunch often. I'd enjoy the $1 coffee at Geno's Steaks.
+                It worked out for me, selling over 300 bikes, until it was the end of the season and I decided to close down the shop and move on.
+            </p>
+            <h2>Lessons Learned</h2>
+            <p>
+                Nobody ever wants to intentionally make a mistake.
+                This often creates a fear of making mistakes and keeps people confined to their status quos.
+                My biggest mistakes in making my pandemic bike business helped me to grow substantially every single time.
+                If I had never made a mistake, I would never have taken the next step.
+                It's important to be calculated but also bold. Even when you make mistakes and have to suffer the consequences, you never know where you'll wind up after you fix them.
+            </p>
+        </BlogContainer>
+    );
+}

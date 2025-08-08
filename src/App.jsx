@@ -6,6 +6,7 @@ import CustomNavBar from './components/navBar/CustomNavBar';
 import Home from './pages/Home';
 import OverhaulingMyWebsite from './pages/blog/OverhaulingMyWebsite';
 import WinterCatchUp from './pages/blog/WinterCatchUp';
+import LearningFromFailure from './pages/blog/LearningFromFailure';
 function App() {
   const routes = [
     {
@@ -19,6 +20,10 @@ function App() {
     {
       path: '/blog/winter-catch-up',
       element: <WinterCatchUp />
+    },
+    {
+      path: '/blog/learning-from-failure',
+      element: <LearningFromFailure />
     }
   ]
 
