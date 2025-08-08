@@ -1,20 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import FeaturedProjects from '../components/FeaturedProjects';
-import ParallaxBackground from '../components/ParallaxBackground';
-import Footer from '../components/Footer';
-
-function LoadingScreen() {
-  return (
-    <div className="d-flex justify-content-center align-items-center vh-100">
-      <div className="spinner-border text-primary" role="status">
-        <span className="visually-hidden">Loading...</span>
-      </div>
-    </div>
-  );
-}
+import LoadingScreen from '../components/home/LoadingScreen';
+import LoadedHome from '../components/home/LoadedHome';
 
 function Home() {
+  // this image takes a bit to load, so we show a loading screen until it does
   const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
@@ -24,39 +13,13 @@ function Home() {
   }, []);
 
   return (
-    <>
-      {!imageLoaded ? (
-        <LoadingScreen />
+    <div className='container'>
+      {imageLoaded ? (
+        <LoadedHome />
       ) : (
-        <div className='background'>
-          <section className="hero background py-5">
-            <div className="container text-center">
-              <img
-                src="images/me/me.png"
-                alt="Ben Math"
-                className="rounded-circle mb-4 grow-on-hover border border-secondary border-2 img-fluid"
-                style={{ maxWidth: "300px", width: "100%" }}
-              />
-              <h1 className="w-100">WELCOME TO BENMATH.COM</h1>
-              <h3 className="lead">
-                This site it under construction!
-              </h3>
-              <div>
-                {/* <Link onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}> */}
-                {/* <button className='secondary m-2'>
-                    View My Blog
-                  </button> */}
-                {/* </Link> */}
-              </div>
-            </div>
-          </section>
-          {/* <ParallaxBackground>
-            <FeaturedProjects />
-          </ParallaxBackground> */}
-          {/* <Footer /> */}
-        </div>
+        <LoadingScreen />
       )}
-    </>
+    </div>
   );
 }
 
