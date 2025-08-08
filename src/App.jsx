@@ -28,7 +28,7 @@ function App() {
     <Router>
       <CustomNavBar />
       <Routes>
-        <Route path="/about" element={<About />} />
+        {/* <Route path="/about" element={<About />} />
         <Route path="/blog" element={<Blog allPostsData={allPostsData} />} />
         <Route path="/blog/:title" element={<BlogDetails />} />
         <Route path="/portfolio" element={<Portfolio />} />
@@ -44,7 +44,7 @@ function App() {
         <Route path="/pokedex/type/:id" element={<PokedexType />} />
         <Route path="/pokedex/pokemon/:id" element={<PokemonDetailsPage />} />
         <Route path="/dictation" element={<Dictation />} />
-        <Route path="/api-fun" element={<APINinjasNav />} />
+        <Route path="/api-fun" element={<APINinjasNav />} /> */}
         <Route path="/" element={<Home />} />
       </Routes>
     </Router>

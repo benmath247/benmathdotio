@@ -30,30 +30,30 @@ function Home() {
       ) : (
         <div className='background'>
           <section className="hero background py-5">
-            <div style={{ paddingTop: "50px" }} className="container text-center">
+            <div className="container text-center">
               <img
                 src="images/me/me.png"
                 alt="Ben Math"
-                className="rounded-circle mb-4 grow-on-hover border border-secondary border-2"
-                width="300"
+                className="rounded-circle mb-4 grow-on-hover border border-secondary border-2 img-fluid"
+                style={{ maxWidth: "300px", width: "100%" }}
               />
-              <h1 style={{ maxWidth: "100%" }}>WELCOME TO BENMATH.COM</h1>
+              <h1 className="w-100">WELCOME TO BENMATH.COM</h1>
               <h3 className="lead">
-                Venture within for thoughts on my personal and professional life or to see projects I have worked on. This site is under construction, but enjoy my blog and a few old portfolio projects.
+                This site it under construction!
               </h3>
               <div>
-                <Link onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-                  <button className='secondary m-2'>
+                {/* <Link onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}> */}
+                {/* <button className='secondary m-2'>
                     View My Blog
-                  </button>
-                </Link>
+                  </button> */}
+                {/* </Link> */}
               </div>
             </div>
           </section>
-          <ParallaxBackground>
+          {/* <ParallaxBackground>
             <FeaturedProjects />
-          </ParallaxBackground>
-          <Footer />
+          </ParallaxBackground> */}
+          {/* <Footer /> */}
         </div>
       )}
     </>
