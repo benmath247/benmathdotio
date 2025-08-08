@@ -1,8 +1,7 @@
 import { Container, Card, Row, Col, Button } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import BlogItem from './BlogItem';
 
 export default function BlogSection() {
-    const navigate = useNavigate();
 
     const blogs = [
         {
@@ -17,19 +16,7 @@ export default function BlogSection() {
             <h2 className="mb-4 text-center">Latest Blog Posts</h2>
             <Row xs={1} md={3} className="g-4">
                 {blogs.map((blog, idx) => (
-                    <Col key={blog.title}>
-                        <Card className="h-100">
-                            <Card.Body className="d-flex flex-column">
-                                <Card.Title>{blog.title}</Card.Title>
-                                <Card.Text className="mb-4">{blog.excerpt}</Card.Text>
-                                <div className="mt-auto d-flex justify-content-end">
-                                    <Button variant="outline-primary" size="sm" onClick={() => navigate('/blog')}>
-                                        Read More
-                                    </Button>
-                                </div>
-                            </Card.Body>
-                        </Card>
-                    </Col>
+                    <BlogItem blog={blog} key={idx} />
                 ))}
             </Row>
         </Container>
