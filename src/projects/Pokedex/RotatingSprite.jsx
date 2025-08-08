@@ -12,7 +12,6 @@ const SpriteDisplay = ({ id, grayscale, hovered, growOnHover }) => {
 
   useEffect(() => {
     let interval;
-    debugger
     if (hovered) {
       interval = setInterval(() => {
         setSpriteIndex((prevIndex) => (prevIndex + 1) % sprites.length);
