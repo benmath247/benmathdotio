@@ -7,29 +7,45 @@ import Home from './pages/Home';
 import OverhaulingMyWebsite from './pages/blog/OverhaulingMyWebsite';
 import WinterCatchUp from './pages/blog/WinterCatchUp';
 import LearningFromFailure from './pages/blog/LearningFromFailure';
+import Resume from './pages/Resume';
+
+
 function App() {
   const routes = [
     {
       path: '/',
-      element: <Home />
+      element: <Home />,
+      showNavBar: true
     },
     {
       path: '/blog/overhauling-my-website',
-      element: <OverhaulingMyWebsite />
+      element: <OverhaulingMyWebsite />,
+      showNavBar: true
     },
     {
       path: '/blog/winter-catch-up',
-      element: <WinterCatchUp />
+      element: <WinterCatchUp />,
+      showNavBar: true
     },
     {
       path: '/blog/learning-from-failure',
-      element: <LearningFromFailure />
+      element: <LearningFromFailure />,
+      showNavBar: true
+    },
+    {
+      path: '/resume',
+      element: <Resume />,
+      showNavBar: false
     }
   ]
 
+  // Use location to determine if navbar should be shown
+  const { pathname } = window.location;
+  const showNavBar = routes.find(r => r.path === pathname)?.showNavBar !== false;
+
   return (
     <Router>
-      <CustomNavBar />
+      {showNavBar && <CustomNavBar />}
       <Routes>
         {routes.map((route, index) => (
           <Route

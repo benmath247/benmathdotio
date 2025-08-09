@@ -27,7 +27,7 @@ const SocialLinks = ({ handleNavLinkClick }) => (
         <Nav.Link href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" onClick={handleNavLinkClick}>
             <FaLinkedin className="rotate-icon" size={20} />
         </Nav.Link>
-        <Nav.Link href={GOOGLE_DOCS_URL} target="_blank" rel="noopener noreferrer" onClick={handleNavLinkClick}>
+        <Nav.Link href={"/resume"} target="_blank" rel="noopener noreferrer" onClick={handleNavLinkClick}>
             <FaFilePdf className="rotate-icon" size={20} />
         </Nav.Link>
     </Nav>
