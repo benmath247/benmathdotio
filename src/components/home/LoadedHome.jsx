@@ -1,5 +1,5 @@
 import Banner from './Banner'
-import BlogSection from './BlogSection'
+import { BlogSection } from './BlogSection'
 
 export default function LoadedHome() {
     return (

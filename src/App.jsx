@@ -36,6 +36,13 @@ function App() {
       path: '/resume',
       element: <Resume />,
       showNavBar: false
+    },
+    {
+      path: '/blog',
+      element: <div>Blog Page</div>, // Placeholder for blog page
+      showNavBar: true
+    },
+    {
     }
   ]
 
