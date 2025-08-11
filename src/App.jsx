@@ -7,14 +7,15 @@ import Home from './pages/Home';
 import OverhaulingMyWebsite from './pages/blog/OverhaulingMyWebsite';
 import WinterCatchUp from './pages/blog/WinterCatchUp';
 import LearningFromFailure from './pages/blog/LearningFromFailure';
+import FixingMyTLS from './pages/blog/FixingMyTLS';
 import Resume from './pages/Resume';
 
 
 function App() {
-  const routes = [
+  const blogRoutes = [
     {
-      path: '/',
-      element: <Home />,
+      path: '/blog',
+      element: <div>Blog Page</div>, // Placeholder for blog page
       showNavBar: true
     },
     {
@@ -33,28 +34,36 @@ function App() {
       showNavBar: true
     },
     {
-      path: '/resume',
-      element: <Resume />,
-      showNavBar: false
-    },
+      path: '/blog/fixing-my-tls-certificate',
+      element: <FixingMyTLS />,
+      showNavBar: true
+    }
+  ];
+
+  const mainRoutes = [
     {
-      path: '/blog',
-      element: <div>Blog Page</div>, // Placeholder for blog page
+      path: '/',
+      element: <Home />,
       showNavBar: true
     },
     {
+      path: '/resume',
+      element: <Resume />,
+      showNavBar: false
     }
-  ]
+  ];
+
+  const allRoutes = [...mainRoutes, ...blogRoutes];
 
   // Use location to determine if navbar should be shown
   const { pathname } = window.location;
-  const showNavBar = routes.find(r => r.path === pathname)?.showNavBar !== false;
+  const showNavBar = allRoutes.find(r => r.path === pathname)?.showNavBar !== false;
 
   return (
     <Router>
       {showNavBar && <CustomNavBar />}
       <Routes>
-        {routes.map((route, index) => (
+        {allRoutes.map((route, index) => (
           <Route
             key={index}
             path={route.path}

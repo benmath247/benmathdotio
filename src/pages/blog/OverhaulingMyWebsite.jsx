@@ -51,7 +51,7 @@ export function OverhaulingMyWebsite() {
             <p>Honestly, I forget whether my old contact form worked or not. I know at one time it worked because I made a blog post about it, but I am not sure what its current status is. I figured it's worth rebuilding for the completeness of the transformation.</p>
 
             <p className="py-4">For now, I have my homepage up with some well-made components, and a couple of blogs. I like how it looks. A new problem also popped up: I am not sure why, but the TLS certificate on my site did not auto-renew. I need to update that, but I am not sure how. I really hate working with DNS records, but this will be good practice.</p>
-            <p>Between work, school, volunteering to teach code, and making this website, I have my plate full. Gotta get to work, so I'm off to the races!</p>
+            <p>Between work, school, volunteering to teach code, planning a wedding, and making this website, I have my plate full. Gotta get to work, so I'm off to the races!</p>
         </BlogContainer>
     );
 }
